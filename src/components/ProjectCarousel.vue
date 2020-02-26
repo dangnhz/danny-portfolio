@@ -3,8 +3,10 @@
     <div class="pr_carousel-title">
       <div class="pr-carousel-title-item">
         <h3>My Featured Projects</h3>
-        <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida.</p>
-        <b-button type="is-warning" class="flat-btn">My Portfolio</b-button>
+        <p>Some cool projects made by me.</p>
+        <router-link :to="{name:'works'}">
+          <b-button type="is-warning" class="flat-btn">My Portfolio</b-button>
+        </router-link>
       </div>
     </div>
     <div class="slider-carousel-wrap">
@@ -14,7 +16,7 @@
             <img :src="project.imgUrl" :alt="project.title" />
           </div>
           <div class="project-text">
-            <h3 class="project-title">{{project.title}}</h3>
+            <router-link :to="{name:'project', params:{id:project.id, project:project}}"><h3 class="project-title">{{project.title}}</h3></router-link>
             <p class="project-category">{{project.category}}</p>
           </div>
         </div>
@@ -26,7 +28,7 @@
         <v-icon name="arrow-right"></v-icon>
       </div>
     </div>
-    <div class="pr-carousel-counter">1 / 5</div>
+    <div class="pr-carousel-counter">{{currentSlide}}/{{projects.length}}</div>
   </section>
 </template>
 
@@ -84,6 +86,7 @@ export default {
         infinite: true,
         centerMode: true,
         slidesToShow: 4,
+        centerPadding: "0px",
         nextArrow: ".btn-next",
         prevArrow: ".btn-prev",
         responsive: [
@@ -123,12 +126,13 @@ export default {
           // settings: "unslick"
           // instead of a settings object
         ]
-      }
+      },
+      currentSlide: 1
     };
   },
   methods: {
     handleAfterChange(event, slick, currentSlide) {
-      console.log("handleAfterChange", event, slick, currentSlide);
+      this.currentSlide = currentSlide + 1;
     }
   }
 };
@@ -160,18 +164,18 @@ export default {
     top: 30%;
     text-align: left;
     @media @mobile, @large-mobile, @tablet {
-    position: relative;
-    float: left;
-    width: 100%;
-    margin-bottom: 50px;
-    left: 0;
+      position: relative;
+      float: left;
+      width: 100%;
+      margin-bottom: 50px;
+      left: 0;
     }
 
     .pr-carousel-title-item {
       max-width: 500px;
       margin: 0 auto;
-      @media @mobile, @large-mobile, @tablet{
-          max-width: 92%;
+      @media @mobile, @large-mobile, @tablet {
+        max-width: 92%;
       }
     }
 
@@ -294,17 +298,14 @@ export default {
             margin: 0;
             transition: all 400ms linear;
 
-            .project-image{
+            .project-image {
               width: 100%;
-              height: 320px;
-              @media @mobile, @large-mobile, @tablet {
-                  height: 280px;
-              }
+              height: 20rem;
               img {
-                   width:100%;
-                    height:100%;
-                    vertical-align: middle;
-                    object-fit: cover;
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+                object-fit: cover;
               }
             }
 
@@ -392,8 +393,8 @@ export default {
         text-align: left;
         padding-left: 20px;
         @media @mobile, @large-mobile, @tablet {
-            bottom: -28px;
-            padding-left: 0px;
+          bottom: -28px;
+          padding-left: 0px;
         }
 
         li button:before {
@@ -401,6 +402,7 @@ export default {
           font-size: 0.3rem;
           opacity: 0.5;
           color: @white;
+          transition: all 0.4s;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
@@ -413,33 +415,34 @@ export default {
       }
     }
 
-    .btn-next, .btn-prev {
-        width: 2.5rem;
-        height: 2.5rem;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        border: 1px solid @white;
-        z-index: 30;
-        transition: all 0.5s;
-        // transform-origin: 50% 100%;
-        border-radius: 8px;
-        color: @yellow;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:hover {
-            border-radius: 50%;
-            background:rgba(255, 255, 255, 0.1);
-            // transform: scale(1.5);
-            cursor: pointer;
-        }
+    .btn-next,
+    .btn-prev {
+      width: 2.5rem;
+      height: 2.5rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid @white;
+      z-index: 30;
+      transition: all 0.5s;
+      // transform-origin: 50% 100%;
+      border-radius: 8px;
+      color: @yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        // transform: scale(1.5);
+        cursor: pointer;
+      }
     }
     .btn-next {
-        right: 20px;
+      right: 20px;
     }
     .btn-prev {
-        left: 20px;
+      left: 20px;
     }
   }
   .pr-carousel-counter {
