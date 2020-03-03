@@ -21,10 +21,10 @@
           </div>
         </div>
       </slick>
-      <div class="btn-prev">
+      <div class="btn-prev hoverable">
         <v-icon name="arrow-left"></v-icon>
       </div>
-      <div class="btn-next">
+      <div class="btn-next hoverable">
         <v-icon name="arrow-right"></v-icon>
       </div>
     </div>

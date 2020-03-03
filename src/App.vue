@@ -1,20 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav-menu></nav-menu>
+    <Navbar></Navbar>
     <router-view/>
   </div>
 </template>
 
-<style>
+<script>
+import Navbar from './components/Navbar'
+import NavMenu from './components/NavMenu'
+export default {
+
+  name:'app',
+  components: {
+    Navbar,
+    NavMenu
+  },
+}
+</script>
+
+<style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: #fff;
 }
 
 #nav {

@@ -18,3 +18,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .home {
+      cursor: none;
+  }
+</style>
