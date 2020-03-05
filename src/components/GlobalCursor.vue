@@ -144,7 +144,7 @@ export default {
   content: "";
   width: 6px;
   height: 6px;
-  background: @yellow;
+  background: @text-color;
   border-radius: 50%;
 }
 </style>

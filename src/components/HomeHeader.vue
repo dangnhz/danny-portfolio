@@ -78,7 +78,7 @@ export default {
       font-size: 3.5rem;
       font-family: "Amatic SC", cursive;
       font-weight: 900;
-      color: @yellow;
+      color: @text-color;
       @media @mobile, @large-mobile {
         font-size: 2rem;
       }

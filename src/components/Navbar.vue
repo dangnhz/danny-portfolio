@@ -55,7 +55,7 @@ export default {
   width: 50px;
   overflow: hidden;
   position: relative;
-  color: @yellow;
+  color: @text-color;
   left: 5rem;
   cursor: pointer;
 
@@ -66,7 +66,7 @@ export default {
     left: 0;
     .hamburger-el {
       content: "";
-      background: @yellow;
+      background: @text-color;
       margin: 5px;
       display: block;
       width: 25px;

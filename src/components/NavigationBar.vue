@@ -23,7 +23,7 @@
         <div class="col-4 text-right btn-projects">
           <router-link :to="{name:'works'}">
             <span class="btn-projects-text">View Projects</span>
-            <svg class="ml-3 btn-projects-icon" width="19" height="18" fill="none">
+            <svg class="ml-3 btn-projects-icon" width="20" height="20" fill="none">
               <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(0 6)" />
               <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(16 6)" />
               <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(8 8)" />
@@ -167,7 +167,7 @@ export default {
 .btn-menu {
   position: relative;
   top: 0;
-  color: @yellow;
+  color: @text-color;
   left: 5rem;
   cursor: pointer;
   @media @mobile, @large-mobile {
@@ -229,6 +229,7 @@ export default {
   .hamburger-caption {
     position: absolute;
     margin-left: 1rem;
+    transition: 0.5s;
     color: @white;
     @media @mobile, @large-mobile {
       display: none;
@@ -237,7 +238,7 @@ export default {
       transform: none !important;
     }
     &:hover {
-      color: @yellow;
+      color: @text-color;
     }
   }
 }
@@ -261,6 +262,7 @@ export default {
   }
   .btn-projects-icon {
       color: @white;
+      margin-top: -2px;
     }
 }
 
@@ -304,7 +306,7 @@ export default {
         }
         &:hover {
           background: none;
-          color: @yellow;
+          color: @text-color ;
         }
       }
     }
