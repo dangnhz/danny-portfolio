@@ -5,7 +5,7 @@
         <h3>My Featured Projects</h3>
         <p>Some cool projects made by me.</p>
         <router-link :to="{name:'works'}">
-          <b-button type="is-warning" class="flat-btn">My Portfolio</b-button>
+          <button class="flat-btn">My Portfolio</button>
         </router-link>
       </div>
     </div>
@@ -214,7 +214,7 @@ export default {
     .flat-btn {
       text-align: center;
       box-sizing: border-box;
-      padding: 15px 30px 30px 30px;
+      padding: 10px 30px;
       position: relative;
       font-size: 0.75rem;
       font-weight: 600;

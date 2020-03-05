@@ -56,13 +56,13 @@ export default {
 
     // Hover an element
     function onMouseHover() {
-      bigBall.style.opacity = 0.1
+      bigBall.style.opacity = 0.1;
       gsap.to(bigBall, 0.3, {
         scale: 3
       });
     }
     function onMouseHoverOut() {
-        // bigBall.style.opacity = 1
+      // bigBall.style.opacity = 1
       gsap.to(bigBall, 0.3, {
         scale: 1
       });
@@ -77,58 +77,33 @@ export default {
   methods: {
     magneticButton(elements) {
       elements.forEach(element => {
-        let isMagnetic = false;
-        var isTransformed;
-        var offsetHoverMax = element.getAttribute("offset-hover-max") || 0.7;
-        var offsetHoverMin = element.getAttribute("offset-hover-min") || 0.5;
-
-        document.addEventListener("mousemove", e => {
-          var mouse = {
-            x: e.clientX,
-            y: e.clientY - window.scrollY
-          };
-          var maxDistance = isMagnetic ? offsetHoverMax : offsetHoverMin;
-          var width = element.offsetWidth;
-          var height = element.offsetHeight;
-          var offset = element.getBoundingClientRect();
-          var center = {
-            x: offset.left + width / 2,
-            y: offset.top + height / 2
-          };
-          var dx = mouse.x - center.x;
-          var dy = mouse.y - center.y;
-
-          isTransformed = false;
-
-          if (Math.sqrt(dx * dx + dy * dy) < width * maxDistance) {
-            isTransformed = true;
-            if (!isMagnetic) isMagnetic = true;
-            onHover(dx, dy);
-          }
-
-          if (!isTransformed && isMagnetic) {
-            onLeave();
-            isMagnetic = false;
-          }
+        element.addEventListener("mouseleave", () => {
+          gsap.to(element, 0.3, { scale: 1, x: 0, y: 0, ease:"elastic.out(1, 0.3)" });
         });
 
-        function onHover(x, y) {
-          gsap.to(element, 0.4, {
-            x: x * 0.8,
-            y: y * 0.8,
-            //scale: .9,
-            rotation: x * 0.05,
-            ease: "power2.out"
-          });
+        element.addEventListener("mouseenter", () => {
+          gsap.to(element, 0.3, { scale: 1, transformOrigin: "0 0" });
+        });
+
+        element.addEventListener("mousemove", e => {
+          callParallax(e);
+        });
+
+        function callParallax(e) {
+          parallaxIt(e, element, 80);
         }
 
-        function onLeave() {
-          gsap.to(element, 0.7, {
-            x: 0,
-            y: 0,
-            scale: 1,
-            rotation: 0,
-            ease: "elastic.out(1, 0.3)"
+        function parallaxIt(e, target, movement) {
+          var boundingRect = target.getBoundingClientRect();
+          var relX = e.pageX - boundingRect.left;
+          var relY = e.pageY - boundingRect.top;
+          var scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          gsap.to(target, 0.3, {
+            x: ((relX - boundingRect.width / 2) / boundingRect.width) * movement,
+            y: ((relY - boundingRect.height / 2 - scrollTop) / boundingRect.width) * movement,
+            ease: "Power2.easeOut"
           });
         }
       });
@@ -147,7 +122,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-   mix-blend-mode: difference;
+  mix-blend-mode: difference;
   z-index: 99999;
   opacity: 0;
   pointer-events: none;
@@ -163,7 +138,7 @@ export default {
   height: 35px;
   background: @white;
   border-radius: 50%;
-//   border: 2px solid @pink;
+  //   border: 2px solid @pink;
 }
 .small-ball {
   content: "";

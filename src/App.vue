@@ -1,31 +1,51 @@
 <template>
   <div id="app">
-    <nav-menu></nav-menu>
-    <Navbar></Navbar>
+    <!-- <nav-menu></nav-menu> -->
+    <NavigationBar></NavigationBar>
     <router-view/>
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar'
-import NavMenu from './components/NavMenu'
+import NavigationBar from './components/NavigationBar'
+//import NavMenu from './components/NavMenu'
 export default {
 
   name:'app',
   components: {
-    Navbar,
-    NavMenu
+    NavigationBar,
   },
 }
 </script>
 
 <style lang="less">
+
+* {
+  padding: 0;
+  margin: 0;
+}
+html, body {
+    height: 100%;
+    -webkit-overflow-scrolling: auto !important;
+}
+html {
+    overflow-y: hidden;
+}
+body {
+    overflow-y: scroll;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+li {
+  list-style-type: none;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   background: #fff;
 }
 

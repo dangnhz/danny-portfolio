@@ -32,67 +32,80 @@
 import gsap from "gsap";
 export default {
   name: "nav-menu",
-computed: {
+  computed: {
     showMenu() {
-        return this.$store.state.showMenu
+      return this.$store.state.showMenu;
     }
-},
+  },
   methods: {
     toggleMenu() {
       const navMenu = document.querySelector("#menu-wrapper");
       const menuItems = document.querySelectorAll(".menu-item");
-      if (this.showMenu == true) {
-        gsap.fromTo(navMenu, {
-          yPercent: -100,
-          opacity: 1,
-        }, 
-        {
+
+      //set menu position
+      gsap.set(navMenu, {
+        yPercent: -100,
+        opacity: 1,
+      })
+
+      gsap.set(menuItems, {
+        x: -100,
+        opacity: 0
+      })
+
+      if (this.showMenu) {
+        gsap.to(navMenu, {
             yPercent: 100,
             opacity: 1,
+            ease: "power2.out",
+            duration: 0.75
+          }
+        );
+        gsap.to(menuItems,{
+            opacity: 1,
+            x: 0,
+            ease: "elastic.out(1, 0.3)",
             duration: 0.75,
-        });
-        gsap.fromTo(menuItems, {
-          opacity: 0,
-          y: -40
-        },
-        {
-          opacity: 1,
-          y: 0,
-          ease: "elastic",
-          duration: .1,
-          delay: .5,
-          stagger: 0.2
-        });
+            delay: 0.8,
+            stagger: 0.3
+          }
+        );
       } else {
-         gsap.fromTo(navMenu, {
-          yPercent: 100,
-          opacity: 1,
-        }, 
-        {
+        gsap.fromTo(
+          navMenu,
+          {
+            yPercent: 100,
+            opacity: 1
+          },
+          {
             yPercent: -100,
-            opacity: 0,
+            opacity: 1,
             duration: 1,
             delay: 1.5
-        });
-        gsap.fromTo(menuItems, {
-          opacity: 1,
-          y: 0,
-        },
-        {
-          opacity: 0,
-          y: -40,
-          ease: "ease.out",
-          duration: .2,
-          stagger: 0.2
-        });
+          }
+        );
+        gsap.fromTo(
+          menuItems,
+          {
+            opacity: 1,
+            y: 0
+          },
+          {
+            opacity: 0,
+            y: -40,
+            ease: "ease.out",
+            duration: 0.5,
+            stagger: 0.3
+          }
+        );
       }
-    },
+    }
   },
   watch: {
-      showMenu() {
-          this.toggleMenu()
-      }
-  },
+    showMenu() {
+      this.toggleMenu();
+    }
+  }
 };
 </script>
 
@@ -105,20 +118,23 @@ computed: {
   top: -100%;
   left: 0;
   z-index: 99;
-  background: @pink;
+  background: #333;
   .menu-container {
     margin-top: 10rem;
-    .menu-list ul li a{
-      text-align: left;
-      left: 15rem;
-      position: relative;
-      font-size: 3rem;
-      padding: 0.5rem;
-      opacity: 0;
-      transition: all 0.8s ease;
-      &:hover {
-        background: none;
-        color: @yellow;
+    .menu-list ul li {
+      a {
+        width: fit-content;
+        text-align: left;
+        left: 15rem;
+        position: relative;
+        font-size: 3rem;
+        padding: 0.5rem;
+        // opacity: 0;
+         transition: color 0.8s;
+        &:hover {
+          background: none;
+          color: @yellow;
+        }
       }
     }
     .menu-list ul li a.router-link-exact-active {
@@ -144,6 +160,7 @@ computed: {
         position: absolute;
         left: -2.2rem;
         top: 50%;
+        transform: translateY(-50%);
         opacity: 1;
         background: @yellow;
         display: block;

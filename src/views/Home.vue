@@ -1,12 +1,16 @@
 <template>
   <div class="home">
+    <HomeHeader></HomeHeader>
+    <AboutMe></AboutMe>
     <project-carousel></project-carousel>
     <GlobalCursor></GlobalCursor>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+
+import HomeHeader from '../components/HomeHeader';
+import AboutMe from '../components/AboutMe'
 import GlobalCursor from '../components/GlobalCursor';
 import ProjectCarousel from '../components/ProjectCarousel';
 
@@ -14,7 +18,9 @@ export default {
   name: 'Home',
   components: {
     GlobalCursor,
-    ProjectCarousel
+    ProjectCarousel,
+    HomeHeader,
+    AboutMe
   }
 }
 </script>
