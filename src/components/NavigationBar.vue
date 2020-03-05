@@ -176,6 +176,7 @@ export default {
   .hamburger-icon {
     background: none;
     border: none;
+    margin-top: 3px;
     @media @mobile, @large-mobile, @tablet {
       -o-transform: none !important;
       -moz-transform: none !important;
