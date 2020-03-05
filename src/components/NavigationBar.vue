@@ -18,10 +18,20 @@
           >{{hamburgerCaption}}</span>
         </div>
         <div class="col-4 text-center" id="my-logo">
-          <router-link to="/" class=" logo-wrapper">DN</router-link>
+          <router-link to="/" class="logo-wrapper">DN</router-link>
         </div>
         <div class="col-4 text-right btn-projects">
-          <span class="btn-projects-text">All Project</span> <v-icon class="ml-2" name="plus"></v-icon>
+          <router-link :to="{name:'works'}">
+            <span class="btn-projects-text">View Projects</span>
+            <svg class="ml-3 btn-projects-icon" width="19" height="18" fill="none">
+              <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(0 6)" />
+              <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(16 6)" />
+              <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(8 8)" />
+              <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(8)" />
+              <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(3 15)" />
+              <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(13 15)" />
+            </svg>
+          </router-link>
         </div>
       </div>
     </div>
@@ -53,12 +63,20 @@
           </ul>
         </div>
         <div class="more-info col-xs-12 col-sm-12 col-md-4 menu-item">
-          <div class="mt-5 mb-5 mb-xs-2">More</div>
-            <div class="row">
-              <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-1">Facebook <v-icon class="ml-2" name="arrow-right"></v-icon></a>
-              <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-1">Linkedin <v-icon class="ml-2" name="arrow-right"></v-icon></a>
-              <a href="mailTo: dangnh3091@gmail.com" class="col-lg-12 col-md-12 col-6 text-light">Email <v-icon class="ml-2" name="arrow-right"></v-icon></a>
-            </div>
+          <div class="mt-5 mb-5 mb-xs-2">
+            <b>More</b>
+          </div>
+          <div class="row">
+            <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-2">
+              <v-icon class="mr-2" name="brands/facebook-square"></v-icon>Facebook
+            </a>
+            <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-2">
+              <v-icon class="mr-2" name="brands/linkedin"></v-icon>Linkedin
+            </a>
+            <a href="mailTo: dangnh3091@gmail.com" class="col-lg-12 col-md-12 col-6 text-light">
+              <v-icon class="mr-2" name="envelope"></v-icon>Email
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -103,12 +121,12 @@ export default {
     // });
 
     this.tl.set(menuItems, {
-      x:-40 ,
+      x: -40,
       opacity: 0
     });
 
     this.tl.to(navMenu, {
-      height:'100vh',
+      height: "100vh",
       opacity: 1,
       ease: "power2.out",
       duration: 0.5
@@ -159,11 +177,11 @@ export default {
     background: none;
     border: none;
     @media @mobile, @large-mobile, @tablet {
-    -o-transform: none !important;
-		-moz-transform: none !important;
-		-ms-transform: none !important;
-		-webkit-transform: none !important;
-		transform: none !important;
+      -o-transform: none !important;
+      -moz-transform: none !important;
+      -ms-transform: none !important;
+      -webkit-transform: none !important;
+      transform: none !important;
     }
     .hamburger-el {
       content: "";
@@ -212,13 +230,13 @@ export default {
     margin-left: 1rem;
     color: @white;
     @media @mobile, @large-mobile {
-    display: none;
-  }
-  @media @tablet {
-    transform: none !important;
-  }
+      display: none;
+    }
+    @media @tablet {
+      transform: none !important;
+    }
     &:hover {
-    color: @yellow;
+      color: @yellow;
     }
   }
 }
@@ -235,10 +253,14 @@ export default {
     right: 1.5rem;
   }
   .btn-projects-text {
+    color: @white;
     @media @mobile, @large-mobile {
-    display: none;
+      display: none;
+    }
   }
-  }
+  .btn-projects-icon {
+      color: @white;
+    }
 }
 
 // end navbar styling
@@ -248,7 +270,7 @@ export default {
 .menu-wrapper {
   width: 100%;
   height: 0;
-  position: absolute;
+  position: fixed;
   left: 0;
   padding: 0 1rem;
   z-index: 100;
@@ -261,7 +283,7 @@ export default {
         text-align: center;
       }
       a {
-        margin:0;
+        margin: 0;
         color: @white;
         width: fit-content;
         left: 15rem;
@@ -326,9 +348,10 @@ export default {
         display: block;
       }
     }
-    .more-info{
+    .more-info {
       color: @white;
       margin-top: 6rem;
+      font-size: 0.8rem;
       @media @mobile, @large-mobile {
         display: none;
       }

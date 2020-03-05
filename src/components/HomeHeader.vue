@@ -8,7 +8,7 @@
       </h1>
     </div>
     <div class="btn-scroll-down">
-      <a href="#about" v-smooth-scroll>
+      <a href="#about-me">
         <div class="box">
           <span></span>
           <span></span>
@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      text: "Danny Ngo"
+      smoothScroll: { duration: 1000, offset: -100 }
     };
   },
   mounted() {
@@ -64,6 +64,10 @@ export default {
   background-size: cover;
   //background-image: url("https://images.unsplash.com/photo-1561494653-744c43aed0c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1929&q=80");
   background-image: url("../assets/images/bg-3.jpg");
+  @media @mobile, @large-mobile, @tablet {
+    background-image: none;
+    background-color: @bg-dark;
+  }
 
   .hero-content {
     position: absolute;
@@ -80,6 +84,7 @@ export default {
       }
     }
     h1 {
+      height: 8rem;
       font-size: 6rem;
       font-family: "Reenie Beanie", cursive;
       font-weight: 500;

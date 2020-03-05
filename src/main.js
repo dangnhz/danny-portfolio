@@ -11,8 +11,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 Vue.component('v-icon', Icon)
-import vueSmoothScroll from 'vue2-smooth-scroll'
-Vue.use(vueSmoothScroll)
 Vue.config.productionTip = false
 
 new Vue({
