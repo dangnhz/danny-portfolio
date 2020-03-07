@@ -207,7 +207,7 @@ export default {
       padding-bottom: 10px;
       font-weight: 500;
       font-family: "Poppins", sans-serif;
-      color: #fff;
+      color: @white;
       text-align: left;
     }
 
@@ -225,10 +225,10 @@ export default {
       text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36);
       border: 1px solid #000;
       float: left;
-      color: #fff;
+      color: @white;
       border-color: transparent;
       margin-top: 3rem;
-      background: @yellow;
+      background: @text-color;
       &:before {
         content: "";
         position: absolute;
@@ -247,7 +247,7 @@ export default {
         padding-left: 60px;
         &:before {
           width: 30px;
-          background: #fff;
+          background: @white;
         }
       }
     }
@@ -342,7 +342,7 @@ export default {
               .project-title {
                 text-align: left;
                 position: relative;
-                color: #fff;
+                color: @white;
                 font-size: 12px;
                 text-transform: uppercase;
                 font-weight: 500;
@@ -357,7 +357,7 @@ export default {
                   left: 0;
                   width: 20px;
                   height: 1px;
-                  background: @yellow;
+                  background: @text-color;
                   transition: all 200ms linear;
                 }
               }
@@ -410,7 +410,7 @@ export default {
         li.slick-active button:before {
           font-size: 0.5rem;
           opacity: 1;
-          color: @yellow;
+          color: @text-color;
         }
       }
     }
@@ -427,7 +427,7 @@ export default {
       transition: all 0.5s;
       // transform-origin: 50% 100%;
       border-radius: 8px;
-      color: @yellow;
+      color: @text-color;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -450,7 +450,7 @@ export default {
     right: 50%;
     z-index: 50;
     bottom: 46px;
-    color: #fff;
+    color: @white;
     margin-right: 80px;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.71);
@@ -464,7 +464,7 @@ export default {
       right: -50px;
       width: 30px;
       height: 1px;
-      background: @yellow;
+      background: @text-color;
     }
   }
 }

@@ -63,7 +63,7 @@ export default {
   -o-background-size: cover;
   background-size: cover;
   //background-image: url("https://images.unsplash.com/photo-1561494653-744c43aed0c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1929&q=80");
-  background-image: url("../assets/images/bg-3.jpg");
+  background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2614&q=80");
   @media @mobile, @large-mobile, @tablet {
     background-image: none;
     background-color: @bg-dark;
@@ -85,14 +85,14 @@ export default {
     }
     h1 {
       height: 8rem;
-      font-size: 6rem;
+      font-size: 8rem;
       font-family: "Reenie Beanie", cursive;
       font-weight: 500;
       @media @mobile, @large-mobile {
         font-size: 3rem;
       }
       .vue-typer .custom.char.typed {
-        color: #fff;
+        color: @white;
       }
       .vue-typer .custom.caret {
         display: none;

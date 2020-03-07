@@ -44,7 +44,7 @@ export default {
 .nav-bar {
   padding: 5rem 2rem;
   width: 100%;
-  // background: #fff;
+  // background: @white;
   position: fixed;
   top: 0;
   left: 0;
@@ -117,7 +117,7 @@ export default {
         left: 0px;
         bottom: -0.5em;
         height: 1px;
-        background: #fff;
+        background: @white;
         transition: width 0.5s ease;
 
     }

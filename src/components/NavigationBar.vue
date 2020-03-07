@@ -7,8 +7,7 @@
           <button
             id="hamburger-icon"
             class="hamburger-icon magnetic-button hoverable"
-            @click="toggleMenu"
-          >
+            @click="toggleMenu" >
             <div class="hamburger-el"></div>
             <div class="hamburger-el"></div>
           </button>
@@ -18,11 +17,25 @@
           >{{hamburgerCaption}}</span>
         </div>
         <div class="col-4 text-center" id="my-logo">
-          <router-link to="/" class="logo-wrapper">DN</router-link>
+          <router-link to="/" class="logo-wrapper">
+          <svg id="danny-logo" x="0px" y="0px" viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve">
+            <g>
+              <g>
+                <polygon class="st0" points="399.44,335.27 427.7,335.27 427.7,501.04 289.34,376.6 289.34,335.27 399.86,435.23 "/>
+                <rect x="289.72" y="476.11" class="st0" width="27.79" height="24.93"/>
+              </g>
+              <path class="st0" d="M283.9,380.09c-3.89-9.91-9.42-18.2-16.6-24.87c-7.18-6.67-15.82-11.67-25.9-15c-10.08-3.33-21.31-5-33.7-5
+                h-55.75v124.26l28.85-23.63l-0.21-71.99h28.65c14.39,0,52.86,9.07,54.68,50.09c2.19,49.42-52.48,60.24-52.48,60.24l-26.31-0.25
+                l-32.88,27.09h49.25c12.06,0,23.46-1.75,34.2-5.26c10.74-3.51,20.11-8.82,28.13-15.93c8.01-7.1,14.33-16.06,18.95-26.85
+                c4.62-10.79,6.94-23.55,6.94-38.29C289.72,401.54,287.77,390.01,283.9,380.09z"/>
+            </g>
+          </svg>
+
+          </router-link>
         </div>
-        <div class="col-4 text-right btn-projects">
+        <div id="btn-projects" class="col-4 text-right btn-projects">
           <router-link :to="{name:'works'}">
-            <span class="btn-projects-text">View Projects</span>
+            <span class="btn-projects-text">All Projects</span>
             <svg class="ml-3 btn-projects-icon" width="20" height="20" fill="none">
               <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(0 6)" />
               <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" transform="translate(16 6)" />
@@ -39,6 +52,7 @@
 
     <!-- Menu Start -->
     <div id="menu-wrapper" class="menu-wrapper">
+      <div class="menu-background"></div>
       <div class="menu-container row">
         <div class="menu-list col-xs-12 col-sm-12 col-md-8">
           <ul>
@@ -62,7 +76,7 @@
             </li>
           </ul>
         </div>
-        <div class="more-info col-xs-12 col-sm-12 col-md-4 menu-item">
+        <div class="more-info col-xs-12 col-sm-12 col-md-4">
           <div class="mt-5 mb-5 mb-xs-2">
             <b>More</b>
           </div>
@@ -77,6 +91,9 @@
               <v-icon class="mr-2" name="envelope"></v-icon>Email
             </a>
           </div>
+        </div>
+        <div class="text-shadow">
+          <h1 class="text-shadow-content">HOME</h1>
         </div>
       </div>
     </div>
@@ -113,17 +130,76 @@ export default {
   },
   mounted() {
     const navMenu = document.querySelector("#menu-wrapper");
+    const menuBackground= document.querySelector('.menu-background');
     const menuItems = document.querySelectorAll(".menu-item");
+    const moreInfo = document.querySelector(".more-info")
+    const textShadow = document.querySelector(".text-shadow-content");
+    const dannyLogo = document.querySelector("#danny-logo");
+    const btnProjects = document.querySelector("#btn-projects");
 
-    //set menu position
-    // this.tl.set(navMenu, {
-    //   opacity: 0
-    // });
+    menuItems.forEach(item => {
+      item.addEventListener("mouseover", e => {
+        showText(e);
+      });
 
-    this.tl.set(menuItems, {
+      item.addEventListener("mouseleave", e => {
+        hideText(e);
+      });
+    });
+
+    function showText(e) {
+      textShadow.innerHTML = e.target.innerText;
+      gsap.fromTo(textShadow, {
+        y:0,
+        x:500,
+        opacity: 0,
+        
+      },
+      {
+        x:0,
+        opacity:1,
+        ease: "elastic.out(1, 0.3)",
+        duration: 0.2,
+        delay: 0.5
+      }
+      )
+    }
+
+    function hideText() {
+      gsap.to(textShadow, {
+        y:0,
+        x:-1000,
+        opacity: 0,
+        ease: "ease.out",
+        duration: 0.2
+      })
+    }
+
+//  set menu items position
+    this.tl.set(menuItems, { 
       x: -40,
       opacity: 0
     });
+
+    this.tl.set(moreInfo, { 
+      x: 300,
+      opacity: 0
+    });
+
+    // hide logo
+    
+    this.tl.to(dannyLogo, {
+      opacity: 0,
+      y:-100,
+      duration: 0.2
+    })
+
+    // hide btn projects
+    this.tl.to(btnProjects, {
+      opacity: 0,
+      x: 300,
+      duration: 0.5
+    })
 
     this.tl.to(navMenu, {
       height: "100vh",
@@ -132,13 +208,26 @@ export default {
       duration: 0.5
     });
 
+    this.tl.to(menuBackground, {
+      height: '100vh',
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.out"
+    })
+
     this.tl.to(menuItems, {
       opacity: 1,
       x: 0,
       ease: "elastic.out(1, 0.4)",
       duration: 0.8,
-      delay: 0.2,
       stagger: 0.2
+    });
+    
+    this.tl.to(moreInfo, {
+      opacity: 1,
+      x: 0,
+      ease: "elastic.out(1, 0.4)",
+      duration: 0.5,
     });
 
     navMenu.addEventListener("click", () => {
@@ -186,7 +275,7 @@ export default {
     }
     .hamburger-el {
       content: "";
-      background: @white;
+      background: @text-color;
       margin: 5px;
       display: block;
       width: 25px;
@@ -244,9 +333,11 @@ export default {
 }
 
 .logo-wrapper {
-  font-size: 2rem;
-  font-weight: 700;
-  color: @white;
+  #danny-logo {
+    width: 6rem;
+    fill:@white
+    
+    }
 }
 .btn-projects {
   position: relative;
@@ -261,9 +352,9 @@ export default {
     }
   }
   .btn-projects-icon {
-      color: @white;
-      margin-top: -2px;
-    }
+    color: @text-color;
+    margin-top: -2px;
+  }
 }
 
 // end navbar styling
@@ -275,12 +366,25 @@ export default {
   height: 0;
   position: fixed;
   left: 0;
-  padding: 0 1rem;
+  padding: 0;
   z-index: 100;
-  background: #333;
+  background: rgba(255, 8, 111, 1);
   overflow: hidden;
+  .menu-background{
+    width: 100%;
+    height: 0;
+    opacity: 1;
+    position: absolute;
+    z-index: -1;
+    background: @bg-dark;
+  }
   .menu-container {
-    margin-top: 10rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
     .menu-list ul li {
       @media @mobile, @large-mobile {
         text-align: center;
@@ -289,52 +393,57 @@ export default {
         margin: 0;
         color: @white;
         width: fit-content;
-        left: 15rem;
+        left: 10rem;
         position: relative;
-        font-size: 3rem;
-        line-height: 3rem;
+        font-size: 4.5rem;
+        line-height: 4.5rem;
         padding: 0.5rem;
         display: inline-block;
         transition: color 0.8s;
         @media @mobile, @large-mobile, @tablet {
-          left: 0;
-          font-size: 2rem;
+          left: 1rem;
+          font-size: 2.5rem;
+          line-height: 3rem;
         }
         @media @tablet {
           left: 7rem;
-          font-size: 2rem;
+          font-size: 3rem;
+          line-height: 3rem;
         }
         &:hover {
           background: none;
-          color: @text-color ;
+          color: @text-color;
         }
       }
     }
     .menu-list ul li a.router-link-exact-active {
-      color: @yellow;
+      color: @text-color;
       &:before {
         content: "";
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
         border-radius: 50%;
         position: absolute;
-        left: -3rem;
-        top: 1rem;
-        opacity: 0.1;
-        background: @yellow;
+        left: -3.5rem;
+        top: 20px;
+        opacity: 0.2;
+        background: @text-color;
         display: block;
-        // transform-origin: ;
         animation: grow 2s infinite;
         @keyframes grow {
           0% {
             transform: scale(0);
           }
           50% {
-            transform: scale(1);
+            transform: scale(1.2);
           }
           100% {
             transform: scale(0);
           }
+        }
+
+        @media @mobile, @large-mobile, @tablet {
+          top: 10px
         }
       }
       &:after {
@@ -347,11 +456,12 @@ export default {
         top: 50%;
         transform: translateY(-50%);
         opacity: 1;
-        background: @yellow;
+        background: @text-color;
         display: block;
       }
     }
     .more-info {
+      display: block;
       color: @white;
       margin-top: 6rem;
       font-size: 0.8rem;
@@ -359,6 +469,34 @@ export default {
         display: none;
       }
     }
+
+    .text-shadow {
+      margin-top: -25px;
+      opacity: 0.04;
+      -webkit-transition-delay: 0.5s;
+      transition-delay: 0.5s;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translateY(-50%, -50%);
+      pointer-events: none;
+      .text-shadow-content {
+        display: block;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 18vw;
+        margin-top: 40px;
+        font-weight: 900;
+        color: @white;
+        opacity: 0;
+        text-transform: uppercase;
+        -webkit-transition: all 300ms linear;
+        transition: all 300ms linear;
+      }
+    }
   }
 }
+
+
 </style>

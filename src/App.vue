@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="less">
-
+@import "./assets/style/setting.less";
 * {
   padding: 0;
   margin: 0;
@@ -31,7 +31,7 @@ html {
 
 a {
   text-decoration: none !important;
-  // color: #fff !important;
+  // color: @white !important;
 }
 
 li {
@@ -41,7 +41,8 @@ li {
   // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #fff;
+  background: @white;
+
 }
 
 </style>

@@ -62,7 +62,7 @@ export default {
       });
     }
     function onMouseHoverOut() {
-      // bigBall.style.opacity = 1
+      // bigBall.style.opacity = 0.1
       gsap.to(bigBall, 0.3, {
         scale: 1
       });

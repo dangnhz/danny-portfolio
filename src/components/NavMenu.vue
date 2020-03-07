@@ -133,7 +133,7 @@ export default {
          transition: color 0.8s;
         &:hover {
           background: none;
-          color: @yellow;
+          color: @text-color;
         }
       }
     }
@@ -149,7 +149,7 @@ export default {
         top: 50%;
         transform: translateY(-50%);
         opacity: 0.1;
-        background: @yellow;
+        background: @text-color;
         display: block;
       }
       &:after {
@@ -162,7 +162,7 @@ export default {
         top: 50%;
         transform: translateY(-50%);
         opacity: 1;
-        background: @yellow;
+        background: @text-color;
         display: block;
       }
     }
