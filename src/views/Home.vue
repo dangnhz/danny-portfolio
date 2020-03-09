@@ -8,7 +8,7 @@
 </template>
 
 <script>
-
+// import VerticalLine from '../components/VerticalLine'
 import HomeHeader from '../components/HomeHeader';
 import AboutMe from '../components/AboutMe'
 import GlobalCursor from '../components/GlobalCursor';
@@ -28,5 +28,7 @@ export default {
 <style>
   .home {
       cursor: none;
+      width: 100%;
+      height: 100%;
   }
 </style>

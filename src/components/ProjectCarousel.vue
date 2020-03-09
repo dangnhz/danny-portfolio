@@ -301,6 +301,12 @@ export default {
             .project-image {
               width: 100%;
               height: 20rem;
+              @media @desktop {
+                height: 20rem;
+              }
+              @media @large-desktop {
+                height: 30rem;
+              }
               img {
                 width: 100%;
                 height: 100%;

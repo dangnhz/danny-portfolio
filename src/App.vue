@@ -8,7 +8,6 @@
 
 <script>
 import NavigationBar from './components/NavigationBar'
-//import NavMenu from './components/NavMenu'
 export default {
 
   name:'app',
