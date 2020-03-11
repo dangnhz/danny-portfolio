@@ -2,7 +2,9 @@
   <div id="app">
     <!-- <nav-menu></nav-menu> -->
     <NavigationBar></NavigationBar>
-    <router-view/>
+    <transition>
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -40,7 +42,8 @@ li {
   // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: @white;
+  background: @bg-dark;
+  cursor: none;
 
 }
 

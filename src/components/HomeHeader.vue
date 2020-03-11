@@ -4,7 +4,7 @@
     
     <div class="hero-content text-center w-100">
         <div class=text-1>I am</div>
-        <div class="text-2">DANNY</div>
+        <div id="danny" class="text-2">DANNY</div>
         <div class="text-3">A FRONT-END <br> WEB DEVELOPER </div>
     </div>
     <div class="btn-scroll-down text-right">
@@ -24,12 +24,19 @@
 export default {
   name: "home-header",
   mounted() {
+    const danny= document.querySelector("#danny");
     const headerContainer = document.querySelector(".home_header-container");
     const light = document.querySelector(".light");
     headerContainer.addEventListener("mousemove", e => {
       let x = e.pageX;
       let y = e.pageY;
       light.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent, #000 35%)`;
+
+      // move DANNY
+      let dx = (window.innerWidth / 2 - x) / 20;
+      let dy = (window.innerHeight / 2 - y) / 20;
+      danny.style.transform = `translate(${dx}px, ${dy}px)`;
+
     });
   }
 };
@@ -42,6 +49,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
   background-repeat: none;
   background-attachment: fixed;
   background-position: center;
@@ -50,8 +58,8 @@ export default {
   color: @white;
    background-image: url("../assets/images/bg-1.jpg");
   @media @mobile, @large-mobile, @tablet {
-    // background-image: none;
-    // background-color: @bg-dark;
+    background-image: none;
+    background-color: @bg-dark;
   }
 
   .hero-content {
@@ -67,7 +75,7 @@ export default {
       width: 50%;
       margin: 0 auto;
       text-align: left;
-      padding-left: 10rem;
+      padding-left: 7rem;
       @media @mobile, @large-mobile {
         padding-left: 2rem;
         width: 90%;
@@ -81,7 +89,8 @@ export default {
       width: 50%;
       margin: 0 auto;
       text-align: right;
-      padding-right: 10rem;
+      padding-right: 7rem;
+      font-family: 'Lato-Light';
       @media @mobile, @large-mobile,@tablet {
         padding-right: 2rem;
         width: 90%;
@@ -97,6 +106,7 @@ export default {
       font-weight: 900;
       line-height: 15vw;
       color: @white;
+      transition: transform 0.2s;
       @media @mobile, @large-mobile, @tablet {
         font-size: 25vw;
         line-height: 25vw;
@@ -107,9 +117,11 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+    pointer-events: none;
     display: block;
     height: 100%;
     width: 100%;
+    background: radial-gradient(circle at 150px 150px, transparent, #000 35%);
     transition: background 0.5s ease;
     @media @mobile, @large-mobile, @tablet {
       display: none;
@@ -122,7 +134,10 @@ export default {
     text-align: right;
     right: 5rem;
     bottom: 3rem;
-
+    @media @mobile, @large-mobile {
+      right: 1rem;
+      bottom: 6rem;
+    }
     .box {
       width: fit-content;
       margin: 0 auto;
@@ -169,16 +184,6 @@ export default {
     margin-top: 3rem;
   }
 
-  #danny-logo{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    background: none;
-    opacity: 0.01;
-    pointer-event: none;
-  }
 
 }
 </style>

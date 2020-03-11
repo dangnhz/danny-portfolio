@@ -31,7 +31,9 @@
 
     <!-- Menu Start -->
     <div id="menu-wrapper" class="menu-wrapper">
-      <div class="menu-background"></div>
+      <div class="menu-background">
+        <!-- <vue-particles color="#dedede"></vue-particles> -->
+      </div>
       <div class="menu-container row">
         <div class="menu-list col-xs-12 col-sm-12 col-md-8">
           <ul>
@@ -81,6 +83,7 @@
 </template>
 
 <script>
+
 import gsap from "gsap";
 export default {
   name: "nav-bar",
@@ -160,7 +163,7 @@ export default {
     });
 
     this.tl.set(moreInfo, { 
-      x: 300,
+      x: 100,
       opacity: 0
     });
 
@@ -190,15 +193,15 @@ export default {
     this.tl.to(menuItems, {
       opacity: 1,
       x: 0,
-      ease: "elastic.out(1, 0.4)",
-      duration: 0.8,
+      ease: "power2.out",
+      duration: 0.5,
       stagger: 0.2
     });
     
     this.tl.to(moreInfo, {
       opacity: 1,
       x: 0,
-      ease: "elastic.out(1, 0.4)",
+      ease: "power2.out",
       duration: 0.5,
     });
 

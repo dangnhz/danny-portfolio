@@ -11,8 +11,23 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 Vue.component('v-icon', Icon)
-Vue.config.productionTip = false
 
+// import VueParticles from 'vue-particles'
+// Vue.use(VueParticles)
+
+import VueScrollmagic from 'vue-scrollmagic'
+Vue.use(VueScrollmagic)
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init({ 
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 800, // values from 0 to 3000, with step 50ms
+  easing: 'ease', //default easing for AOS animations
+});
+
+Vue.config.productionTip = false
 new Vue({
   router,
   store,
