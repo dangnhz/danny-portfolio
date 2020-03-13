@@ -1,3 +1,5 @@
+
+
 @large-desktop: ~"only screen and (min-width: 1800px)";
 @desktop: ~"only screen and (min-width : 1111px) and (max-width: 1799px)";
 @tablet: ~"only screen and (min-width : 660px) and (max-width : 1100px)";
@@ -5,7 +7,8 @@
 @mobile: ~"only screen and (max-width : 392px)";
 
 @navy: #1D2230;
-@bg-dark :#252934;
+@bg-dark :#252934; //#252934 #1A1C33
+@bg-dark-2: #252934;
 @text-grey: #CFCFCF;
 @text-color: #3197EE;
 @red: #C3063F;
@@ -22,21 +25,21 @@
 @light-blue: #009f9f;
 @grey-projects: #919191;
 
-@font-face {
-    font-family: 'ITC';
-    src: url('../fonts/itc-avant-garde-gothic-std-bold.otf') format('woff2'),
-    url('../fonts/itc-avant-garde-gothic-std-bold.otf') format('woff');
-    font-weight: 100;
-    font-style: normal;
-  }
 
-  @font-face {
-    font-family: 'Gothic-Bold';
-    src: url('../fonts/ITC-Avant-Garde-Gothic-LT-Bold.otf') format('otf'),
-    url('../fonts/ITC-Avant-Garde-Gothic-LT-Bold.otf') format('otf');
-    font-weight: 100;
-    font-style: normal;
-  }
+// @import (css) url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+@import (css) url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'Abril Fatface';
+  src: url('../fonts/abrilfatface-regular-webfont.woff2') format('woff2'),
+       url('../fonts/abrilfatface-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
 
 @font-face {
     font-family: 'Lato-Light';

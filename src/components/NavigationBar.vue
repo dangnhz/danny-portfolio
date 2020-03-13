@@ -335,7 +335,7 @@ export default {
   left: 0;
   padding: 0;
   z-index: 100;
-  background: @text-color;
+  background: @black;
   overflow: hidden;
   .menu-background{
     width: 100%;

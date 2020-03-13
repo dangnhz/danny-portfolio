@@ -1,27 +1,27 @@
 <template>
     <section id="about-me" class="about-container">
          <div class="section-1">
-            <div class="row d-flex align-items-center">
-                <div class="col-5 text-light text-description">
+            <div class="row d-flex align-items-center" data-aos="fade-up" data-aos-offset="400" data-aos-duration="1000">
+                <div class="col-md-5 col-xs-12 col-sm-12 mb-5 text-light text-description">
                     <h1>I create websites with attention to detail and faithful to the design.</h1>
                 </div>
-                <div class="right-bg col-7" data-aos="fade-left" data-aos-offset="100">
-                    <div class="image-bg"><img style="width: 100%; height: 100%;" src="https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="image"></div>
+                <div class="right-bg col-md-7 col-xs-12 col-sm-12">
+                    <div class="image-bg"><img src="https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="image"></div>
                     <div class="overlay"></div>
                 </div>
             </div>
         </div>
         <div class="section-2">
-            <div class="row d-flex align-items-center">
-                <div id= "my-values" class="col-5 order-2 text-light text-description">
+            <div class="row d-flex align-items-center" data-aos="fade-up" data-aos-offset="400" data-aos-duration="1000">
+                <div id= "my-values" class="col-md-5 col-xs-12 col-sm-12 order-md-2 order-sm-1 order-xs-1 mb-5 text-light text-description" >
                     <h1>My values: <br> 
                     <span class="my-value" data-explanation="Always working with accuracy and transparency.">integrity,</span> <br> 
                     <span class="my-value" data-explanation="Well-made website require effort and comprehension.">understanding</span> <br>and <br>
                     <span class="my-value" data-explanation="Focus is the key, extremely attentive to accuracy and detail.">thoroughness.</span>
                     </h1>
                 </div>
-                <div class="right-bg col-7 text-center" data-aos="fade-right" data-aos-offset="100">
-                    <div class="image-bg"><img style="width: 70%; height: 10%;" src="https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=710&q=80" alt="image"></div>
+                <div class="right-bg col-md-7 col-xs-12 col-sm-12 text-center">
+                    <div class="image-bg"><img src="https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=710&q=80" alt="image"></div>
                 </div>
             </div>
         </div>
@@ -78,31 +78,56 @@ import gsap from 'gsap'
     padding: 10rem 0;
     background: @bg-dark;
     overflow-x: hidden;
+    @media @mobile, @large-mobile {
+        padding: 1rem 0;
+    }
     &::-webkit-scrollbar {
     display: none;
-}
+    }
     .section-1, .section-2 {
         width: 90%;
         margin: 10rem auto;
         @media @mobile, @large-mobile, @tablet {
             width: 100%;
             padding: 1rem;
+            margin: 3rem auto;
         }
 
         .text-description {
             z-index: 1;
             transform: translateX(10rem);
+            // box-shadow: -16px 16px 32px rgba(0,0,0,.64);
+            // display: block;
             @media @mobile, @large-mobile, @tablet {
             transform: translateX(0);
+
+        }
+        @media @tablet {
+            transform: translateX(5rem);
+
         }
             h1 {
                 font-family: Lato-Light;
                 font-size: 1.8rem;
                 line-height: 3rem;
-                @media @mobile, @large-mobile, @tablet {
-            font-size: 1rem;
-            line-height: 2rem;
+                @media @mobile, @large-mobile {
+                    font-size: 1.3rem;
+                    line-height: 2rem;
+                }
+                @media  @large-desktop {
+                    font-size: 3rem;
+                    line-height: 5rem;
+                }
+            }
         }
+
+        .image-bg {
+            width: 100%;
+            height: 100%;
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: cover;
             }
         }
     }
@@ -115,8 +140,27 @@ import gsap from 'gsap'
             }
             .my-value {
                 cursor: pointer;
-                // text-decoration: underline;
                 border-bottom: 1px solid @white;
+                @media @mobile, @large-mobile, @tablet {
+                    pointer-events: none;
+                }
+            }
+        }
+
+        .image-bg {
+            @media @mobile, @large-mobile {
+                height: 400px;
+                img {
+                    width: 100%;
+                }
+            }
+            @media @tablet {
+                height: 500px;
+                width: 350px;
+                img {
+                    width: 100%;
+                    transform: translateX(5rem);
+                }
             }
         }
 

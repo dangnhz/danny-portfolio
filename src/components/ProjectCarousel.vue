@@ -1,8 +1,8 @@
 <template>
-  <section class="pr_carousel-container">
+  <section class="pr_carousel-container" data-aos="fade-up">
     <div class="pr_carousel-title">
       <div class="pr-carousel-title-item">
-        <h3>My Featured Projects</h3>
+        <h3>Selected Works</h3>
         <p>Some cool projects made by me.</p>
         <router-link :to="{name:'works'}">
           <button class="flat-btn">My Portfolio</button>
@@ -180,11 +180,10 @@ export default {
     }
 
     .pr-carousel-title-item h3 {
-      font-size: 2.5rem;
-      font-family: "Lato-Black";
-      text-transform: uppercase;
-      font-weight: 800;
-      color: @text-grey;
+      font-size: 3rem;
+      font-family: "Abril Fatface";
+      // text-transform: uppercase;
+      color: @white;
       position: relative;
       text-align: left;
       padding-bottom: 20px;
@@ -202,11 +201,11 @@ export default {
       text-decoration: none;
       margin: 0;
       padding: 0;
-      font-size: 0.8rem;
+      font-size: 1rem;
       line-height: 24px;
       padding-bottom: 10px;
       font-weight: 500;
-      font-family: "Poppins", sans-serif;
+      font-family: 'Lato-Light';
       color: @white;
       text-align: left;
     }
@@ -349,10 +348,11 @@ export default {
                 text-align: left;
                 position: relative;
                 color: @white;
-                font-size: 12px;
+                font-size: 0.8rem;
+                font-family: 'Lato';
                 text-transform: uppercase;
                 font-weight: 500;
-                font-family: "Poppins", sans-serif;
+                // font-family: "Poppins", sans-serif;
                 letter-spacing: 4px;
                 padding-left: 35px;
                 transition: all 200ms linear;
@@ -432,13 +432,12 @@ export default {
       z-index: 30;
       transition: all 0.5s;
       // transform-origin: 50% 100%;
-      border-radius: 8px;
+      border-radius: 50%;
       color: @text-color;
       display: flex;
       justify-content: center;
       align-items: center;
       &:hover {
-        border-radius: 50%;
         background: rgba(255, 255, 255, 0.1);
         // transform: scale(1.5);
         cursor: pointer;

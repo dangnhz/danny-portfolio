@@ -44,7 +44,46 @@ li {
   -moz-osx-font-smoothing: grayscale;
   background: @bg-dark;
   cursor: none;
+.flat-btn {
+      text-align: center;
+      box-sizing: border-box;
+      padding: 10px 30px;
+      position: relative;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      transition: all 200ms linear;
+      text-transform: uppercase;
+      border-radius: 4px;
+      text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36);
+      border: 1px solid #000;
+      float: left;
+      color: @white;
+      border-color: transparent;
+      margin-top: 3rem;
+      background: @text-color;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        height: 1px;
+        width: 0;
+        -webkit-transition: all 200ms linear;
+        -moz-transition: all 200ms linear;
+        -o-transition: all 200ms linear;
+        -ms-transition: all 200ms linear;
+        transition: all 200ms linear;
+      }
 
+      &:hover {
+        padding-left: 60px;
+        &:before {
+          width: 30px;
+          background: @white;
+        }
+      }
+    }
 }
 
 </style>

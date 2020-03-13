@@ -1,5 +1,5 @@
 <template>
-  <div class="home_header-container">
+  <div class="home-header-container">
     <div class="light"></div>
     
     <div class="hero-content text-center w-100">
@@ -25,7 +25,7 @@ export default {
   name: "home-header",
   mounted() {
     const danny= document.querySelector("#danny");
-    const headerContainer = document.querySelector(".home_header-container");
+    const headerContainer = document.querySelector(".home-header-container");
     const light = document.querySelector(".light");
     headerContainer.addEventListener("mousemove", e => {
       let x = e.pageX;
@@ -45,7 +45,7 @@ export default {
 <style lang="less">
 @import "../assets/style/setting.less";
 
-.home_header-container {
+.home-header-container {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -56,8 +56,9 @@ export default {
   background-size: cover;
   background-color: @bg-dark;
   color: @white;
-   background-image: url("../assets/images/bg-1.jpg");
+  background-image: url("../assets/images/bg-1.jpg");
   @media @mobile, @large-mobile, @tablet {
+    // height: 50vh;
     background-image: none;
     background-color: @bg-dark;
   }
@@ -76,6 +77,7 @@ export default {
       margin: 0 auto;
       text-align: left;
       padding-left: 7rem;
+      font-family: 'Lato-Bold';
       @media @mobile, @large-mobile {
         padding-left: 2rem;
         width: 90%;
@@ -90,7 +92,7 @@ export default {
       margin: 0 auto;
       text-align: right;
       padding-right: 7rem;
-      font-family: 'Lato-Light';
+      font-family: 'Lato-Bold';
       @media @mobile, @large-mobile,@tablet {
         padding-right: 2rem;
         width: 90%;
@@ -103,13 +105,14 @@ export default {
     .text-2 {
       width: 100%;
       font-size: 15vw;
-      font-weight: 900;
+      font-weight: 800;
       line-height: 15vw;
       color: @white;
       transition: transform 0.2s;
       @media @mobile, @large-mobile, @tablet {
         font-size: 25vw;
         line-height: 25vw;
+        transform: none !important;
       }
     }
   }
