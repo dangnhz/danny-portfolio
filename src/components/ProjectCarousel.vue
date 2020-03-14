@@ -349,7 +349,7 @@ export default {
                 position: relative;
                 color: @white;
                 font-size: 0.8rem;
-                font-family: 'Lato';
+                font-family: 'Lato', sans-serif;
                 text-transform: uppercase;
                 font-weight: 500;
                 // font-family: "Poppins", sans-serif;

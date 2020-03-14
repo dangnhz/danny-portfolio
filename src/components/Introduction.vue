@@ -48,6 +48,7 @@ export default {
   position: relative;
   padding: 10rem 0;
   color: @white;
+  overflow-x: hidden;
   @media @mobile, @large-mobile, @tablet  {
       padding: 5rem 0;
   }
@@ -81,8 +82,9 @@ export default {
       height: 450px;
       width: 90%;
       @media @mobile, @large-mobile {
-          height: 350px;
+          height: 450px;
           margin-top: 2rem;
+          width: 100%;
       }
       @media @tablet {
           height: 350px;

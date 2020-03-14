@@ -3,7 +3,7 @@
     <div class="light"></div>
     
     <div class="hero-content text-center w-100">
-        <div class=text-1>I am</div>
+        <div class=text-1>Hi, I'm</div>
         <div id="danny" class="text-2">DANNY</div>
         <div class="text-3">A FRONT-END <br> WEB DEVELOPER </div>
     </div>
@@ -51,14 +51,12 @@ export default {
   height: 100vh;
   overflow: hidden;
   background-repeat: none;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  // background-color: @bg-dark;
   color: @white;
   background-image: url("../assets/images/bg-4.jpeg");
   @media @mobile, @large-mobile, @tablet {
-    // height: 50vh;
     background-image: none;
     background-color: @bg-dark;
   }
