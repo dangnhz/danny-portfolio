@@ -15,8 +15,16 @@ Vue.component('v-icon', Icon)
 // import VueParticles from 'vue-particles'
 // Vue.use(VueParticles)
 
-import VueScrollmagic from 'vue-scrollmagic'
-Vue.use(VueScrollmagic)
+// import VueScrollmagic from 'vue-scrollmagic'
+// Vue.use(VueScrollmagic, {
+//   verical: true,
+//   globalSceneOptions: {},
+//   loglevel: 2,
+//   refreshInterval: 100
+// })
+
+// import KsVueScrollmagic from 'ks-vue-scrollmagic'
+// Vue.use(KsVueScrollmagic)
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles

@@ -1,18 +1,18 @@
 <template>
     <section id="about-me" class="about-container">
          <div class="section-1">
-            <div class="row d-flex align-items-center" data-aos="fade-up" data-aos-offset="400" data-aos-duration="1000">
+            <div class="row d-flex align-items-center" >
                 <div class="col-md-5 col-xs-12 col-sm-12 mb-5 text-light text-description">
-                    <h1>I create websites with attention to detail and faithful to the design.</h1>
+                    <h1 id="about-text_1">I create websites with attention to detail and faithful to the design.</h1>
                 </div>
                 <div class="right-bg col-md-7 col-xs-12 col-sm-12">
-                    <div class="image-bg"><img src="https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="image"></div>
+                    <div id="about-img_1" class="image-bg"><img src="https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="image"></div>
                     <div class="overlay"></div>
                 </div>
             </div>
         </div>
         <div class="section-2">
-            <div class="row d-flex align-items-center" data-aos="fade-up" data-aos-offset="400" data-aos-duration="1000">
+            <div class="row d-flex align-items-center">
                 <div id= "my-values" class="col-md-5 col-xs-12 col-sm-12 order-md-2 order-sm-1 order-xs-1 mb-5 text-light text-description" >
                     <h1>My values: <br> 
                     <span class="my-value" data-explanation="Always working with accuracy and transparency.">integrity,</span> <br> 
@@ -21,7 +21,7 @@
                     </h1>
                 </div>
                 <div class="right-bg col-md-7 col-xs-12 col-sm-12 text-center">
-                    <div class="image-bg"><img src="https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=710&q=80" alt="image"></div>
+                    <div id="about-img_2" class="image-bg"><img src="https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=710&q=80" alt="image"></div>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@ import gsap from 'gsap'
 
         .text-description {
             z-index: 1;
-            transform: translateX(10rem);
+            // transform: translateX(10rem);
             // box-shadow: -16px 16px 32px rgba(0,0,0,.64);
             // display: block;
             @media @mobile, @large-mobile, @tablet {
@@ -128,6 +128,9 @@ import gsap from 'gsap'
                 max-width: 100%;
                 max-height: 100%;
                 object-fit: cover;
+                @media @mobile, @large-mobile {
+                    transform: none !important;
+                }
             }
         }
     }

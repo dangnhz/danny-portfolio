@@ -30,7 +30,7 @@ export default {
     headerContainer.addEventListener("mousemove", e => {
       let x = e.pageX;
       let y = e.pageY;
-      light.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent, #000 35%)`;
+      light.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent, #000 55%)`;
 
       // move DANNY
       let dx = (window.innerWidth / 2 - x) / 20;
@@ -51,12 +51,12 @@ export default {
   height: 100vh;
   overflow: hidden;
   background-repeat: none;
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  background-color: @bg-dark;
+  // background-color: @bg-dark;
   color: @white;
-  background-image: url("../assets/images/bg-1.jpg");
+  background-image: url("../assets/images/bg-4.jpeg");
   @media @mobile, @large-mobile, @tablet {
     // height: 50vh;
     background-image: none;

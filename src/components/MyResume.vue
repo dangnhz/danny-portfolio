@@ -1,12 +1,13 @@
 <template>
-  <section id="#my-resume" class="resume-container">
-    <div class="resume-section-about m-auto">
+  <section id="about-me" class="about-container">
+    <div class="section-about m-auto">
       <div class="row">
-        <div class="col-md-6 col-md-6 col-sm-12 col-xs-12 text-right section-title">
+        <div class="col-md-6 col-md-6 col-sm-12 col-xs-12 text-right about-title">
           <h1 data-aos="fade-up">Some <br>words<br> about<br> me</h1>
         </div>
 
-        <div class="col-md-6 col-sm-12 col-xs-12 section-content" >
+        <div class="col-md-6 col-sm-12 col-xs-12 about-content" >
+          <svg id="button__arrow" class="button__arrow mb-5" viewBox="0 0 91 118" fill="none"><path d="M15.2307 57.4152L15.9378 56.708L15.2307 56.0009L14.5236 56.708L15.2307 57.4152ZM34.9813 77.1658L34.2742 77.8729L35.9813 79.58L35.9813 77.1658L34.9813 77.1658ZM0.151478 72.4944L-0.555622 71.7873L-1.26273 72.4944L-0.555622 73.2015L0.151478 72.4944ZM45.29 117.633L44.5828 118.34L45.29 119.047L45.9971 118.34L45.29 117.633ZM60.3692 102.554L61.0763 103.261L61.7839 102.553L61.0758 101.846L60.3692 102.554ZM60.3685 102.553L59.6614 101.846L58.9538 102.553L59.6619 103.261L60.3685 102.553ZM90.427 72.4944L91.1341 73.2015L91.8412 72.4944L91.1341 71.7873L90.427 72.4944ZM75.3478 57.4152L76.0549 56.7081L75.3478 56.001L74.6407 56.7081L75.3478 57.4152ZM56.3065 76.4565L55.3065 76.4565L55.3065 78.8707L57.0136 77.1636L56.3065 76.4565ZM56.3065 0.120074L57.3065 0.120074L57.3065 -0.879926L56.3065 -0.879926L56.3065 0.120074ZM34.9813 0.120076L34.9813 -0.879924L33.9813 -0.879924L33.9813 0.120076L34.9813 0.120076ZM14.5236 58.1223L34.2742 77.8729L35.6884 76.4587L15.9378 56.708L14.5236 58.1223ZM0.858585 73.2015L15.9378 58.1223L14.5236 56.708L-0.555622 71.7873L0.858585 73.2015ZM45.9971 116.926L0.858585 71.7873L-0.555622 73.2015L44.5828 118.34L45.9971 116.926ZM59.662 101.846L44.5828 116.926L45.9971 118.34L61.0763 103.261L59.662 101.846ZM59.6619 103.261L59.6625 103.261L61.0758 101.846L61.0751 101.845L59.6619 103.261ZM61.0756 103.26L91.1341 73.2015L89.7199 71.7873L59.6614 101.846L61.0756 103.26ZM91.1341 71.7873L76.0549 56.7081L74.6407 58.1223L89.7199 73.2015L91.1341 71.7873ZM74.6407 56.7081L55.5994 75.7494L57.0136 77.1636L76.0549 58.1223L74.6407 56.7081ZM57.3065 76.4565L57.3065 0.120074L55.3065 0.120074L55.3065 76.4565L57.3065 76.4565ZM56.3065 -0.879926L34.9813 -0.879924L34.9813 1.12008L56.3065 1.12007L56.3065 -0.879926ZM33.9813 0.120076L33.9813 77.1658L35.9813 77.1658L35.9813 0.120076L33.9813 0.120076Z" fill="#fff"></path></svg>
           <p data-aos="fade-up">
             I am a postgraduate IT student from Western Sydney University.
             I am punctual, responsible and considerate to others.
@@ -15,11 +16,11 @@
             I have perseverance and a willingness to learn.
             I am a perfectionist and curious person with the inclination to learn new things everyday and always up for new challenges.
           </p>
-          <a data-aos="fade-up" href="#" class="btn flat-btn">MY RESUME</a>
+          <a href="#" class="btn flat-btn">MY RESUME</a>
         </div>
       </div>
     </div>
-    <div class="resume-section-skill" data-aos="fade-up">
+    <div class="section-skill" data-aos="fade-up">
       <h1>Skills</h1>
       <div class="row">
         <div class="col-md-6 skill-description">
@@ -76,22 +77,22 @@
 
 <script>
 export default {
-  name: "my-resume"
+  name: "about-me"
 };
 </script>
 
 <style lang="less">
 @import "../assets/style/setting.less";
-.resume-container {
+.about-container {
   position: relative;
   width: 100%;
   color: #fff;
   padding: 10rem 0;
   background: @bg-dark;
-  @media @mobile, @large-mobile {
+  @media @mobile, @large-mobile, @tablet {
         padding: 5rem 0;
     }
-    .resume-section-about {
+    .section-about {
     width: 75%;
     @media @mobile, @large-mobile {
         width: 100%;
@@ -101,21 +102,21 @@ export default {
         width: 50%;
     }
     }
-  .section-title h1{
+  .about-title h1{
       padding-right: 3rem;
       font-size: 5rem;
-      font-family: 'Abril Fatface', cursive;
+      font-family: 'Abril-Fatface', cursive;
     //   font-family: 'Lato';
     @media @mobile, @large-mobile{
-        font-size: 3rem;
+        font-size: 2rem;
         text-align: left;
     }
     @media @tablet{
-        font-size: 4rem;
+        font-size: 3rem;
     }
   }
-  .section-content {
-      margin-top: 25rem;
+  .about-content {
+      margin-top: 15rem;
       font-size: 1.5rem;
       font-family: 'Lato-Light';
       padding-left: 3rem;
@@ -126,11 +127,21 @@ export default {
     }
     @media @tablet{
         font-size: 1rem;
-        margin-top: 20rem;
+        margin-top: 5rem;
+    }
+    .button__arrow {
+      height: 10rem;
+      transform: rotate(-45deg);
+      @media @mobile, @large-mobile{
+        display:none;
+      }
+      @media @tablet{
+        height: 8rem;
+    }
     }
   }
 
-  .resume-section-skill {
+  .section-skill {
     width: 80%;
     margin: 10rem auto;
     @media @mobile, @large-mobile {
@@ -144,10 +155,13 @@ export default {
 
     h1 {
       font-size: 5rem;
-      font-family: 'Abril Fatface', cursive;
+      font-family: 'Abril-Fatface', cursive;
       @media @mobile, @large-mobile {
-        font-size: 3rem;
+        font-size: 2rem;
       }
+      @media @tablet{
+        font-size: 3rem;
+    }
     }
     .skill-description {
       padding: 1rem 5rem 0 0 ;
@@ -213,6 +227,10 @@ export default {
       }
       li:nth-child(2n+1) {
         border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: background 0.4s;
+        &:hover {
+          background: @text-color;
+        }
       }
     }
   }

@@ -5,16 +5,19 @@
     <transition>
       <router-view/>
     </transition>
+    <MainFooter></MainFooter>
   </div>
 </template>
 
 <script>
 import NavigationBar from './components/NavigationBar'
+import MainFooter from './components/MainFooter'
 export default {
 
   name:'app',
   components: {
     NavigationBar,
+    MainFooter
   },
 }
 </script>

@@ -142,7 +142,7 @@ export default {
 @import "../assets/style/setting.less";
 .pr_carousel-container {
   position: relative;
-  background: @bg-dark;
+  background: @bg-dark-2;
   text-align: center;
   margin: 0;
   box-sizing: border-box;
@@ -181,7 +181,7 @@ export default {
 
     .pr-carousel-title-item h3 {
       font-size: 3rem;
-      font-family: "Abril Fatface";
+      font-family: "Abril-Fatface";
       // text-transform: uppercase;
       color: @white;
       position: relative;
