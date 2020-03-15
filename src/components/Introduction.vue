@@ -8,16 +8,16 @@
       <div class="col-md-4 intro-col intro-col-2 text-center">
         <div id="intro-img-1" class="image-wrapper image-1">
           <img
-            src="https://images.unsplash.com/photo-1553484771-047a44eee27a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            src="../assets/images/danny.jpg"
             alt="image"
           />
         </div>
       </div>
-      <div class="col-md-4 intro-col intro-col-3 d-flex align-items-end">
+      <div class="col-md-4 intro-col intro-col-3 d-flex align-items-end mt-5">
         <div>
           <div id="intro-img-2" class="image-wrapper image-2">
             <img
-              src="https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+              src="../assets/images/danny3.jpeg"
               alt="image"
             />
           </div>
@@ -60,7 +60,7 @@ export default {
         padding: 1rem;
     }
     @media @tablet {
-        width:90%;
+        width:100%;
         padding: 1rem;
     }
     .text {
@@ -76,10 +76,11 @@ export default {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border: 1px solid rgba(255,255,255, 0.7);
     }
 
     .image-wrapper.image-1 {
-      height: 450px;
+      height: 400px;
       width: 90%;
       @media @mobile, @large-mobile {
           height: 450px;

@@ -20,9 +20,9 @@
         </div>
       </div>
     </div>
-    <div class="section-skill" data-aos="fade-up">
-      <h1>Skills</h1>
-      <div class="row">
+    <div class="section-skill">
+      <h1 data-aos="fade-up" >Skills</h1>
+      <div class="row" data-aos="fade-up">
         <div class="col-md-6 skill-description">
           <p>Now is the time to meet some skills and technologies that I used to develop my projects.  </p>
         </div>
@@ -37,7 +37,7 @@
           <p>PHP - Laravel</p>
           <p>Wordpress</p>
           <p>SQL / NoSQL</p>
-          <p>Node.js - Express</p>
+          <p>Node.js</p>
           <p>Java</p>
         </div>
         <div class="col-md-2 skill-item">
@@ -45,7 +45,7 @@
           <p>Illustrator</p>
         </div>
       </div>
-      <div class="grid-skill">
+      <div class="grid-skill" data-aos="fade-up">
       <ul>
         <li><svg version="1.1" viewBox="0 0 261.76 226.69" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)"><g transform="translate(178.06 235.01)"><path d="m0 0-22.669-39.264-22.669 39.264h-75.491l98.16-170.02 98.16 170.02z" opacity="0.5" fill="#fff"></path></g><g transform="translate(178.06 235.01)"><path d="m0 0-22.669-39.264-22.669 39.264h-36.227l58.896-102.01 58.896 102.01z" fill="#fff"></path></g></g></svg></li>
         <li></li>

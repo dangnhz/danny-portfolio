@@ -60,7 +60,7 @@ export default {
       let timeline2 = gsap.timeline();
       timeline2
       .from('#intro-text-1', {x:150,opacity:0, duration:3})
-      .from('#intro-img-1', {y:50,opacity:0, duration:3}, "-=3")
+      .from('#intro-img-1', {y:0,opacity:0, duration:3}, "-=3")
       .from('#intro-img-2', {x:-100,opacity:0, duration:3}, "-=3")
       .from('#intro-text-2', {x:-100,opacity:0, duration:3}, "-=3")
 
