@@ -1,23 +1,25 @@
 <template>
-  <div id="app">
+  <div id="app" :key="$route.path">
     <!-- <nav-menu></nav-menu> -->
     <NavigationBar></NavigationBar>
-    <transition>
-      <router-view/>
-    </transition>
+    <router-view>
+    </router-view>
     <MainFooter></MainFooter>
+   <GlobalCursor ></GlobalCursor>
   </div>
 </template>
 
 <script>
 import NavigationBar from './components/NavigationBar'
 import MainFooter from './components/MainFooter'
+import GlobalCursor from './components/GlobalCursor'
 export default {
 
   name:'app',
   components: {
     NavigationBar,
-    MainFooter
+    MainFooter,
+    GlobalCursor
   },
 }
 </script>
@@ -46,7 +48,7 @@ li {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: @bg-dark;
-  cursor: none;
+
 .flat-btn {
       text-align: center;
       box-sizing: border-box;

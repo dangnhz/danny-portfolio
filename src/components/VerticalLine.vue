@@ -4,8 +4,6 @@
             <div class="line-item"></div>
             <div class="line-item"></div>
             <div class="line-item"></div>
-			<div class="line-item"></div>
-			<div class="line-item"></div>
         </div>
     </div>
 </template>
@@ -16,21 +14,23 @@
     }
 </script>
 
-<style  scoped>
+<style lang="less" scoped>
+@import "../assets/style/setting.less";
 .sec-lines {
 	pointer-events: none;
 	position: absolute;
+	overflow: hidden;
 	top: 0;
     left: 0;
     bottom: 0;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	z-index: 0;
 	opacity: 1;
 }
 .line-item {
 	float: left;
-	width: calc(100%/5);
+	width: calc(100%/3);
 	height: 100%;
 	box-sizing: border-box;
 	border-right: 1px solid rgba(153, 153, 153, 0.1);
@@ -44,18 +44,18 @@
 	right: -2px;
 	width: 4px;
     height: 30px;
-    background: #fff;
-	animation: scroll3 8s ease-out infinite;
+    background: @text-color;
+	animation: scroll3 15s ease-out infinite;
 }
 .line-item:last-child:before {
 	content: '';
     position: absolute;
-    background: #fff;
+    background: @text-color;
 	bottom: 0;
 	right: -2px;
 	width: 4px;
 	height: 30px;
-	animation: scroll2 6s ease-out infinite;
+	animation: scroll2 10s ease-out infinite;
 }
 .sec-lines .container {
 	width:100%;

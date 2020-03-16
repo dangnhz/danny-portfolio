@@ -40,20 +40,10 @@
             <li>
               <router-link class="menu-item" :to="{name:'home'}">Home</router-link>
             </li>
-          </ul>
-          <ul>
-            <li>
-              <router-link class="menu-item" :to="{name:'about'}">About</router-link>
-            </li>
-          </ul>
-          <ul>
             <li>
               <router-link class="menu-item" :to="{name:'works'}">Works</router-link>
-            </li>
-          </ul>
-          <ul>
             <li>
-              <router-link class="menu-item" :to="{name:'works'}">Contact</router-link>
+              <router-link class="menu-item" :to="{name:'contact'}">Contact</router-link>
             </li>
           </ul>
         </div>
@@ -62,10 +52,10 @@
             <b>More</b>
           </div>
           <div class="row">
-            <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-2">
+            <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-3">
               <v-icon class="mr-2" name="brands/facebook-square"></v-icon>Facebook
             </a>
-            <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-2">
+            <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-3">
               <v-icon class="mr-2" name="brands/linkedin"></v-icon>Linkedin
             </a>
             <a href="mailTo: dangnh3091@gmail.com" class="col-lg-12 col-md-12 col-6 text-light">
@@ -335,6 +325,8 @@ export default {
   left: 0;
   padding: 0;
   z-index: 100;
+  display: flex;
+  align-items: center;
   background: @black;
   overflow: hidden;
   .menu-background{
@@ -346,17 +338,27 @@ export default {
     background: @bg-dark;
   }
   .menu-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: 90%;
+    margin: auto auto;
+    height: fit-content;
     z-index: 1;
     padding: 1rem;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
+    @media @tablet {
+        width: 100%;
+      }
+       @media @large-desktop {
+        width: 70%;
+      }
     .menu-list ul li {
+      margin-top: 2.5rem;
       @media @mobile, @large-mobile {
         text-align: center;
+        margin: 2rem 0;
       }
+      
       a {
         margin: 0;
         color: @white;
@@ -430,8 +432,10 @@ export default {
     }
     .more-info {
       display: block;
+      position: absolute;
+      bottom: 3rem;
+      right:0;
       color: @white;
-      margin-top: 10rem;
       font-size: 0.8rem;
       @media @mobile, @large-mobile {
         display: none;

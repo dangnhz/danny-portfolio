@@ -49,7 +49,7 @@ export default {
           title: "Project 1",
           category: "Website",
           imgUrl:
-            "https://images.unsplash.com/photo-1582650949011-13bacf9a35fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80"
+            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
         },
         {
           id: 2,
@@ -63,21 +63,21 @@ export default {
           title: "Project 3",
           category: "Website",
           imgUrl:
-            "https://images.unsplash.com/photo-1582653042372-7771724cbaa6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
         },
         {
           id: 4,
           title: "Project 4",
           category: "Website",
           imgUrl:
-            "https://images.unsplash.com/photo-1582641554369-b1edcee26bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
         },
         {
           id: 5,
           title: "Project 5",
           category: "Website",
           imgUrl:
-            "https://images.unsplash.com/photo-1582529041741-3dc9b7beeb8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
         }
       ],
       slickOptions: {

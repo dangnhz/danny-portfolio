@@ -13,8 +13,7 @@
             I am punctual, responsible and considerate to others.
             Good problem solving and pressure handling are my strong skills.
             In addition, I have an eye for design and love to play with pixels.
-            I have perseverance and a willingness to learn.
-            I am a perfectionist and curious person with the inclination to learn new things everyday and always up for new challenges.
+            I am a curious person with the inclination to learn new things everyday and always up for new challenges.
           </p>
           <a href="#" class="btn flat-btn">MY RESUME</a>
         </div>

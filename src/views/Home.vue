@@ -6,7 +6,6 @@
     <project-carousel></project-carousel>
     <div class="clearfix"></div>
     <MyResume></MyResume>
-    <GlobalCursor></GlobalCursor>
   </div>
 </template>
 
@@ -15,7 +14,6 @@
 import HomeHeader from "../components/HomeHeader";
 // import AboutMe from "../components/AboutMe";
 import Introduction from '../components/Introduction'
-import GlobalCursor from "../components/GlobalCursor";
 import ProjectCarousel from "../components/ProjectCarousel";
 import MyResume from "../components/MyResume";
 
@@ -27,7 +25,6 @@ ScrollMagicPluginGsap(ScrollMagic, gsap);
 export default {
   name: "Home",
   components: {
-    GlobalCursor,
     ProjectCarousel,
     HomeHeader,
     Introduction,
@@ -94,7 +91,7 @@ export default {
 
 <style lang="less">
 .home {
-  cursor: none;
+  // cursor: none;
   width: 100%;
   height: 100%;
 }
