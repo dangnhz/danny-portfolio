@@ -15,7 +15,7 @@
             In addition, I have an eye for design and love to play with pixels.
             I am a curious person with the inclination to learn new things everyday and always up for new challenges.
           </p>
-          <a href="#" class="btn flat-btn">MY RESUME</a>
+          <a href="https://dangnhz.github.io/cv/Dang_Resume.pdf" class="btn flat-btn">MY RESUME</a>
         </div>
       </div>
     </div>
