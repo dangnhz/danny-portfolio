@@ -13,10 +13,10 @@
       <slick ref="slick" :options="slickOptions" @afterChange="handleAfterChange">
         <div v-for="project in projects" :key="project.id">
           <div class="project-image">
-            <img :src="project.imgUrl" :alt="project.title" />
+            <img :src="project.imgCover" :alt="project.title" />
           </div>
           <div class="project-text">
-            <router-link :to="{name:'project', params:{id:project.id, project:project}}"><h3 class="project-title">{{project.title}}</h3></router-link>
+            <router-link :to="{name:'project', params:{project_name:project.name}}"><h3 class="project-title">{{project.title}}</h3></router-link>
             <p class="project-category">{{project.category}}</p>
           </div>
         </div>
@@ -43,43 +43,7 @@ export default {
   },
   data() {
     return {
-      projects: [
-        {
-          id: 1,
-          title: "Project 1",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        },
-        {
-          id: 2,
-          title: "Project 2",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        },
-        {
-          id: 3,
-          title: "Project 3",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        },
-        {
-          id: 4,
-          title: "Project 4",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        },
-        {
-          id: 5,
-          title: "Project 5",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        }
-      ],
+      projects: [],
       slickOptions: {
         dots: true,
         arrows: true,
@@ -134,7 +98,10 @@ export default {
     handleAfterChange(event, slick, currentSlide) {
       this.currentSlide = currentSlide + 1;
     }
-  }
+  },
+  created () {
+    this.projects = this.$store.getters.getAllProjects
+  },
 };
 </script>
 

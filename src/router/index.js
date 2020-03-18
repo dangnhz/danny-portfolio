@@ -16,7 +16,7 @@ const routes = [
     component: () => import('../views/Works.vue')
   },
   {
-    path: '/works/:id',
+    path: '/works/:project_name',
     name: 'project',
     component: () => import('../views/Project.vue'),
   },
@@ -24,6 +24,10 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: () => import('../views/Contact.vue'),
+  },
+  {
+    path: "*",
+    component: () => import('../views/PageNotFound.vue')
   }
 
 ]

@@ -1,18 +1,19 @@
 <template>
   <div id="works" class="works-container">
     <div class="works-wrapper container-fluid">
-      <div class="shadow-title">My Work</div>
+      <div id="shadow-title" class="shadow-title">My Work</div>
       <div class="page-title col-sm-12 col-md-10 col-lg-8">
-        <h1>My Works</h1>
+        <h1>My Works.</h1>
+        <span class="line"></span>
       </div>
       <div class="row justify-content-center">
         <div class="col-sm-12 col-md-10 col-lg-8">
-          <div class="works-list">
+          <div id="works-list" class="works-list">
             <div class="work-item" v-for="(project, index) in projects" :key="project.id">
               <div class="row d-flex">
                 <div class="col-md-12 col-lg-12 col-xl-7 col-sm-12 col-xs-12 work-item_bg">
-                  <router-link :to="{name:'project', params:{id: project.id, project:project}}">
-                    <img class="work-item_bg-image" :src="project.imgUrl" alt />
+                  <router-link :to="{name:'project', params:{project_name: project.name}}">
+                    <img class="work-item_bg-image" :src="project.imgCover" alt="project_cover" />
                   </router-link>
                 </div>
                 <div class="col-md-12 col-lg-5 col-sm-12 col-xs-12"></div>
@@ -20,7 +21,7 @@
               <div class="work-item-index" v-if="index < 9">.0{{index + 1}}</div>
               <div class="work-item-index" v-else>.{{index + 1}}</div>
               <router-link
-                :to="{name:'project', params:{id: project.id, project:project}}"
+                :to="{name:'project', params:{project_name: project.name}}"
                 class="work-item_title"
               >
                 <p>{{project.category}}</p>
@@ -38,6 +39,10 @@
 
 <script>
 import VerticalLine from "../components/VerticalLine";
+import ScrollMagic from 'scrollmagic';
+import gsap from 'gsap';
+// import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+// ScrollMagicPluginGsap(ScrollMagic, gsap);
 export default {
   name: "works",
   components: {
@@ -45,49 +50,65 @@ export default {
   },
   data() {
     return {
-      projects: [
-        {
-          id: 1,
-          title: "Project 1",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1584308032011-d289f91420ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        },
-        {
-          id: 2,
-          title: "Project 2",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        },
-        {
-          id: 3,
-          title: "Project 3",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        },
-        {
-          id: 4,
-          title: "Project 4",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        },
-        {
-          id: 5,
-          title: "Project 5",
-          category: "Website",
-          imgUrl:
-            "https://images.unsplash.com/photo-1582643381669-4ad3e9cdac73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
-        }
-      ]
+      projects: []
     };
+  },
+  created () {
+    this.projects = this.$store.getters.getAllProjects;
+  },
+  mounted () {
+    const workList = document.querySelectorAll('.work-item')
+    let w = window.innerWidth
+    let tl = gsap.timeline({paused: true})
+    let size = w > 1024 ? 'big' : 'small'
+    if (size === 'big') {
+      makeScrollMagic()
+    }
+
+    function makeScrollMagic() {
+    tl.to('.page-title', {
+      opacity:0,
+      duration: 1
+    })
+    .to('.works-list', {
+      y:-400,
+      duration: 15,
+    }, "-=3")
+
+    let controller = new ScrollMagic.Controller()
+
+    let scene1 = new ScrollMagic.Scene({
+      triggerElement: '#works',
+      duration: '100%',
+      triggerHook: 0
+    })
+    .setTween(tl)
+    controller.addScene(scene1)
+
+    // add parallax for work-item
+    workList.forEach(workItem => {
+      let projectImage = workItem.querySelector('.work-item_bg-image')
+      let tl2 = gsap.timeline()
+      tl2.from(projectImage, {
+        y: 350,
+        duration: 4,
+      })
+      let scene2 = new ScrollMagic.Scene({
+        triggerElement: workItem,
+        duration: 700,
+        triggerHook: 0.7
+      })
+      .setTween(tl2)
+      controller.addScene(scene2)
+
+    })
+    }
   }
+  
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 @import "../assets/style/setting.less";
 .works-container {
   width: 100%;
@@ -95,15 +116,17 @@ export default {
   color: @white;
   position: relative;
   top: 0;
-  overflow-x: hidden;
+  background: @bg-dark;
+  overflow: hidden;
 
   .shadow-title {
     pointer-events: none;
-    position: absolute;
-    display: block;
+    position: fixed;
+    display: none;
     margin-top: 8rem;
     left: 20px;
     width: 100%;
+    height: 300%;
     text-align: left;
     font-family: sans-serif;
     font-weight: 900;
@@ -144,11 +167,20 @@ export default {
         font-size: 3rem;
       }
     }
+    .line {
+      content:'';
+      display: block;
+      background: @text-color;
+      width: 100px;
+      height: 5px;
+      margin-top: 4rem;
+    }
   }
 
   .works-list {
     max-width: 1224px;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 5;
@@ -163,6 +195,7 @@ export default {
       .work-item_bg {
         width: 100%;
         max-height: 400px;
+        transition: 0.5s;
         @media @mobile, @large-mobile {
           height: 150px;
           margin-bottom: 2.5rem;
@@ -181,8 +214,11 @@ export default {
           object-fit: cover;
           z-index: 4;
           transform: translateZ(0);
+          transition: 0.5s;
           box-shadow: 2px 3px 32px 0 rgba(0, 0, 0, 0.22);
+          
         }
+        
       }
 
       .work-item-index {

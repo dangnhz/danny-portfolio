@@ -38,7 +38,7 @@
         <div class="menu-list col-xs-12 col-sm-12 col-md-8">
           <ul>
             <li>
-              <router-link class="menu-item" :to="{name:'home'}">Home</router-link>
+              <router-link class="menu-item" :to="{name:'home'}" exact="">Home</router-link>
             </li>
             <li>
               <router-link class="menu-item" :to="{name:'works'}">Works</router-link>
@@ -386,7 +386,7 @@ export default {
         }
       }
     }
-    .menu-list ul li a.router-link-exact-active {
+    .menu-list ul li a.router-link-active {
       color: @text-color;
       &:before {
         content: "";
