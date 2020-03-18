@@ -5,7 +5,7 @@
     <Introduction></Introduction>
     <project-carousel></project-carousel>
     <div class="clearfix"></div>
-    <MyResume></MyResume>
+    <AboutMe></AboutMe>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import HomeHeader from "../components/HomeHeader";
 // import AboutMe from "../components/AboutMe";
 import Introduction from '../components/Introduction'
 import ProjectCarousel from "../components/ProjectCarousel";
-import MyResume from "../components/MyResume";
+import AboutMe from "../components/AboutMe";
 
 import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
 import gsap from "gsap"; // Also works with TweenLite and TimelineLite: import { TweenMax, TimelineMax } from "gsap";
@@ -28,7 +28,7 @@ export default {
     ProjectCarousel,
     HomeHeader,
     Introduction,
-    MyResume
+    AboutMe
   },
   mounted() {
     // change opacity of hero section when scrolling
