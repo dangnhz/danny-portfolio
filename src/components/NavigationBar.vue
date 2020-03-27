@@ -52,19 +52,16 @@
             <b>More</b>
           </div>
           <div class="row">
-            <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-3">
+            <a href="https://www.facebook.com/dang.nhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
               <v-icon class="mr-2" name="brands/facebook-square"></v-icon>Facebook
             </a>
-            <a href="#" class="col-lg-12 col-md-12 col-6 text-light mb-3">
-              <v-icon class="mr-2" name="brands/linkedin"></v-icon>Linkedin
+            <a href="https://github.com/dangnhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
+              <v-icon class="mr-2" name="brands/github"></v-icon>Github
             </a>
-            <a href="mailTo: dangnh3091@gmail.com" class="col-lg-12 col-md-12 col-6 text-light">
+            <a href="mailTo: dangnh3091@gmail.com" class="col-lg-12 col-md-12 col-6">
               <v-icon class="mr-2" name="envelope"></v-icon>Email
             </a>
           </div>
-        </div>
-        <div class="text-shadow">
-          <h1 class="text-shadow-content">HOME</h1>
         </div>
       </div>
     </div>
@@ -105,46 +102,6 @@ export default {
     const menuBackground= document.querySelector('.menu-background');
     const menuItems = document.querySelectorAll(".menu-item");
     const moreInfo = document.querySelector(".more-info")
-    const textShadow = document.querySelector(".text-shadow-content");
-    const dannyLogo = document.querySelector("#danny-logo");
-
-    menuItems.forEach(item => {
-      item.addEventListener("mouseover", e => {
-        showText(e);
-      });
-
-      item.addEventListener("mouseleave", e => {
-        hideText(e);
-      });
-    });
-
-    function showText(e) {
-      textShadow.innerHTML = e.target.innerText;
-      gsap.fromTo(textShadow, {
-        y:0,
-        x:500,
-        opacity: 0,
-        
-      },
-      {
-        x:0,
-        opacity:1,
-        ease: "elastic.out(1, 0.3)",
-        duration: 0.2,
-        delay: 0.5
-      }
-      )
-    }
-
-    function hideText() {
-      gsap.to(textShadow, {
-        y:0,
-        x:-1000,
-        opacity: 0,
-        ease: "ease.out",
-        duration: 0.2
-      })
-    }
 
 //  set menu items position
     this.tl.set(menuItems, { 
@@ -156,15 +113,6 @@ export default {
       x: 100,
       opacity: 0
     });
-
-    // hide logo
-    
-    this.tl.to(dannyLogo, {
-      opacity: 0,
-      x:-100,
-      duration: 0.2
-    })
-
 
     this.tl.to(navMenu, {
       height: "100vh",
@@ -361,7 +309,7 @@ export default {
       
       a {
         margin: 0;
-        color: @white;
+        color: @text-grey;
         width: fit-content;
         left: 10rem;
         position: relative;
@@ -369,7 +317,7 @@ export default {
         line-height: 4.5rem;
         padding: 0.5rem;
         display: inline-block;
-        transition: color 0.8s;
+        transition: color 0.5s;
         @media @mobile, @large-mobile, @tablet {
           left: 1rem;
           font-size: 2.5rem;
@@ -382,7 +330,7 @@ export default {
         }
         &:hover {
           background: none;
-          color: @text-color;
+          color: @white;
         }
       }
     }
@@ -437,36 +385,18 @@ export default {
       right:0;
       color: @white;
       font-size: 0.8rem;
+      a {
+        transition: 0.5s;
+        color: @text-grey;
+        &:hover {
+          color: @white;
+        }
+      }
       @media @mobile, @large-mobile {
         display: none;
       }
     }
 
-    .text-shadow {
-      margin-top: -25px;
-      opacity: 0.04;
-      -webkit-transition-delay: 0.5s;
-      transition-delay: 0.5s;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translateY(-50%, -50%);
-      pointer-events: none;
-      .text-shadow-content {
-        display: block;
-        text-align: center;
-        font-family: "Poppins", sans-serif;
-        font-size: 18vw;
-        margin-top: 40px;
-        font-weight: 900;
-        color: @white;
-        opacity: 0;
-        text-transform: uppercase;
-        -webkit-transition: all 300ms linear;
-        transition: all 300ms linear;
-      }
-    }
   }
 }
 

@@ -42,13 +42,13 @@ import gsap from 'gsap';
     top: 0;
     left: 0;
     bottom: 0;
-    background: @white;
+    background: @bg-dark;
     z-index: 99999;
     pointer-events: none;
     #loader-item {
         width: 100%;
         height: 100%;
-        background: @bg-dark;
+        background: @white;
         display: block;
     }
 }

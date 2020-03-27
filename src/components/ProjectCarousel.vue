@@ -13,7 +13,7 @@
       <slick ref="slick" :options="slickOptions" @afterChange="handleAfterChange">
         <div v-for="project in projects" :key="project.id">
           <div class="project-image">
-            <img :src="project.imgCover" :alt="project.title" />
+            <img v-if="project.coverImage" :src="project.coverImage" :alt="project.title" />
           </div>
           <div class="project-text">
             <router-link :to="{name:'project', params:{project_name:project.name}}"><h3 class="project-title">{{project.title}}</h3></router-link>
@@ -405,7 +405,8 @@ export default {
       justify-content: center;
       align-items: center;
       &:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: @text-color;
+        color: @white;
         // transform: scale(1.5);
         cursor: pointer;
       }

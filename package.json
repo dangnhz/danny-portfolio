@@ -18,11 +18,9 @@
     "scrollmagic-plugin-gsap": "^1.0.4",
     "vue": "^2.6.11",
     "vue-awesome": "^4.0.2",
-    "vue-blotter": "^0.1.3",
     "vue-router": "^3.1.5",
     "vue-scrollmagic": "^1.2.0",
     "vue-slick": "^1.1.15",
-    "vue-typer": "^1.2.0",
     "vuex": "^3.1.2"
   },
   "devDependencies": {

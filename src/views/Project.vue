@@ -1,9 +1,9 @@
 <template>
     <div id="project-container" class="project-container">
+        <PageLoader></PageLoader>
         <div class="project-wrapper" v-if="project">
-            <div id="project-shadow-title" class="shadow-title">{{project.title}}</div>
 
-            <div class="page-title col-sm-12 col-md-10 col-lg-7">
+            <div class="page-title col-sm-12 col-md-10 col-lg-8">
                 <h1>{{project.title}}</h1>
                 <div class="d-flex align-items-center mt-5">
                     <div class="line"></div>
@@ -11,21 +11,19 @@
                 </div>
             </div>
 
-            <div class="project-content col-sm-12 col-md-10 col-lg-7">
+            <div class="project-content col-sm-12 col-md-10 col-lg-8">
                 <div class="row mt-5">
-                    <div class="project-cover-image col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                        <img :src="project.imgCover" alt="project-cover">
+                    <div class="project-cover-image col-md-7 col-lg-7 col-sm-12 col-xs-12">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 801 23"><path fill="#f1f1f1" d="M801 23H0V4c0-2.8 3.3-4 6.1-4H797c2.8 0 4.1 1.2 4.1 4v19z"></path><circle opacity=".71" fill="#E74C3C" cx="14.1" cy="11.5" r="4.7"></circle><circle opacity=".71" fill="#F1C40F" cx="29.5" cy="11.5" r="4.7"></circle><circle opacity=".71" fill="#2ECC71" cx="44.9" cy="11.5" r="4.7"></circle></svg>
+                        <img v-if="project.siteImage" :src="project.siteImage" alt="project-cover">
                     </div>
-                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
                         <div class="about-project">
                             <h5 class="mb-3">About this project</h5>
                             <p v-html="project.desc"></p>
-                            <a href="#" class="flat-btn mt-4">SEE THE SITE</a>
+                            <a :href="project.url" class="flat-btn mt-4">SEE THE SITE</a>
                         </div>
                     </div>
-                </div>
-                <div style="height: 200vh" class="row mt-5">
-
                 </div>
             </div>
         </div>
@@ -33,11 +31,13 @@
 </template>
 
 <script>
-import ScrollMagic from 'scrollmagic';
-import gsap from 'gsap';
+import PageLoader from '../components/PageLoader'
 
     export default {
         name:'project',
+        components: {
+            PageLoader,
+        },
         data() {
             return {
                 project: null
@@ -47,22 +47,6 @@ import gsap from 'gsap';
             const project_name = this.$route.params.project_name
             this.project = this.$store.getters.getSingleProject(project_name)
             if (!this.project) this.$router.push({name:'works'}) 
-        },
-        mounted () {
-            let timeline = gsap.timeline()
-            timeline.to('#project-shadow-title', {
-                y:-600,
-                duration:10
-            })
-
-            let controller = new ScrollMagic.Controller()
-            let scene = new ScrollMagic.Scene({
-                triggerElement: '#project-container',
-                duration: '200%',
-                triggerHook: 0
-            })
-            .setTween(timeline)
-            controller.addScene(scene)
         },
     }
 </script>
@@ -75,38 +59,10 @@ import gsap from 'gsap';
   color: @white;
   position: relative;
   top: 0;
+  margin-bottom: 10rem;
   background: @bg-dark;
   overflow: hidden;
 
-  .shadow-title {
-    pointer-events: none;
-    position: fixed;
-    display: block;
-    margin-top: 8rem;
-    left: 20px;
-    width: 100%;
-    height: 300%;
-    text-align: left;
-    font-family: sans-serif;
-    font-weight: 900;
-    -webkit-writing-mode: vertical-lr;
-    writing-mode: vertical-lr;
-    font-size: 15rem;
-    line-height: 1;
-    color: rgba(200, 200, 200, 0.1);
-    background: linear-gradient(
-      90deg,
-      rgba(200, 200, 200, 0),
-      rgba(200, 200, 200, 0.65)
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-    z-index: 1;
-    @media @mobile, @large-mobile, @tablet {
-      display: none;
-    }
-  }
   .page-title {
     margin: 0 auto;
     padding: 15rem 0 5rem 0;
@@ -143,7 +99,7 @@ import gsap from 'gsap';
     .project-content {
         margin: 5rem auto;
         .about-project {
-            margin-top: 5rem;
+            margin-top: 3rem;
             padding-left: 3rem;
             @media @mobile, @large-mobile {
             padding-left: 0;
@@ -152,11 +108,20 @@ import gsap from 'gsap';
         
         .project-cover-image {
             width: 100%;
-            max-height: 400px;
+            height: auto;
+            overflow: hidden;
+            padding: 0;
+            @media @mobile, @large-mobile, @tablet {
+                padding: 1rem;
+            }
+            // @media @large-desktop {
+            //     height: 50vw;
+            // }
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                transition: 0.5s;
             }
         }
     }
