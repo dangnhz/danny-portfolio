@@ -37,7 +37,6 @@ html {
 
 a {
   text-decoration: none !important;
-  // color: @white !important;
 }
 
 li {

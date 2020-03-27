@@ -33,7 +33,7 @@
 	width: calc(100%/3);
 	height: 100%;
 	box-sizing: border-box;
-	border-right: 1px solid rgba(153, 153, 153, 0.1);
+	border-right: 1px solid rgba(153, 153, 153, 0.05);
 	height: 100%;
 	position: relative;
 }

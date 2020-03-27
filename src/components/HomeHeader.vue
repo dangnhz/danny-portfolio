@@ -1,44 +1,28 @@
 <template>
   <div class="home-header-container">
     <div class="light"></div>
-    
     <div class="hero-content text-center w-100">
-        <div class=text-1>Hi, I'm</div>
-        <div id="danny" class="text-2">DANNY</div>
-        <div class="text-3">A FRONT-END <br> WEB DEVELOPER </div>
-    </div>
-    <div class="btn-scroll-down text-right">
-      <a href="#about-me">
-        <div class="box">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="text-scroll">Scroll</div>
-      </a>
+      <h1 id="text-hello">Hello,</h1>
+      <h1 id="text-danny">I'm Danny</h1>
+      <h4>Front-end Web Developer</h4>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "home-header",
   mounted() {
-    const danny= document.querySelector("#danny");
     const headerContainer = document.querySelector(".home-header-container");
     const light = document.querySelector(".light");
     headerContainer.addEventListener("mousemove", e => {
       let x = e.pageX;
       let y = e.pageY;
       light.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent, #000 55%)`;
-
-      // move DANNY
-      let dx = (window.innerWidth / 2 - x) / 20;
-      let dy = (window.innerHeight / 2 - y) / 20;
-      danny.style.transform = `translate(${dx}px, ${dy}px)`;
-
     });
-  }
+  },
+
 };
 </script>
 
@@ -48,7 +32,7 @@ export default {
 .home-header-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   overflow: hidden;
   background-repeat: none;
   background-attachment: fixed;
@@ -58,61 +42,43 @@ export default {
   background-image: url("../assets/images/bg-4.jpeg");
   @media @mobile, @large-mobile, @tablet {
     background-image: none;
-    background-color: @bg-dark;
+    background-color: @bg-dark-2;
+    height: 100vh;
   }
 
   .hero-content {
     position: absolute;
     width: 100%;
     height: fit-content;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    .text-1 {
-      text-transform: uppercase;
-      width: 50%;
-      margin: 0 auto;
-      text-align: left;
-      padding-left: 7rem;
-      font-family: 'Lato-Bold';
-      @media @mobile, @large-mobile {
-        padding-left: 2rem;
-        width: 90%;
+      h1{
+        font-size: 10rem;
+        font-family: 'athena';
+        letter-spacing: -0.5rem;
+        font-weight: 800;
+        @media @mobile, @large-mobile {
+          font-size: 5rem;
+        }
+        @media @tablet {
+          font-size: 8rem;
+        }
+        @media @large-desktop {
+          font-size: 15rem;
+        }
       }
-      @media @tablet {
-        padding-left: 5rem;
-        width: 80%;
+      h4 {
+        margin-top: 2rem;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 800;
+        font-family: sans-serif;
+        @media @mobile, @large-mobile {
+          font-size: 1rem;
+        }
       }
-    }
-    .text-3 {
-      width: 50%;
-      margin: 0 auto;
-      text-align: right;
-      padding-right: 7rem;
-      font-family: 'Lato-Bold';
-      @media @mobile, @large-mobile,@tablet {
-        padding-right: 2rem;
-        width: 90%;
-      }
-      @media @tablet {
-        padding-right: 5rem;
-        width: 80%;
-      }
-    }
-    .text-2 {
-      width: 100%;
-      font-size: 15vw;
-      font-weight: 800;
-      line-height: 15vw;
-      color: @white;
-      transition: transform 0.2s;
-      @media @mobile, @large-mobile, @tablet {
-        font-size: 25vw;
-        line-height: 25vw;
-        transform: none !important;
-      }
-    }
   }
   .light {
     position: absolute;
@@ -184,7 +150,5 @@ export default {
     font-size: 1rem;
     margin-top: 3rem;
   }
-
-
 }
 </style>
