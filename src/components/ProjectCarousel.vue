@@ -266,7 +266,7 @@ export default {
 
             .project-image {
               width: 100%;
-              height: 20rem;
+              height: 25rem;
               @media @desktop {
                 height: 20rem;
               }

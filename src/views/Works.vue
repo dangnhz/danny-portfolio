@@ -105,12 +105,12 @@ export default {
       let projectImage = workItem.querySelector('.work-item_bg')
       let tl2 = gsap.timeline()
       tl2.from(projectImage, {
-        y: 350,
-        duration: 4,
-      })
+        y: 250,
+        duration: 1,
+      },0)
       let scene2 = new ScrollMagic.Scene({
         triggerElement: workItem,
-        duration: 700,
+        duration: '100%',
         triggerHook: 0.7
       })
       .setTween(tl2)
@@ -206,6 +206,7 @@ export default {
         z-index: 99;
         overflow: hidden;
         padding: 0;
+        line-height: 0 !important;
         @media @mobile, @large-mobile {
           margin-bottom: 2.5rem;
           padding:1rem;
@@ -279,7 +280,7 @@ export default {
       .work-item_title {
         position: relative;
         width: fit-content;
-        top: -22rem;
+        top: -20vw;
         left: 70%;
         color: @white;
         @media @mobile, @large-mobile, @tablet {

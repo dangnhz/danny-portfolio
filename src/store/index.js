@@ -11,9 +11,9 @@ const state = {
       title: "Mirk",
       category: "Website",
       url:"http://mirk.co",
-      coverImage: require('../assets/images/mirk-cover.jpg'),
+      coverImage: require('../assets/images/mirk-ver.jpg'),
       siteImage: require('../assets/images/mirk-site.jpg'),
-      workImage: require('../assets/images/photo-finder-work.jpg'),
+      workImage: require('../assets/images/mirk-hor.jpg'),
       desc: "kronik is the storytelling platform specially designed to help startups and companies tell their stories and engage their communities."
     },
     {
@@ -22,9 +22,9 @@ const state = {
       title: "Photo Finder",
       category: "Website",
       url:"http://dangnhz.github.io/photo-finder",
-      coverImage: require('../assets/images/photo-finder.jpg'),
+      coverImage: require('../assets/images/photo-finder-ver.jpg'),
       siteImage: require('../assets/images/photo-finder.jpg'),
-      workImage: require('../assets/images/photo-finder-work.jpg'),
+      workImage: require('../assets/images/photo-finder-hor.jpg'),
       desc: "kronik is the storytelling platform specially designed to help startups and companies tell their stories and engage their communities."
     },
     {

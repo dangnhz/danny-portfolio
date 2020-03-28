@@ -19,7 +19,7 @@ import gsap from 'gsap';
         .from("#loader-item", {
             height:'2px',
             duration:0.8,
-            esase: "power2.out"
+            ease: "power2.out"
         })
         .to('#page-loader', {
             opacity:0,

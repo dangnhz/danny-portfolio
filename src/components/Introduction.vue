@@ -8,7 +8,7 @@
       <div class="col-md-4 intro-col intro-col-2 text-center">
         <div id="intro-img-1" class="image-wrapper image-1">
           <img
-            src="../assets/images/danny-1.jpeg"
+            src="../assets/images/danny.jpg"
             alt="image"
           />
         </div>
@@ -17,7 +17,7 @@
         <div>
           <div id="intro-img-2" class="image-wrapper image-2">
             <img
-              src="../assets/images/danny-2.jpeg"
+              src="../assets/images/danny2.jpeg"
               alt="image"
             />
           </div>
@@ -48,6 +48,7 @@ export default {
   position: relative;
   padding: 10rem 0;
   color: @white;
+  background: @bg-dark;
   overflow-x: hidden;
   @media @mobile, @large-mobile, @tablet  {
       padding: 5rem 0;

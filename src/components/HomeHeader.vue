@@ -17,12 +17,31 @@ export default {
     const headerContainer = document.querySelector(".home-header-container");
     const light = document.querySelector(".light");
     headerContainer.addEventListener("mousemove", e => {
+      lighting(e)
+      moveHero(e)
+    });
+
+  function lighting(e) {
       let x = e.pageX;
       let y = e.pageY;
-      light.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent, #000 55%)`;
-    });
-  },
+      light.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent, #000 55%)`
+    }
 
+  function moveHero(e) {
+   let  hero = document.querySelector(".hero-content");
+   
+        var b = Math.ceil(window.innerWidth / 1.5),
+            c = Math.ceil(window.innerHeight / 1.5),
+            d = e.pageX - b,
+            a = e.pageY - c,
+            f = a / c,
+            g = -(d / b),
+            h = Math.sqrt(Math.pow(f, 2) + Math.pow(g, 2)),
+            i = 10 * h;
+        hero.style.transform = `rotate3d(${f}, ${g}, 0, ${i}deg)`
+        // (browserPrefix + "transform", "rotate3d(" + f + ", " + g + ", 0, " + i + "deg)");
+  }
+  }
 };
 </script>
 
@@ -38,8 +57,13 @@ export default {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000;
   color: @white;
   background-image: url("../assets/images/bg-4.jpeg");
+
   @media @mobile, @large-mobile, @tablet {
     background-image: none;
     background-color: @bg-dark-2;
@@ -47,13 +71,14 @@ export default {
   }
 
   .hero-content {
-    position: absolute;
-    width: 100%;
+    width: fit-content;
     height: fit-content;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    transform-style: preserve-3d;
+    transition: 0.3s;
+    margin-top: -5rem;
+    @media @mobile, @large-mobile, @tablet {
+      transform: none;
+    }
       h1{
         font-size: 10rem;
         font-family: 'athena';

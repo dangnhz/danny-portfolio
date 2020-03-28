@@ -111,6 +111,7 @@ import PageLoader from '../components/PageLoader'
             height: auto;
             overflow: hidden;
             padding: 0;
+            line-height: 0 !important;
             @media @mobile, @large-mobile, @tablet {
                 padding: 1rem;
             }
