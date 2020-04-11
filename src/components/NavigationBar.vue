@@ -38,12 +38,12 @@
         <div class="menu-list col-xs-12 col-sm-12 col-md-8">
           <ul>
             <li>
-              <router-link class="menu-item" :to="{name:'home'}" exact="">Home</router-link>
+              <router-link class="menu-item" :to="{name:'home'}" exact="">Home.</router-link>
             </li>
             <li>
-              <router-link class="menu-item" :to="{name:'works'}">Works</router-link>
+              <router-link class="menu-item" :to="{name:'work'}">Work.</router-link>
             <li>
-              <router-link class="menu-item" :to="{name:'contact'}">Contact</router-link>
+              <router-link class="menu-item" :to="{name:'contact'}">Contact.</router-link>
             </li>
           </ul>
         </div>
@@ -52,8 +52,8 @@
             <b>More</b>
           </div>
           <div class="row">
-            <a href="https://www.facebook.com/dang.nhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
-              <v-icon class="mr-2" name="brands/facebook-square"></v-icon>Facebook
+            <a href="https://www.linkedin.com/in/dang-nhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
+              <v-icon class="mr-2" name="brands/linkedin"></v-icon>LinkedIn
             </a>
             <a href="https://github.com/dangnhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
               <v-icon class="mr-2" name="brands/github"></v-icon>Github
@@ -189,6 +189,11 @@ export default {
       -webkit-transform: none !important;
       transform: none !important;
     }
+    &:hover {
+      .hamburger-el {
+        background: @text-color;
+      }
+    }
     .hamburger-el {
       content: "";
       background: @white;
@@ -302,6 +307,7 @@ export default {
       }
     .menu-list ul li {
       margin-top: 2.5rem;
+      font-weight: 900;
       @media @mobile, @large-mobile {
         text-align: center;
         margin: 2rem 0;
@@ -384,7 +390,7 @@ export default {
       bottom: 3rem;
       right:0;
       color: @white;
-      font-size: 0.8rem;
+      font-size: 1rem;
       a {
         transition: 0.5s;
         color: @text-grey;

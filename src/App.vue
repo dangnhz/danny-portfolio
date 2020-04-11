@@ -26,6 +26,8 @@ export default {
 
 <style lang="less">
 @import "./assets/style/setting.less";
+@import (css) url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+@import (css) url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:wght@700&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -43,7 +45,7 @@ li {
   list-style-type: none;
 }
 #app {
-  // font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "averta", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: @bg-dark;

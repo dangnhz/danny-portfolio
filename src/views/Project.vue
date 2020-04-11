@@ -46,7 +46,7 @@ import PageLoader from '../components/PageLoader'
         created () {
             const project_name = this.$route.params.project_name
             this.project = this.$store.getters.getSingleProject(project_name)
-            if (!this.project) this.$router.push({name:'works'}) 
+            if (!this.project) this.$router.push({name:'work'}) 
         },
     }
 </script>
@@ -74,7 +74,7 @@ import PageLoader from '../components/PageLoader'
       position: relative;
       font-size: 5rem;
       color: @white;
-      font-family: "Abril-Fatface";
+      font-family: "averta", sans-serif;
       font-weight: 900;
       line-height: 1;
       z-index: 2;

@@ -62,7 +62,7 @@ export default {
   justify-content: center;
   perspective: 1000;
   color: @white;
-  background-image: url("../assets/images/bg-4.jpeg");
+  background-image: url("https://images.unsplash.com/photo-1547997853-17516ad3266f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
 
   @media @mobile, @large-mobile, @tablet {
     background-image: none;
@@ -81,7 +81,7 @@ export default {
     }
       h1{
         font-size: 10rem;
-        font-family: 'athena';
+        font-family: "averta", sans-serif;
         letter-spacing: -0.5rem;
         font-weight: 800;
         @media @mobile, @large-mobile {
@@ -99,7 +99,7 @@ export default {
         text-transform: uppercase;
         font-size: 1.5rem;
         font-weight: 800;
-        font-family: sans-serif;
+        font-family: "averta", sans-serif;
         @media @mobile, @large-mobile {
           font-size: 1rem;
         }
@@ -168,12 +168,5 @@ export default {
     }
   }
 
-  .text-scroll {
-    transform: rotate(90deg);
-    color: @white;
-    font-family: "Lato";
-    font-size: 1rem;
-    margin-top: 3rem;
-  }
 }
 </style>

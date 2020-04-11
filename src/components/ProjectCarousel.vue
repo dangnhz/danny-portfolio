@@ -2,9 +2,9 @@
   <section class="pr_carousel-container" data-aos="fade-up">
     <div class="pr_carousel-title">
       <div class="pr-carousel-title-item">
-        <h3>Selected Works</h3>
+        <h3>Selected work</h3>
         <p>Some cool projects made by me.</p>
-        <router-link :to="{name:'works'}">
+        <router-link :to="{name:'work'}">
           <button class="flat-btn">My Portfolio</button>
         </router-link>
       </div>
@@ -148,8 +148,8 @@ export default {
 
     .pr-carousel-title-item h3 {
       font-size: 3rem;
-      font-family: "Abril-Fatface";
-      // text-transform: uppercase;
+      font-family: "averta", sans-serif;
+      font-weight: 900;
       color: @white;
       position: relative;
       text-align: left;
@@ -172,7 +172,7 @@ export default {
       line-height: 24px;
       padding-bottom: 10px;
       font-weight: 500;
-      font-family: 'Lato-Light';
+      font-family: "averta", sans-serif;
       color: @white;
       text-align: left;
     }
@@ -299,27 +299,15 @@ export default {
                   width: 35px;
                 }
               }
-              &:before {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                width: 100px;
-                height: 50px;
-                z-index: -1;
-                background: rgba(255, 255, 255, 0.031);
-                transition: all 400ms linear;
-              }
 
               .project-title {
                 text-align: left;
                 position: relative;
                 color: @white;
                 font-size: 0.8rem;
-                font-family: 'Lato', sans-serif;
+                font-family: "averta", sans-serif;
                 text-transform: uppercase;
                 font-weight: 500;
-                // font-family: "Poppins", sans-serif;
                 letter-spacing: 4px;
                 padding-left: 35px;
                 transition: all 200ms linear;
@@ -371,7 +359,6 @@ export default {
         }
 
         li button:before {
-          font-family: "slick";
           font-size: 0.3rem;
           opacity: 0.5;
           color: @white;
@@ -428,7 +415,7 @@ export default {
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.71);
     font-weight: 500;
-    font-family: "Poppins", sans-serif;
+    font-family: "averta", sans-serif;
     letter-spacing: 4px;
     &:before {
       content: "";

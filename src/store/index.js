@@ -10,57 +10,59 @@ const state = {
       name:'mirk',
       title: "Mirk",
       category: "Website",
-      url:"http://mirk.co",
+      url:"https://mirk.co",
       coverImage: require('../assets/images/mirk-ver.jpg'),
       siteImage: require('../assets/images/mirk-site.jpg'),
       workImage: require('../assets/images/mirk-hor.jpg'),
-      desc: "kronik is the storytelling platform specially designed to help startups and companies tell their stories and engage their communities."
+      desc: "I made this company’s landing page during my internship at Mirk. The front-end was built with Vue.js and Bootstrap, animations were done with GSAP."
     },
     {
       id: 2,
       name:'photo-finder',
       title: "Photo Finder",
       category: "Website",
-      url:"http://dangnhz.github.io/photo-finder",
+      url:"https://dangnhz.github.io/photo-finder",
       coverImage: require('../assets/images/photo-finder-ver.jpg'),
       siteImage: require('../assets/images/photo-finder.jpg'),
       workImage: require('../assets/images/photo-finder-hor.jpg'),
-      desc: "kronik is the storytelling platform specially designed to help startups and companies tell their stories and engage their communities."
+      desc: "This website was created based on Vue.js framework and Unsphash’s API. It enables the users to search and download free high-resolution photos from photographers over the world."
     },
     {
       id: 3,
-      name:'project-3',
-      title: "Project 3",
+      name:'vue-weather',
+      title: "Vue Weather",
       category: "Website",
-      url:"http://dangnhz.github.io/photo-finder",
-      coverImage: require('../assets/images/mirk-cover.jpg'),
-      siteImage: require('../assets/images/mirk-site.jpg'),
-      workImage: require('../assets/images/photo-finder-work.jpg'),
-      desc: "kronik is the storytelling platform specially designed to help startups and companies tell their stories and engage their communities.",
+      url:"https://vue-weather.dangnhz.now.sh",
+      coverImage: require('../assets/images/weather-ver.jpg'),
+      siteImage: require('../assets/images/weather-ver.jpg'),
+      workImage: require('../assets/images/weather-hor.jpg'),
+      desc: "A simple weather application made with Vue.js and Dark Sky's API. It shows current weather conditon as well as the forecast for the next 7 days based on user's location",
 
     },
     {
       id: 4,
-      name:'project-4',
-      title: "Project 4",
+      name:'vue-weather',
+      title: "Vue Weather",
       category: "Website",
-      url:"http://dangnhz.github.io/photo-finder",
-      coverImage: require('../assets/images/mirk-cover.jpg'),
-      siteImage: require('../assets/images/mirk-site.jpg'),
-      workImage: require('../assets/images/photo-finder-work.jpg'),
-        desc: "kronik is the storytelling platform specially designed to help startups and companies tell their stories and engage their communities."
+      url:"https://vue-weather.dangnhz.now.sh",
+      coverImage: require('../assets/images/weather-ver.jpg'),
+      siteImage: require('../assets/images/weather-ver.jpg'),
+      workImage: require('../assets/images/weather-hor.jpg'),
+      desc: "A simple weather application made with Vue.js and Dark Sky's API. It shows current weather conditon as well as the forecast for the next 7 days based on user's location",
+
     },
     {
       id: 5,
-      name:'project-5',
-      title: "Project 5",
+      name:'vue-weather',
+      title: "Vue Weather",
       category: "Website",
-      url:"http://dangnhz.github.io/photo-finder",
-      coverImage: require('../assets/images/mirk-cover.jpg'),
-      siteImage: require('../assets/images/mirk-site.jpg'),
-      workImage: require('../assets/images/photo-finder-work.jpg'),
-      desc: "kronik is the storytelling platform specially designed to help startups and companies tell their stories and engage their communities."
-    }
+      url:"https://vue-weather.dangnhz.now.sh",
+      coverImage: require('../assets/images/weather-ver.jpg'),
+      siteImage: require('../assets/images/weather-ver.jpg'),
+      workImage: require('../assets/images/weather-hor.jpg'),
+      desc: "A simple weather application made with Vue.js and Dark Sky's API. It shows current weather conditon as well as the forecast for the next 7 days based on user's location",
+
+    },
   ]
 }
 

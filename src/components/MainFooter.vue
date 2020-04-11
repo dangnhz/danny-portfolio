@@ -5,8 +5,8 @@
             Danny Ngo © {{year}} 
         </div>
         <div class="col-md-6 col-sm-12 social-group">
-            <a href="https://www.facebook.com/dang.nhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
-              <v-icon class="mr-2" name="brands/facebook-square"></v-icon>Facebook
+            <a href="https://www.linkedin.com/in/dang-nhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
+              <v-icon class="mr-2" name="brands/linkedin"></v-icon>LinkedIn
             </a>
             <a href="https://github.com/dangnhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
               <v-icon class="mr-2" name="brands/github"></v-icon>Github
@@ -42,12 +42,16 @@
     background: @bg-dark-2;
     overflow: hidden;
     .social-group {
+        width: 100%;
         @media @mobile, @large-mobile {
             margin-top: 2rem;
+            font-size: 1rem;
+            padding: 0;
         }
         a {
             color: @text-grey;
             transition: 0.5s;
+            height: 2rem;
             &:hover {
                 color: @white;
             }

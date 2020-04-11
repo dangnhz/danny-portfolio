@@ -1,15 +1,14 @@
 <template>
-  <div id="works" class="works-container">
+  <div id="work" class="work-container">
     <PageLoader></PageLoader>
-    <div class="works-wrapper container-fluid">
-      <div id="shadow-title" class="shadow-title">Featured Projects</div>
+    <div class="work-wrapper container-fluid">
       <div class="page-title col-sm-12 col-md-10 col-lg-8">
-        <h1>My Works.</h1>
+        <h1>My Work</h1>
         <span class="line"></span>
       </div>
       <div class="row justify-content-center">
         <div class="col-sm-12 col-md-10 col-lg-8">
-          <div id="works-list" class="works-list">
+          <div id="work-list" class="work-list">
             <div class="work-item" v-for="(project, index) in projects" :key="project.id">
               <div class="row d-flex">
                 <div class="col-md-12 col-lg-12 col-xl-7 col-sm-12 col-xs-12 work-item_bg">
@@ -57,7 +56,7 @@ import gsap from 'gsap';
 // import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 // ScrollMagicPluginGsap(ScrollMagic, gsap);
 export default {
-  name: "works",
+  name: "work",
   components: {
     VerticalLine,
     PageLoader
@@ -85,7 +84,7 @@ export default {
       opacity:0,
       duration: 1
     })
-    .to('.works-list', {
+    .to('.work-list', {
       y:-400,
       duration: 15,
     }, "-=3")
@@ -93,7 +92,7 @@ export default {
     let controller = new ScrollMagic.Controller()
 
     let scene1 = new ScrollMagic.Scene({
-      triggerElement: '#works',
+      triggerElement: '#work',
       duration: '100%',
       triggerHook: 0
     })
@@ -125,7 +124,7 @@ export default {
 
 <style lang="less">
 @import "../assets/style/setting.less";
-.works-container {
+.work-container {
   width: 100%;
   height: 100%;
   color: @white;
@@ -134,25 +133,6 @@ export default {
   background: @bg-dark;
   overflow: hidden;
 
-  .shadow-title {
-    pointer-events: none;
-    position: absolute;
-    display: none;
-    margin-top: 20%;
-    left: 20px;
-    width: 200%;
-    text-align: left;
-    font-family: sans-serif;
-    font-weight: 900;
-    font-size: 15rem;
-    line-height: 1;
-    color: rgba(0, 0, 0, 0.1);
-    font-weight: 900;
-    z-index: 1;
-    @media @mobile, @large-mobile, @tablet {
-      display: none;
-    }
-  }
   .page-title {
     margin: 0 auto;
     padding: 15rem 0 5rem 0;
@@ -164,7 +144,7 @@ export default {
       position: relative;
       font-size: 5rem;
       color: @white;
-      font-family: "Abril-Fatface";
+      font-family: "averta", sans-serif;
       font-weight: 900;
       line-height: 1;
       z-index: 2;
@@ -182,7 +162,7 @@ export default {
     }
   }
 
-  .works-list {
+  .work-list {
     max-width: 1224px;
     width: 100%;
     height: 100%;
@@ -275,7 +255,7 @@ export default {
         line-height: 0;
         color: #414145;
         text-transform: uppercase;
-        font-family: "Poppins", sans-serif;
+        font-family: "averta", sans-serif;
       }
       .work-item_title {
         position: relative;
@@ -297,7 +277,7 @@ export default {
           letter-spacing: 5px;
           font-weight: 600;
           text-transform: uppercase;
-          font-family: "Lato";
+          font-family: "averta", sans-serif;
           color: @white;
           @media @mobile, @large-mobile, @tablet {
             font-size: 1rem;

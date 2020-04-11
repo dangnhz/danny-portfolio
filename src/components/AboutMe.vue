@@ -3,11 +3,14 @@
     <div class="section-about m-auto">
       <div class="row">
         <div class="col-md-6 col-md-6 col-sm-12 col-xs-12 text-right about-title">
-          <h1 data-aos="fade-up">
+          <h1 id="about-title-desktop" data-aos="fade-up">
             Some
             <br />words
             <br />about
             <br />me
+          </h1>
+          <h1 id="about-title-mobile" data-aos="fade-up">
+            Some words about me
           </h1>
         </div>
 
@@ -19,13 +22,10 @@
             />
           </svg>
           <p data-aos="fade-up">
-            I am a postgraduate IT student from Western Sydney University.
-            I am punctual, responsible and considerate to others.
-            Good problem solving and pressure handling are my strong skills.
-            In addition, I have an eye for design and love to play with pixels.
-            I am a curious person with the inclination to learn new things everyday and always up for new challenges.
+            A hard-working and creative IT graduate with a great eye for detail, keen enthusiasm in user-centred design and understanding of usability principles.
+            A self-taught front-end developer with the passion to learn new technologies every day and is always up for new challenges. With every line of code, I strive to create top quality and high-performance web applications.
           </p>
-          <a :href="resumeLink" target="_blank" class="btn flat-btn">MY RESUME</a>
+          <a href="/pdf/Danny_Resume.pdf" target="_blank" class="btn flat-btn">MY RESUME</a>
         </div>
       </div>
     </div>
@@ -174,14 +174,8 @@
 </template>
 
 <script>
-import pdf from "../assets/pdf/Danny_Resume.pdf";
 export default {
   name: "about-me",
-  data() {
-    return {
-      resumeLink: pdf
-    };
-  }
 };
 
 </script>
@@ -207,23 +201,40 @@ export default {
       width: 50%;
     }
   }
-  .about-title h1 {
+  .about-title {
+  
+  #about-title-mobile {
+        display:none;
+        @media @mobile, @large-mobile {
+          display:block;
+        }
+      }
+      #about-title-desktop {
+        display:block;
+        @media @mobile, @large-mobile {
+          display:none;
+        }
+      }
+  h1 {
     padding-right: 3rem;
     font-size: 5rem;
-    font-family: "Abril-Fatface", cursive;
-    //   font-family: 'Lato';
+    font-family: "averta", sans-serif;
+    font-weight: 900;
     @media @mobile, @large-mobile {
       font-size: 2rem;
       text-align: left;
+      padding:0;
     }
     @media @tablet {
       font-size: 3rem;
     }
   }
+  }
   .about-content {
     margin-top: 15rem;
     font-size: 1.5rem;
-    font-family: "Lato-Light";
+    font-family: "averta", sans-serif;
+    // font-weight: 100;
     padding-left: 3rem;
     @media @mobile, @large-mobile {
       font-size: 1rem;
@@ -260,7 +271,8 @@ export default {
 
     h1 {
       font-size: 5rem;
-      font-family: "Abril-Fatface", cursive;
+      font-family: "averta", sans-serif;
+      font-weight: 900;
       @media @mobile, @large-mobile {
         font-size: 2rem;
       }
@@ -269,8 +281,8 @@ export default {
       }
     }
     .skill-description {
-      padding: 1rem 5rem 0 0;
-      font-family: "Lato-Light";
+      padding: 1rem 5rem 0 1rem;
+      font-family: "averta", sans-serif;
       font-size: 1.5rem;
       @media @mobile, @large-mobile {
         padding: 1rem;
@@ -288,7 +300,7 @@ export default {
       }
       p {
         font-size: 1.5rem;
-        font-family: "Lato-Light";
+        font-family: "averta", sans-serif;
         @media @tablet {
           font-size: 1rem;
         }

@@ -31,7 +31,7 @@
         font-weight: 700;
     }
     h3{
-        font-family: "Lato-Light";
+        font-family: "averta", sans-serif;
     }
 
 }
