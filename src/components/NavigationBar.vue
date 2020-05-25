@@ -258,6 +258,10 @@ export default {
     fill: @white;
     @media @mobile, @large-mobile {
       width: 2rem;
+      pointer-events: auto;
+    }
+    @media @mobile, @tablet {
+      pointer-events: auto;
     }
   }
 }

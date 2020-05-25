@@ -58,8 +58,8 @@ export default {
       gsap.to(bigBall, {
         x: this.bigBallPosX,
         y: this.bigBallPosY,
-        duration: this.bigBallDuration,
-        scale: this.scale
+        scale: this.scale,
+        duration: this.bigBallDuration
       });
       gsap.to(smallBall, {
         x: this.smallBallPosX,
