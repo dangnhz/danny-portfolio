@@ -254,6 +254,7 @@ export default {
   #danny-logo {
     margin-top: -10px;
     width: 2.5rem;
+    pointer-events: none;
     fill: @white;
     @media @mobile, @large-mobile {
       width: 2rem;

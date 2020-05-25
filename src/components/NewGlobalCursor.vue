@@ -13,11 +13,25 @@ export default {
   props: ["targets"],
   data() {
     return {
-      scale: 1
+      scale: 1,
+      bigBallPosX: null,
+      bigBallPosY: null,
+      bigBallDuration: 0.5,
+      smallBallDuration: 0.1,
+      smallBallPosX: null,
+      smallBallPosY: null
     };
   },
   methods: {
     customCursor(e, bigBall, smallBall) {
+      // bigBall position
+      this.bigBallPosX = e.clientX - bigBall.clientWidth / 2;
+      this.bigBallPosY = e.clientY - bigBall.clientHeight / 2;
+
+      //small ball cursor
+      this.smallBallPosX = e.clientX - smallBall.clientWidth / 2;
+      this.smallBallPosY = e.clientY - smallBall.clientHeight / 2;
+
       // on hover selected targets
 
       const setScaleRatio = () => {
@@ -32,21 +46,25 @@ export default {
         this.targets.includes(e.target.tagName.toLowerCase())
       ) {
         setScaleRatio();
+
+        // let targetRect = e.target.getBoundingClientRect();
+        // this.smallBallPosX = targetRect.left - 8;
+        // this.smallBallPosY = targetRect.top + targetRect.height / 2;
       } else {
         this.scale = 1;
       }
 
       // move the cursor
       gsap.to(bigBall, {
-        x: e.clientX - bigBall.clientWidth / 2,
-        y: e.clientY - bigBall.clientHeight / 2,
-        duration: 0.4,
+        x: this.bigBallPosX,
+        y: this.bigBallPosY,
+        duration: this.bigBallDuration,
         scale: this.scale
       });
       gsap.to(smallBall, {
-        x: e.clientX - smallBall.clientWidth / 2,
-        y: e.clientY - smallBall.clientHeight / 2,
-        duration: 0.1
+        x: this.smallBallPosX,
+        y: this.smallBallPosY,
+        duration: this.smallBallDuration
       });
     },
 
