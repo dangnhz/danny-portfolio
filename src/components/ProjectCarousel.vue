@@ -12,11 +12,15 @@
     <div class="slider-carousel-wrap">
       <slick ref="slick" :options="slickOptions" @afterChange="handleAfterChange">
         <div v-for="project in projects" :key="project.id">
-          <div class="project-image">
-            <img v-if="project.coverImage" :src="project.coverImage" :alt="project.title" />
-          </div>
+          <router-link :to="{name:'project', params:{project_name:project.name}}">
+            <div class="project-image">
+              <img v-if="project.coverImage" :src="project.coverImage" :alt="project.title" />
+            </div>
+          </router-link>
           <div class="project-text">
-            <router-link :to="{name:'project', params:{project_name:project.name}}"><h3 class="project-title">{{project.title}}</h3></router-link>
+            <router-link :to="{name:'project', params:{project_name:project.name}}">
+              <h3 class="project-title">{{project.title}}</h3>
+            </router-link>
             <p class="project-category">{{project.category}}</p>
           </div>
         </div>
@@ -99,9 +103,9 @@ export default {
       this.currentSlide = currentSlide + 1;
     }
   },
-  created () {
-    this.projects = this.$store.getters.getAllProjects
-  },
+  created() {
+    this.projects = this.$store.getters.getAllProjects;
+  }
 };
 </script>
 
@@ -168,7 +172,7 @@ export default {
       text-decoration: none;
       margin: 0;
       padding: 0;
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 24px;
       padding-bottom: 10px;
       font-weight: 500;

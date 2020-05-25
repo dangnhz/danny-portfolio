@@ -9,9 +9,7 @@
             <br />about
             <br />me
           </h1>
-          <h1 id="about-title-mobile" data-aos="fade-up">
-            Some words about me
-          </h1>
+          <h1 id="about-title-mobile" data-aos="fade-up">Some words about me</h1>
         </div>
 
         <div class="col-md-6 col-sm-12 col-xs-12 about-content">
@@ -23,7 +21,7 @@
           </svg>
           <p data-aos="fade-up">
             A hard-working and creative IT graduate with a great eye for detail, keen enthusiasm in user-centred design and understanding of usability principles.
-            A self-taught front-end developer with the passion to learn new technologies every day and is always up for new challenges. With every line of code, I strive to create top quality and high-performance web applications.
+            A self-taught front-end web developer with the passion to learn new technologies every day and is always up for new challenges. With every line of code, I strive to create top quality and high-performance web applications.
           </p>
           <a href="/pdf/Danny_Resume.pdf" target="_blank" class="btn flat-btn">MY RESUME</a>
         </div>
@@ -175,9 +173,8 @@
 
 <script>
 export default {
-  name: "about-me",
+  name: "about-me"
 };
-
 </script>
 
 <style lang="less">
@@ -202,33 +199,32 @@ export default {
     }
   }
   .about-title {
-  
-  #about-title-mobile {
-        display:none;
-        @media @mobile, @large-mobile {
-          display:block;
-        }
+    #about-title-mobile {
+      display: none;
+      @media @mobile, @large-mobile {
+        display: block;
       }
-      #about-title-desktop {
-        display:block;
-        @media @mobile, @large-mobile {
-          display:none;
-        }
+    }
+    #about-title-desktop {
+      display: block;
+      @media @mobile, @large-mobile {
+        display: none;
       }
-  h1 {
-    padding-right: 3rem;
-    font-size: 5rem;
-    font-family: "averta", sans-serif;
-    font-weight: 900;
-    @media @mobile, @large-mobile {
-      font-size: 2rem;
-      text-align: left;
-      padding:0;
     }
-    @media @tablet {
-      font-size: 3rem;
+    h1 {
+      padding-right: 3rem;
+      font-size: 5rem;
+      font-family: "averta", sans-serif;
+      font-weight: 900;
+      @media @mobile, @large-mobile {
+        font-size: 2rem;
+        text-align: left;
+        padding: 0;
+      }
+      @media @tablet {
+        font-size: 3rem;
+      }
     }
-  }
   }
   .about-content {
     margin-top: 15rem;
@@ -237,12 +233,12 @@ export default {
     // font-weight: 100;
     padding-left: 3rem;
     @media @mobile, @large-mobile {
-      font-size: 1rem;
+      font-size: 1.2rem;
       margin-top: 2rem;
       padding-left: 1rem;
     }
     @media @tablet {
-      font-size: 1rem;
+      font-size: 1.2rem;
       margin-top: 5rem;
     }
     .button__arrow {
@@ -258,7 +254,7 @@ export default {
   }
 
   .section-skill {
-    width: 80%;
+    width: 90%;
     margin: 10rem auto;
     @media @mobile, @large-mobile {
       width: 100%;
@@ -286,11 +282,11 @@ export default {
       font-size: 1.5rem;
       @media @mobile, @large-mobile {
         padding: 1rem;
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
       @media @tablet {
         padding: 1rem;
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
     .skill-item {

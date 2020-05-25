@@ -56,7 +56,7 @@ export default {
     timeline2
       .from("#intro-text", { x: -300, opacity: 0, duration: 3 },0)
       .from("#intro-img", { x: 300, opacity: 0, duration: 3 }, 0)
-      .to("#intro-img", { y: -100, duration: 2 })
+      .to("#intro-img", { y: -80, duration: 2 })
 
     let scene2 = new ScrollMagic.Scene({
       triggerElement: ".intro-wrapper",

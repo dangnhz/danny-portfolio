@@ -2,25 +2,27 @@
   <div class="navbar-container">
     <!-- Navbar start -->
     <div id="nav-bar" class="nav-bar">
-      <div class="row d-flex align-items-center">
-        <div class="col-6" id="my-logo">
+      <div class="d-flex align-items-center justify-content-between">
+        <div id="my-logo" class="hoverable">
           <router-link to="/" class="logo-wrapper">
-          <svg id="danny-logo" viewBox="0 0 275.75 165.82">
-          <polygon points="247.49 0.05 275.75 0.05 275.75 165.82 137.4 41.39 137.4 0.05 247.91 100.02 247.49 0.05" fill="#fff"/>
-          <rect x="137.77" y="140.89" width="27.79" height="24.93" fill="#fff"/>
-          <path d="M179.18,79.77A66.44,66.44,0,0,0,162.57,54.9a69.72,69.72,0,0,0-25.89-15,107,107,0,0,0-33.7-5H47.22V159.15l28.85-23.63-.2-72,30.57,0c14.39,0,50.93,9,52.76,50.05,2.19,49.42-53,61.46-53,61.46l-30.24,0-28.46,25.6H96.78a109.41,109.41,0,0,0,34.2-5.26,78.71,78.71,0,0,0,28.13-15.93,74.47,74.47,0,0,0,18.95-26.84q6.93-16.19,6.94-38.3Q185,94.64,179.18,79.77Z" transform="translate(-47.22 -34.89)" fill="#fff"/></svg>
+            <svg id="danny-logo" viewBox="0 0 275.75 165.82">
+              <polygon
+                points="247.49 0.05 275.75 0.05 275.75 165.82 137.4 41.39 137.4 0.05 247.91 100.02 247.49 0.05"
+                fill="#fff"
+              />
+              <rect x="137.77" y="140.89" width="27.79" height="24.93" fill="#fff" />
+              <path
+                d="M179.18,79.77A66.44,66.44,0,0,0,162.57,54.9a69.72,69.72,0,0,0-25.89-15,107,107,0,0,0-33.7-5H47.22V159.15l28.85-23.63-.2-72,30.57,0c14.39,0,50.93,9,52.76,50.05,2.19,49.42-53,61.46-53,61.46l-30.24,0-28.46,25.6H96.78a109.41,109.41,0,0,0,34.2-5.26,78.71,78.71,0,0,0,28.13-15.93,74.47,74.47,0,0,0,18.95-26.84q6.93-16.19,6.94-38.3Q185,94.64,179.18,79.77Z"
+                transform="translate(-47.22 -34.89)"
+                fill="#fff"
+              />
+            </svg>
           </router-link>
         </div>
 
-        <div class="col-6 text-right btn-menu">
-          <span
-            @click="toggleMenu"
-            class="hamburger-caption magnetic-button hoverable"
-          >{{hamburgerCaption}}</span>
-          <button
-            id="hamburger-icon"
-            class="hamburger-icon magnetic-button hoverable"
-            @click="toggleMenu" >
+        <div class="btn-menu">
+          <span @click="toggleMenu" class="hamburger-caption hoverable">{{hamburgerCaption}}</span>
+          <button id="hamburger-icon" class="hamburger-icon magnetic-button" @click="toggleMenu">
             <div class="hamburger-el"></div>
             <div class="hamburger-el"></div>
           </button>
@@ -38,10 +40,11 @@
         <div class="menu-list col-xs-12 col-sm-12 col-md-8">
           <ul>
             <li>
-              <router-link class="menu-item" :to="{name:'home'}" exact="">Home.</router-link>
+              <router-link class="menu-item" :to="{name:'home'}" exact>Home.</router-link>
             </li>
             <li>
               <router-link class="menu-item" :to="{name:'work'}">Work.</router-link>
+            </li>
             <li>
               <router-link class="menu-item" :to="{name:'contact'}">Contact.</router-link>
             </li>
@@ -51,16 +54,22 @@
           <div class="mt-5 mb-5 mb-xs-2">
             <b>More</b>
           </div>
-          <div class="row">
-            <a href="https://www.linkedin.com/in/dang-nhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
-              <v-icon class="mr-2" name="brands/linkedin"></v-icon>LinkedIn
-            </a>
-            <a href="https://github.com/dangnhz" target="_blank" class="col-lg-12 col-md-12 col-6  mb-3">
-              <v-icon class="mr-2" name="brands/github"></v-icon>Github
-            </a>
-            <a href="mailTo: dangnh3091@gmail.com" class="col-lg-12 col-md-12 col-6">
-              <v-icon class="mr-2" name="envelope"></v-icon>Email
-            </a>
+          <div>
+            <div class="mb-3">
+              <a href="https://www.linkedin.com/in/dang-nhz" target="_blank">
+                <v-icon class="mr-2" name="brands/linkedin"></v-icon>LinkedIn
+              </a>
+            </div>
+            <div class="mb-3">
+              <a href="https://github.com/dangnhz" target="_blank">
+                <v-icon class="mr-2" name="brands/github"></v-icon>Github
+              </a>
+            </div>
+            <div>
+              <a href="mailTo: dangnh3091@gmail.com">
+                <v-icon class="mr-2" name="envelope"></v-icon>Email
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -70,7 +79,6 @@
 </template>
 
 <script>
-
 import gsap from "gsap";
 export default {
   name: "nav-bar",
@@ -99,17 +107,17 @@ export default {
   },
   mounted() {
     const navMenu = document.querySelector("#menu-wrapper");
-    const menuBackground= document.querySelector('.menu-background');
+    // const menuBackground = document.querySelector(".menu-background");
     const menuItems = document.querySelectorAll(".menu-item");
-    const moreInfo = document.querySelector(".more-info")
+    const moreInfo = document.querySelector(".more-info");
 
-//  set menu items position
-    this.tl.set(menuItems, { 
+    //  set menu items position
+    this.tl.set(menuItems, {
       x: -40,
       opacity: 0
     });
 
-    this.tl.set(moreInfo, { 
+    this.tl.set(moreInfo, {
       x: 100,
       opacity: 0
     });
@@ -118,29 +126,29 @@ export default {
       height: "100vh",
       opacity: 1,
       ease: "power2.out",
-      duration: 0.5
+      duration: 0.3
     });
 
-    this.tl.to(menuBackground, {
-      height: '100vh',
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.out"
-    })
+    // this.tl.to(menuBackground, {
+    //   height: "100vh",
+    //   opacity: 1,
+    //   duration: 0.2,
+    //   ease: "power2.out"
+    // });
 
     this.tl.to(menuItems, {
       opacity: 1,
       x: 0,
       ease: "power2.out",
-      duration: 0.5,
+      duration: 0.3,
       stagger: 0.2
     });
-    
+
     this.tl.to(moreInfo, {
       opacity: 1,
       x: 0,
       ease: "power2.out",
-      duration: 0.5,
+      duration: 0.3
     });
 
     navMenu.addEventListener("click", () => {
@@ -155,7 +163,7 @@ export default {
 
 // navbar styling
 .nav-bar {
-  // padding: 1rem 2rem;
+  padding: 0rem 5rem;
   width: 100%;
   color: @white;
   mix-blend-mode: difference;
@@ -166,6 +174,7 @@ export default {
   z-index: 999;
   @media @mobile, @large-mobile {
     top: 2rem;
+    padding: 0rem 1.5rem;
   }
 }
 
@@ -173,11 +182,7 @@ export default {
   position: relative;
   top: 0;
   color: @text-color;
-  right: 5rem;
   cursor: pointer;
-  @media @mobile, @large-mobile {
-    right: 1.5rem;
-  }
   .hamburger-icon {
     background: none;
     border: none;
@@ -188,11 +193,6 @@ export default {
       -ms-transform: none !important;
       -webkit-transform: none !important;
       transform: none !important;
-    }
-    &:hover {
-      .hamburger-el {
-        background: @text-color;
-      }
     }
     .hamburger-el {
       content: "";
@@ -247,25 +247,19 @@ export default {
     @media @tablet {
       transform: none !important;
     }
-    &:hover {
-      color: @text-color;
-    }
   }
 }
 
 .logo-wrapper {
   #danny-logo {
-    margin-top:-10px;
+    margin-top: -10px;
     width: 2.5rem;
-    fill:@white;
-    margin-left: 5rem;
-    @media @mobile, @large-mobile{
+    fill: @white;
+    @media @mobile, @large-mobile {
       width: 2rem;
-      margin-left: 1.5rem;
     }
-    }
+  }
 }
-
 
 // end navbar styling
 
@@ -282,7 +276,7 @@ export default {
   align-items: center;
   background: @black;
   overflow: hidden;
-  .menu-background{
+  .menu-background {
     width: 100%;
     height: 0;
     opacity: 1;
@@ -300,11 +294,11 @@ export default {
     // display: flex;
     // align-items: center;
     @media @tablet {
-        width: 100%;
-      }
-       @media @large-desktop {
-        width: 70%;
-      }
+      width: 100%;
+    }
+    @media @large-desktop {
+      width: 70%;
+    }
     .menu-list ul li {
       margin-top: 2.5rem;
       font-weight: 900;
@@ -312,7 +306,7 @@ export default {
         text-align: center;
         margin: 2rem 0;
       }
-      
+
       a {
         margin: 0;
         color: @text-grey;
@@ -367,7 +361,7 @@ export default {
         }
 
         @media @mobile, @large-mobile, @tablet {
-          top: 10px
+          top: 10px;
         }
       }
       &:after {
@@ -388,7 +382,7 @@ export default {
       display: block;
       position: absolute;
       bottom: 3rem;
-      right:0;
+      right: 0;
       color: @white;
       font-size: 1rem;
       a {
@@ -402,9 +396,6 @@ export default {
         display: none;
       }
     }
-
   }
 }
-
-
 </style>
