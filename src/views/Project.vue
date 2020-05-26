@@ -1,12 +1,12 @@
 <template>
   <div id="project-container" class="project-container">
     <PageLoader></PageLoader>
-    <div class="project-wrapper" v-if="project">
+    <div class="project-wrapper" v-if="currentProject">
       <div class="page-title col-sm-12 col-md-10 col-lg-8">
-        <h1>{{project.title}}</h1>
+        <h1>{{currentProject.title}}</h1>
         <div class="d-flex align-items-center mt-5">
           <div class="line"></div>
-          <div class="project-category ml-5">{{project.category}}</div>
+          <div class="project-category ml-5">{{currentProject.category}}</div>
         </div>
       </div>
 
@@ -19,38 +19,91 @@
               <circle opacity=".71" fill="#F1C40F" cx="29.5" cy="11.5" r="4.7" />
               <circle opacity=".71" fill="#2ECC71" cx="44.9" cy="11.5" r="4.7" />
             </svg>
-            <img v-if="project.siteImage" :src="project.siteImage" alt="project-cover" />
+            <img
+              v-if="currentProject.siteImage"
+              :src="currentProject.siteImage"
+              alt="project-cover"
+            />
           </div>
           <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
             <div class="about-project">
               <h5 class="mb-3">About this project</h5>
-              <p v-html="project.desc"></p>
-              <a :href="project.url" target="_blank" class="flat-btn mt-4">SEE THE SITE</a>
+              <p v-html="currentProject.desc"></p>
+              <a :href="currentProject.url" target="_blank" class="flat-btn mt-4">SEE THE SITE</a>
             </div>
           </div>
         </div>
       </div>
+
+      <ProjectFooterNavigation
+        :prevProject="prevProject"
+        :goToPrevProject="goToPrevProject"
+        :goToNextProject="goToNextProject"
+        :nextProject="nextProject"
+      ></ProjectFooterNavigation>
     </div>
   </div>
 </template>
 
 <script>
+import ProjectFooterNavigation from "../components/ProjectFooterNavigation";
 import PageLoader from "../components/PageLoader";
-
+import gsap from "gsap";
 export default {
   name: "project",
   components: {
+    ProjectFooterNavigation,
     PageLoader
   },
-  data() {
-    return {
-      project: null
-    };
+  computed: {
+    allProjects() {
+      return this.$store.getters.getAllProjects;
+    },
+    currentProject() {
+      let project_name = this.$route.params.project_name;
+      let currentProject = this.$store.getters.getSingleProject(project_name);
+
+      return currentProject;
+    },
+    currentProjectIndex() {
+      let currentIndex = this.allProjects.indexOf(this.currentProject);
+      return currentIndex;
+    },
+    prevProject() {
+      if (this.currentProjectIndex === 0)
+        return this.allProjects[this.allProjects.length - 1];
+      return this.allProjects[this.currentProjectIndex - 1];
+    },
+    nextProject() {
+      if (this.currentProjectIndex === this.allProjects.length - 1)
+        return this.allProjects[0];
+      return this.allProjects[this.currentProjectIndex + 1];
+    }
   },
-  created() {
-    const project_name = this.$route.params.project_name;
-    this.project = this.$store.getters.getSingleProject(project_name);
-    if (!this.project) this.$router.push({ name: "work" });
+  methods: {
+    goToNextProject() {
+      gsap.to(".project-container", { opacity: 0, duration: 0.8 });
+      setTimeout(() => {
+        this.$router.push({
+          name: "project",
+          params: { project_name: this.nextProject.name }
+        });
+      }, 800);
+    },
+    goToPrevProject() {
+      gsap.to(".project-container", { opacity: 0, duration: 0.8 });
+      setTimeout(() => {
+        this.$router.push({
+          name: "project",
+          params: { project_name: this.prevProject.name }
+        });
+      }, 800);
+    }
+  },
+  watch: {
+    currentProject() {
+      gsap.to(".project-container", { opacity: 1, duration: 0.8, delay: 0.8 });
+    }
   }
 };
 </script>
@@ -63,7 +116,7 @@ export default {
   color: @white;
   position: relative;
   top: 0;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   background: @bg-dark;
   overflow: hidden;
 

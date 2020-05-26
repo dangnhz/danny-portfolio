@@ -1,19 +1,19 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
   },
   {
     path: '/work',
     name: 'work',
-    component: () => import('../views/Work.vue')
+    component: () => import('../views/Work.vue'),
   },
   {
     path: '/work/:project_name',
@@ -26,19 +26,18 @@ const routes = [
     component: () => import('../views/Contact.vue'),
   },
   {
-    path: "*",
-    component: () => import('../views/PageNotFound.vue')
-  }
-
-]
+    path: '*',
+    component: () => import('../views/PageNotFound.vue'),
+  },
+];
 
 const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior () {
-    return { x: 0, y: 0 }
-  }
-})
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
+});
 
-export default router
+export default router;
