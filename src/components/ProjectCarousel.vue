@@ -12,17 +12,17 @@
     <div class="slider-carousel-wrap">
       <slick ref="slick" :options="slickOptions" @afterChange="handleAfterChange">
         <div v-for="project in projects" :key="project.id">
-          <router-link :to="{name:'project', params:{project_name:project.name}}">
+          <a :href="project.url" target="_blank">
             <div class="project-image">
               <img v-if="project.coverImage" :src="project.coverImage" :alt="project.title" />
             </div>
-          </router-link>
-          <div class="project-text">
-            <router-link :to="{name:'project', params:{project_name:project.name}}">
+
+            <div class="project-text">
               <h3 class="project-title">{{project.title}}</h3>
-            </router-link>
-            <p class="project-category">{{project.category}}</p>
-          </div>
+
+              <p class="project-category">{{project.category}}</p>
+            </div>
+          </a>
         </div>
       </slick>
       <div class="btn-prev hoverable">
@@ -174,7 +174,7 @@ export default {
       padding: 0;
       font-size: 1.2rem;
       line-height: 24px;
-      padding-bottom: 10px;
+      // padding-bottom: 10px;
       font-weight: 500;
       font-family: "averta", sans-serif;
       color: @white;

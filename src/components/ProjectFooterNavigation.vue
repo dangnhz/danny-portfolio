@@ -5,7 +5,7 @@
         <v-icon class="arrow-icon" name="arrow-left"></v-icon>
       </div>
       <div @click="goToPrevProject" class="btn-previous-project">
-        <h6>Previouse Project</h6>
+        <h6>Previous Project</h6>
         <h1>{{prevProject.title}}</h1>
       </div>
     </div>
