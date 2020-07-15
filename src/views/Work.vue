@@ -86,7 +86,7 @@ export default {
       }).to(
         ".work-list",
         {
-          y: -400,
+          y: 0,
           duration: 15
         },
         "-=3"
@@ -196,21 +196,61 @@ export default {
         @media @tablet {
           margin-bottom: 2.5rem;
         }
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: -75%;
+          z-index: 2;
+          display: block;
+          content: "";
+          width: 50%;
+          height: 100%;
+          background: -webkit-linear-gradient(
+            left,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.3) 100%
+          );
+          background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.3) 100%
+          );
+          -webkit-transform: skewX(-25deg);
+          transform: skewX(-25deg);
+        }
         &:hover {
+          &::before {
+            -webkit-animation: shine 0.75s;
+            animation: shine 0.75s;
+          }
           .work-item_bg-image {
-            transform: scale(1.15);
+            filter: grayscale(0);
+            -webkit-filter: grayscale(0);
             transform-origin: center center;
             @media @mobile, @large-mobile, @tablet {
               transform: none;
             }
           }
         }
-
         .work-item_bg-image {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: 0.3s;
+          -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
+          transition: 0.25s;
+        }
+
+        @-webkit-keyframes shine {
+          100% {
+            left: 125%;
+          }
+        }
+        @keyframes shine {
+          100% {
+            left: 125%;
+          }
         }
       }
 
