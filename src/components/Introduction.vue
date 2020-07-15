@@ -49,8 +49,8 @@ export default {
     }
     .text {
       font-family: "averta", sans-serif;
-      font-size: 1.4rem;
-      line-height: 3rem;
+      font-size: 1.2rem;
+      line-height: 2.5rem;
       padding: 0rem 2rem 0rem 5rem;
       @media @mobile, @large-mobile {
         font-size: 1.2rem;
@@ -65,16 +65,16 @@ export default {
         padding: 2rem;
       }
       @media @large-desktop {
-        font-size: 2rem;
-        line-height: 3.5rem;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
         padding: 0 3rem 0 10rem;
       }
     }
     .image-wrapper img {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       object-fit: contain;
-      transition: 0.8s;
+      transition: 0.5s;
       &:hover {
         transform: scale(1.05);
       }

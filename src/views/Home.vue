@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <PageLoader></PageLoader>
-    <HomeHeader id="home-header"></HomeHeader>
+    <HomeHero id="home-hero"></HomeHero>
     <Introduction></Introduction>
     <project-carousel></project-carousel>
     <div class="clearfix"></div>
@@ -9,8 +9,8 @@
   </div>
 </template>
 <script>
-import PageLoader from '../components/PageLoader'
-import HomeHeader from "../components/HomeHeader";
+import PageLoader from "../components/PageLoader";
+import HomeHero from "../components/HomeHero";
 // import AboutMe from "../components/AboutMe";
 import Introduction from "../components/Introduction";
 import ProjectCarousel from "../components/ProjectCarousel";
@@ -25,7 +25,7 @@ export default {
   name: "Home",
   components: {
     ProjectCarousel,
-    HomeHeader,
+    HomeHero,
     Introduction,
     AboutMe,
     PageLoader
@@ -41,9 +41,9 @@ export default {
       .to(".hero-content", {
         y: "-100%",
         opacity: 0,
-        duration: 2, 
+        duration: 2
       })
-      .to("#home-header", { duration: 1, opacity: 0 }, "-=3");
+      .to("#home-hero", { duration: 1, opacity: 0 }, "-=3");
 
     let scene1 = new ScrollMagic.Scene({
       triggerElement: ".intro-wrapper",
@@ -54,9 +54,9 @@ export default {
     // animate introduction section
     let timeline2 = gsap.timeline();
     timeline2
-      .from("#intro-text", { x: -300, opacity: 0, duration: 3 },0)
+      .from("#intro-text", { x: -300, opacity: 0, duration: 3 }, 0)
       .from("#intro-img", { x: 300, opacity: 0, duration: 3 }, 0)
-      .to("#intro-img", { y: -80, duration: 2 })
+      .to("#intro-img", { y: -80, duration: 2 });
 
     let scene2 = new ScrollMagic.Scene({
       triggerElement: ".intro-wrapper",
