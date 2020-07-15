@@ -39,6 +39,7 @@ export default {
 <style lang="less" scoped>
 @import "../assets/style/setting.less";
 .footer {
+  width: 100%;
   padding: 4rem 0;
   color: @white;
   background: @bg-dark-2;

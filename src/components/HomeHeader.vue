@@ -61,7 +61,8 @@ export default {
   justify-content: center;
   perspective: 1000;
   color: @white;
-  background-image: url("https://images.unsplash.com/photo-1547997853-17516ad3266f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
+  background-color: @bg-dark-2;
+  // background-image: url("https://images.unsplash.com/photo-1547997853-17516ad3266f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
 
   @media @mobile, @large-mobile, @tablet {
     background-image: none;
@@ -113,58 +114,11 @@ export default {
     display: block;
     height: 100%;
     width: 100%;
+    display: none;
     background: radial-gradient(circle at 150px 150px, transparent, #000 35%);
     transition: background 0.5s ease;
     @media @mobile, @large-mobile, @tablet {
       display: none;
-    }
-  }
-
-  .btn-scroll-down {
-    color: @white;
-    position: absolute;
-    text-align: right;
-    right: 5rem;
-    bottom: 3rem;
-    @media @mobile, @large-mobile {
-      right: 1rem;
-      bottom: 6rem;
-    }
-    .box {
-      width: fit-content;
-      margin: 0 auto;
-    }
-
-    .box span {
-      width: 10px;
-      height: 10px;
-      display: block;
-      border-right: 2px solid @white;
-      border-bottom: 2px solid @white;
-      transform: rotate(180deg);
-      margin: -5px;
-      animation: animate 2s infinite;
-    }
-
-    .box span:nth-child(2) {
-      animation-delay: -0.2s;
-    }
-
-    .box span:nth-child(3) {
-      animation-delay: -0.4s;
-    }
-
-    @keyframes animate {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-        transform: rotate(45deg) translate(10px, 10px);
-      }
-      100% {
-        opacity: 0;
-      }
     }
   }
 }
