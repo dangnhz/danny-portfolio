@@ -225,8 +225,8 @@ export default {
             animation: shine 0.75s;
           }
           .work-item_bg-image {
-            filter: grayscale(0);
-            -webkit-filter: grayscale(0);
+            // filter: grayscale(0);
+            // -webkit-filter: grayscale(0);
             transform-origin: center center;
             @media @mobile, @large-mobile, @tablet {
               transform: none;
@@ -237,8 +237,8 @@ export default {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          -webkit-filter: grayscale(80%);
-          filter: grayscale(80%);
+          // -webkit-filter: grayscale(80%);
+          // filter: grayscale(80%);
           transition: 0.25s;
         }
 

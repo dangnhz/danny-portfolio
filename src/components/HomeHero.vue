@@ -14,7 +14,7 @@
         <span class="letter">'</span>
         <span class="letter">m</span>
         <span style="margin: 0 10px">&nbsp;</span>
-        <span class="letter animated">D</span>
+        <span class="letter">D</span>
         <span class="letter">a</span>
         <span class="letter">n</span>
         <span class="letter">n</span>
@@ -93,7 +93,7 @@ export default {
       &.animated {
         @media @desktop, @large-desktop {
           animation: rubberBand 1s;
-          color: @text-color;
+          // color: @text-color;
         }
       }
       @keyframes rubberBand {
