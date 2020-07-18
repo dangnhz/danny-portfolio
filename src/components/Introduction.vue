@@ -31,6 +31,8 @@ export default {
   color: @white;
   background: @bg-dark;
   overflow-x: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
   @media @mobile, @large-mobile, @tablet {
     padding: 5rem 0;
   }
@@ -38,7 +40,7 @@ export default {
     display: flex;
     align-items: center;
     width: 100%;
-    margin: 0 auto;
+
     @media @mobile, @large-mobile {
       width: 100%;
       padding: 1rem;

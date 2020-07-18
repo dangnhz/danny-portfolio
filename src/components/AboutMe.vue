@@ -20,36 +20,93 @@
             />
           </svg>
           <p data-aos="fade-up">
-            A hard-working and creative IT graduate with a great eye for detail, keen enthusiasm in user-centred design and understanding of usability principles.
+            A hard-working and creative Master of IT graduate with a great eye for detail, keen enthusiasm in user-centred design and understanding of usability principles.
             A self-taught front-end web developer with the passion to learn new technologies every day and is always up for new challenges. With every line of code, I strive to create top quality and high-performance web applications.
           </p>
-          <a href="/pdf/Danny_Resume.pdf" target="_blank" class="btn flat-btn">MY RESUME</a>
+          <a
+            href="/pdf/Danny_Resume.pdf"
+            target="_blank"
+            class="btn flat-btn"
+            data-aos="fade-up"
+          >MY RESUME</a>
         </div>
       </div>
     </div>
     <div class="section-skill">
       <h1 data-aos="fade-up">Skills</h1>
-      <div class="row" data-aos="fade-up">
+      <div class="row">
         <div class="col-md-6 skill-description">
-          <p>Now is the time to meet some skills and technologies that I used to develop my projects.</p>
+          <p data-aos="fade-up">
+            The main area of my expertise is the front-end development.
+            I am able to independently develop complicated front-end web apps through profound knowledge of multiple coding skills.
+          </p>
+          <p
+            data-aos="fade-up"
+          >Now is the time to meet a few technologies that I've been working with recently:</p>
+          <div class="row" data-aos="fade-up">
+            <div class="col-6 skill-item">
+              <ul>
+                <li>Vue</li>
+                <li>React, React Native</li>
+                <li>JavaScript (ES6+)</li>
+                <li>HTML & (S)CSS</li>
+              </ul>
+            </div>
+            <div class="col-6 skill-item">
+              <ul>
+                <li>Node.js</li>
+                <li>PHP - Laravel</li>
+                <li>Wordpress</li>
+                <li>Java</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="col-md-2 skill-item">
-          <p>Vue</p>
-          <p>React</p>
-          <p>JavaScript</p>
-          <p>HTML, CSS</p>
-          <p>Bootstrap</p>
-        </div>
-        <div class="col-md-2 skill-item">
-          <p>PHP - Laravel</p>
-          <p>Wordpress</p>
-          <p>SQL / NoSQL</p>
-          <p>Node.js</p>
-          <p>Java</p>
-        </div>
-        <div class="col-md-2 skill-item">
-          <p>Photoshop</p>
-          <p>Illustrator</p>
+
+        <div class="col-md-6">
+          <div class="skill-chart" data-aos="fade-up">
+            <svg viewBox="0 0 661 398">
+              <line class="percent_line_dash" x1="0" y1="52" x2="661" y2="52" />
+              <text transform="matrix(1 0 0 1 615 41)" class="skill_tri_full">100%</text>
+              <text transform="matrix(1 0 0 1 78 382)" class="skill_tri_text">HTML</text>
+              <text transform="matrix(1 0 0 1 176 382)" class="skill_tri_text">CSS</text>
+              <text transform="matrix(1 0 0 1 262 382)" class="skill_tri_text">React</text>
+              <text transform="matrix(1 0 0 1 360 382)" class="skill_tri_text">Vue</text>
+              <text transform="matrix(1 0 0 1 430 382)" class="skill_tri_text">JavaScript</text>
+              <text transform="matrix(1 0 0 1 549 382)" class="skill_tri_text">Node.js</text>
+
+              <polygon
+                id="skill_tri_css"
+                class="skill_tri_body skill_tri_2"
+                points="94,358 282,358 188,67 "
+              />
+              <polygon
+                id="skill_tri_vue"
+                class="skill_tri_body skill_tri_2"
+                points="282,358 470,358 376,136 "
+              />
+              <polygon
+                id="skill_tri_nodejs"
+                class="skill_tri_body skill_tri_2"
+                points="470,358 658,358 564,200 "
+              />
+              <polygon
+                id="skill_tri_html"
+                class="skill_tri_body skill_tri_1"
+                points="0,358 188,358 94,90 "
+              />
+              <polygon
+                id="skill_tri_react"
+                class="skill_tri_body skill_tri_1"
+                points="188,358 376,358 282,150 "
+              />
+              <polygon
+                id="skill_tri_javascript"
+                class="skill_tri_body skill_tri_1"
+                points="376,358 564,358 470,100 "
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div class="grid-skill" data-aos="fade-up">
@@ -185,6 +242,8 @@ export default {
   color: #fff;
   padding: 10rem 0;
   background: @bg-dark;
+  max-width: 1920px;
+  margin: 0 auto;
   @media @mobile, @large-mobile, @tablet {
     padding: 5rem 0;
   }
@@ -290,16 +349,48 @@ export default {
       }
     }
     .skill-item {
-      padding: 1rem;
-      @media @mobile, @large-mobile {
-        display: none;
-      }
-      p {
+      ul li {
         font-size: 1.2rem;
         font-family: "averta", sans-serif;
-        @media @tablet {
+        margin-bottom: 1rem;
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        @media @mobile, @large-mobile, @tablet {
           font-size: 1rem;
         }
+        &::before {
+          content: "▹";
+          position: absolute;
+          left: 0px;
+          color: @text-color;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .skill-chart {
+      .percent_line_dash {
+        fill: none;
+        stroke: rgba(255, 5, 121, 0.8);
+        stroke-dasharray: 4, 6;
+      }
+
+      .skill_tri_full {
+        font-size: 1rem;
+        fill: @white;
+      }
+      .skill_tri_text {
+        font-size: 1rem;
+        fill: @white;
+      }
+
+      .skill_tri_2 {
+        fill: rgba(132, 22, 206, 0.8);
+      }
+
+      .skill_tri_1 {
+        fill: rgba(255, 5, 121, 0.801);
       }
     }
 
@@ -314,7 +405,7 @@ export default {
         margin: 5rem 0;
       }
       li {
-        height: 8rem;
+        height: 10rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -325,7 +416,7 @@ export default {
           height: 8rem;
         }
         @media @large-desktop {
-          height: 12rem;
+          height: 11rem;
         }
         svg {
           width: 5rem;

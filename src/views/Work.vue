@@ -35,7 +35,16 @@
               <div class="work-item_title">
                 <p>{{project.category}}</p>
                 <h3>{{project.title}}</h3>
-                <p class="col-xl-4 col-md-12 col-xs-12 col-sm-12 p-0">{{project.desc}}</p>
+                <p
+                  class="col-xl-4 col-md-12 col-xs-12 col-sm-12 p-0 project-description"
+                >{{project.desc}}</p>
+                <div class="project-technology">
+                  <span
+                    v-for="(item, index) in project.tech"
+                    :key="index"
+                    class="project-technology-item"
+                  >{{ item }}</span>
+                </div>
                 <a :href="project.url" target="_blank">
                   <button class="flat-btn mt-3">View Project</button>
                 </a>
@@ -179,6 +188,23 @@ export default {
       float: left;
       width: 100%;
       position: relative;
+
+      .project-description {
+        font-size: 1rem;
+
+        @media @large-desktop {
+          font-size: 1.2rem;
+        }
+      }
+
+      .project-technology {
+        margin: 2rem 0 1rem 0;
+        .project-technology-item {
+          font-size: 1rem;
+          margin-right: 1rem;
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
 
       .work-item_bg {
         width: 100%;

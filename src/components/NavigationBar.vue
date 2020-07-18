@@ -165,6 +165,7 @@ export default {
 .nav-bar {
   padding: 0rem 5rem;
   width: 100%;
+  margin: 0 auto;
   color: @white;
   mix-blend-mode: difference;
   background: transparent;
