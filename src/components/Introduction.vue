@@ -1,12 +1,12 @@
 <template>
   <section class="introduction">
-    <div class="intro-wrapper row">
+    <div class="intro-wrapper row m-0">
       <div id="intro-text" class="col-md-5 intro-col">
         <p
           class="text mt-3"
         >I create websites with attention to detail and faithfulness to the design.</p>
       </div>
-      <div class="col-md-7 intro-col">
+      <div class="col-md-7 intro-col p-xs-0 p-sm-0">
         <div id="intro-img" class="image-wrapper">
           <img src="../assets/images/website-mockup.png" alt="image" />
         </div>
@@ -56,7 +56,7 @@ export default {
       padding: 0rem 2rem 0rem 5rem;
       @media @mobile, @large-mobile {
         font-size: 1.2rem;
-        line-height: 2.5rem;
+        line-height: 2.2rem;
         margin-bottom: 10rem;
         padding: 1rem;
       }
@@ -79,6 +79,9 @@ export default {
       transition: 0.5s;
       &:hover {
         transform: scale(1.05);
+      }
+      @media @mobile, @large-mobile {
+        width: 100%;
       }
     }
   }

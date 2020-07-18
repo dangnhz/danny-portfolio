@@ -47,12 +47,7 @@
             </li>
 
             <li>
-              <a
-                href="/pdf/Danny_Resume.pdf"
-                target="_blank"
-                class="menu-item"
-                data-aos="fade-up"
-              >Resume.</a>
+              <a href="/pdf/Danny_Resume.pdf" target="_blank" class="menu-item">Resume.</a>
             </li>
             <li>
               <router-link class="menu-item" :to="{name:'contact'}">Contact.</router-link>
