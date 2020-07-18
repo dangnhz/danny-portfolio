@@ -21,7 +21,10 @@
               <div class="project-text">
                 <h3 class="project-title">{{project.title}}</h3>
 
-                <p class="project-category">{{project.category}}</p>
+                <p class="project-tech-stack">
+                  <span class="project-tech-item">{{project.tech[0]}}</span>
+                  <span class="project-tech-item">{{project.tech[1]}}</span>
+                </p>
               </div>
             </a>
           </div>
@@ -289,12 +292,16 @@ export default {
                   }
                 }
 
-                .project-category {
+                .project-tech-stack {
                   margin-top: 10px;
                   padding-left: 35px;
                   float: left;
                   color: rgba(255, 255, 255, 0.5);
                   font-size: 13px;
+
+                  span {
+                    margin-right: 1rem;
+                  }
                 }
               }
             }

@@ -45,6 +45,15 @@
             <li>
               <router-link class="menu-item" :to="{name:'work'}">Work.</router-link>
             </li>
+
+            <li>
+              <a
+                href="/pdf/Danny_Resume.pdf"
+                target="_blank"
+                class="menu-item"
+                data-aos="fade-up"
+              >Resume.</a>
+            </li>
             <li>
               <router-link class="menu-item" :to="{name:'contact'}">Contact.</router-link>
             </li>

@@ -40,6 +40,7 @@
             The main area of my expertise is the front-end development.
             I am able to independently develop complicated front-end web apps through profound knowledge of multiple coding skills.
           </p>
+
           <p
             data-aos="fade-up"
           >Now is the time to meet a few technologies that I've been working with recently:</p>
@@ -49,14 +50,14 @@
                 <li>Vue</li>
                 <li>React, React Native</li>
                 <li>JavaScript (ES6+)</li>
-                <li>HTML & (S)CSS</li>
+                <li>HTML5 & (S)CSS</li>
               </ul>
             </div>
             <div class="col-6 skill-item">
               <ul>
                 <li>Node.js</li>
                 <li>PHP - Laravel</li>
-                <li>Wordpress</li>
+                <li>WordPress</li>
                 <li>Java</li>
               </ul>
             </div>
@@ -68,7 +69,7 @@
             <svg viewBox="0 0 661 398">
               <line class="percent_line_dash" x1="0" y1="52" x2="661" y2="52" />
               <text transform="matrix(1 0 0 1 615 41)" class="skill_tri_full">100%</text>
-              <text transform="matrix(1 0 0 1 78 382)" class="skill_tri_text">HTML</text>
+              <text transform="matrix(1 0 0 1 70 382)" class="skill_tri_text">HTML5</text>
               <text transform="matrix(1 0 0 1 176 382)" class="skill_tri_text">CSS</text>
               <text transform="matrix(1 0 0 1 262 382)" class="skill_tri_text">React</text>
               <text transform="matrix(1 0 0 1 360 382)" class="skill_tri_text">Vue</text>
@@ -83,12 +84,12 @@
               <polygon
                 id="skill_tri_vue"
                 class="skill_tri_body skill_tri_2"
-                points="282,358 470,358 376,136 "
+                points="282,358 470,358 376,110 "
               />
               <polygon
                 id="skill_tri_nodejs"
                 class="skill_tri_body skill_tri_2"
-                points="470,358 658,358 564,200 "
+                points="470,358 658,358 564,180 "
               />
               <polygon
                 id="skill_tri_html"
@@ -98,7 +99,7 @@
               <polygon
                 id="skill_tri_react"
                 class="skill_tri_body skill_tri_1"
-                points="188,358 376,358 282,150 "
+                points="188,358 376,358 282,120 "
               />
               <polygon
                 id="skill_tri_javascript"
