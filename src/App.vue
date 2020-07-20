@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <nav-menu></nav-menu> -->
     <NavigationBar></NavigationBar>
     <router-view></router-view>
     <MainFooter></MainFooter>
@@ -12,6 +11,7 @@
 import NavigationBar from "./components/NavigationBar";
 import MainFooter from "./components/MainFooter";
 import NewGlobalCursor from "./components/NewGlobalCursor";
+
 export default {
   name: "app",
   components: {
