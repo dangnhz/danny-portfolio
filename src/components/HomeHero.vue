@@ -20,7 +20,7 @@
         <span class="letter">n</span>
         <span class="letter">y</span>
       </div>
-      <h2>I build things for the web.</h2>
+      <h2 id="slogan">I build things for the web.</h2>
     </div>
   </div>
 </template>
@@ -29,6 +29,7 @@
 export default {
   name: "home-hero",
   mounted() {
+    // animate text on hover
     const letters = document.querySelectorAll(".letter");
     letters.forEach(letter => {
       letter.addEventListener("mouseover", () => {
@@ -46,7 +47,7 @@ export default {
 .home-hero-container {
   position: relative;
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -65,7 +66,6 @@ export default {
     width: fit-content;
     height: fit-content;
     transition: 0.3s;
-    margin-top: -8rem;
     user-select: none;
     @media @mobile, @large-mobile, @tablet {
       transform: none;

@@ -1,6 +1,10 @@
 <template>
   <div id="page-loader">
-    <span id="loader-item"></span>
+    <div class="loader-item"></div>
+    <div class="loader-item"></div>
+    <div class="loader-item"></div>
+    <div class="loader-item"></div>
+    <div class="loader-item"></div>
   </div>
 </template>
 
@@ -10,29 +14,33 @@ export default {
   name: "page-loader",
 
   mounted() {
-    let timeline = gsap.timeline();
+    let timeline = gsap.timeline({ paused: true });
     timeline
-      .from("#loader-item", {
-        xPercent: -100,
-        duration: 0.8
-      })
       .fromTo(
-        "#loader-item",
+        ".loader-item",
         {
-          height: "2px",
-          duration: 0.4,
-          ease: "power2.out"
+          height: "1px"
         },
         {
-          height: "100vh"
+          height: "100vh",
+          stagger: 0.1,
+          duration: 0.5,
+          ease: "none"
         }
       )
+      .to(".loader-item", {
+        height: "0",
+        stagger: 0.1,
+        duration: 0.5,
+        ease: "none"
+      })
       .to("#page-loader", {
         opacity: 0,
         visibility: "invisible",
         display: "none",
         duration: 0.5
       });
+    timeline.play();
   }
 };
 </script>
@@ -43,7 +51,7 @@ export default {
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
+  // align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -51,10 +59,10 @@ export default {
   background: @bg-dark;
   z-index: 99999;
   pointer-events: none;
-  #loader-item {
-    height: 2px;
-    width: 100%;
-    background: @white;
+  .loader-item {
+    height: 0;
+    width: 20%;
+    background: @text-color;
     display: block;
   }
 }

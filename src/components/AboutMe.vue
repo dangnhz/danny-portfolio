@@ -48,7 +48,7 @@
             <div class="col-6 skill-item">
               <ul>
                 <li>Vue</li>
-                <li>React, React Native</li>
+                <li>React</li>
                 <li>JavaScript (ES6+)</li>
                 <li>HTML5 & (S)CSS</li>
               </ul>
@@ -56,9 +56,9 @@
             <div class="col-6 skill-item">
               <ul>
                 <li>Node.js</li>
-                <li>PHP - Laravel</li>
+                <li>Laravel</li>
                 <li>WordPress</li>
-                <li>Java</li>
+                <li>Python</li>
               </ul>
             </div>
           </div>

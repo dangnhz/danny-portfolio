@@ -133,27 +133,24 @@ export default {
       duration: 0.3
     });
 
-    // this.tl.to(menuBackground, {
-    //   height: "100vh",
-    //   opacity: 1,
-    //   duration: 0.2,
-    //   ease: "power2.out"
-    // });
-
     this.tl.to(menuItems, {
       opacity: 1,
       x: 0,
       ease: "power2.out",
       duration: 0.3,
-      stagger: 0.2
+      stagger: 0.1
     });
 
-    this.tl.to(moreInfo, {
-      opacity: 1,
-      x: 0,
-      ease: "power2.out",
-      duration: 0.3
-    });
+    this.tl.to(
+      moreInfo,
+      {
+        opacity: 1,
+        x: 0,
+        ease: "power2.out",
+        duration: 0.3
+      },
+      "-=0.3"
+    );
 
     navMenu.addEventListener("click", () => {
       this.toggleMenu();
