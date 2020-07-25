@@ -27,7 +27,7 @@
             href="/pdf/Danny_Resume.pdf"
             target="_blank"
             class="btn flat-btn"
-            data-aos="fade-up"
+            data-aos="fade-in"
           >MY RESUME</a>
         </div>
       </div>
@@ -231,7 +231,7 @@
 
 <script>
 export default {
-  name: "about-me"
+  name: "about-me",
 };
 </script>
 
@@ -241,10 +241,9 @@ export default {
   position: relative;
   width: 100%;
   color: #fff;
-  padding: 10rem 0;
   background: @bg-dark;
   max-width: 1920px;
-  margin: 0 auto;
+  margin: 10rem auto 0 auto;
   @media @mobile, @large-mobile, @tablet {
     padding: 5rem 0;
   }

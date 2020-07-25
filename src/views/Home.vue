@@ -1,20 +1,19 @@
 <template>
   <div class="home">
-    <PageLoader></PageLoader>
     <HomeHero id="home-hero"></HomeHero>
     <Introduction></Introduction>
     <project-carousel></project-carousel>
     <div class="clearfix"></div>
     <AboutMe></AboutMe>
+    <GetInTouch></GetInTouch>
   </div>
 </template>
 <script>
-import PageLoader from "../components/PageLoader";
 import HomeHero from "../components/HomeHero";
-// import AboutMe from "../components/AboutMe";
 import Introduction from "../components/Introduction";
 import ProjectCarousel from "../components/ProjectCarousel";
 import AboutMe from "../components/AboutMe";
+import GetInTouch from "../components/GetInTouch";
 
 import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
 import gsap from "gsap"; // Also work with TweenLite and TimelineLite: import { TweenMax, TimelineMax } from "gsap";
@@ -28,7 +27,7 @@ export default {
     HomeHero,
     Introduction,
     AboutMe,
-    PageLoader
+    GetInTouch,
   },
   mounted() {
     // change opacity of hero section when scrolling
@@ -41,14 +40,14 @@ export default {
       .to(".hero-content", {
         y: "-100%",
         opacity: 0,
-        duration: 2
+        duration: 2,
       })
       .to("#home-hero", { duration: 1, opacity: 0 }, "-=3");
 
     let scene1 = new ScrollMagic.Scene({
       triggerElement: ".intro-wrapper",
       duration: "100%",
-      triggerHook: 1
+      triggerHook: 1,
     }).setTween(timeline);
 
     // animate introduction section
@@ -61,7 +60,7 @@ export default {
     let scene2 = new ScrollMagic.Scene({
       triggerElement: ".intro-wrapper",
       duration: "100%",
-      triggerHook: 1
+      triggerHook: 1,
     }).setTween(timeline2);
 
     // animate about section
@@ -72,11 +71,11 @@ export default {
     let scene3 = new ScrollMagic.Scene({
       triggerElement: ".section-about",
       duration: 0,
-      triggerHook: 0.5
+      triggerHook: 0.5,
     }).setTween(timeline3);
 
     controller.addScene([scene1, scene2, scene3]);
-  }
+  },
 };
 </script>
 

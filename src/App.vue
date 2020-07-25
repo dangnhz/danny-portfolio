@@ -17,8 +17,8 @@ export default {
   components: {
     NavigationBar,
     MainFooter,
-    NewGlobalCursor
-  }
+    NewGlobalCursor,
+  },
 };
 </script>
 
@@ -31,10 +31,11 @@ export default {
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box !important;
 }
 
-html {
-  scroll-behavior: smooth !important;
+body {
+  overscroll-behavior-y: none !important;
 }
 
 a {
@@ -44,6 +45,22 @@ a {
 li {
   list-style-type: none;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: @bg-dark;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: @text-color;
+  border-radius: 10px;
+}
+
 #app {
   font-family: "averta", sans-serif;
   -webkit-font-smoothing: antialiased;

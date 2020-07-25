@@ -1,6 +1,5 @@
 <template>
   <div id="contact">
-    <PageLoader></PageLoader>
     <div
       class="contact-wrapper container-fluid"
       :style="{minHeight: `calc(100vh - ${footerHeight})`}"
@@ -23,21 +22,17 @@
 </template>
 
 <script>
-import PageLoader from "../components/PageLoader";
 export default {
   name: "contact",
-  components: {
-    PageLoader
-  },
   data() {
     return {
-      footerHeight: null
+      footerHeight: null,
     };
   },
   created() {
     this.footerHeight =
       document.getElementById("footer").getBoundingClientRect().height + "px";
-  }
+  },
 };
 </script>
 
@@ -46,7 +41,7 @@ export default {
 .contact-wrapper {
   width: 100%;
   color: #fff;
-  padding-bottom: 10rem;
+  height: fit-content;
 
   .page-title {
     margin: 0 auto;

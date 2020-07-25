@@ -48,7 +48,7 @@ import "../../node_modules/slick-carousel/slick/slick-theme.css";
 export default {
   name: "project-carousel",
   components: {
-    Slick
+    Slick,
   },
   data() {
     return {
@@ -69,8 +69,8 @@ export default {
               slidesToShow: 4,
               slidesToScroll: 4,
               infinite: true,
-              dots: true
-            }
+              dots: true,
+            },
           },
           {
             breakpoint: 1025,
@@ -78,39 +78,39 @@ export default {
               slidesToShow: 3,
               slidesToScroll: 3,
               infinite: true,
-              dots: true
-            }
+              dots: true,
+            },
           },
           {
             breakpoint: 960,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2
-            }
+              slidesToScroll: 2,
+            },
           },
           {
             breakpoint: 480,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
+              slidesToScroll: 1,
+            },
+          },
           // You can unslick at a given breakpoint now by adding:
           // settings: "unslick"
           // instead of a settings object
-        ]
+        ],
       },
-      currentSlide: 1
+      currentSlide: 1,
     };
   },
   methods: {
     handleAfterChange(event, slick, currentSlide) {
       this.currentSlide = currentSlide + 1;
-    }
+    },
   },
   created() {
     this.projects = this.$store.getters.getAllProjects;
-  }
+  },
 };
 </script>
 

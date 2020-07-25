@@ -31,13 +31,13 @@ export default {
   mounted() {
     // animate text on hover
     const letters = document.querySelectorAll(".letter");
-    letters.forEach(letter => {
+    letters.forEach((letter) => {
       letter.addEventListener("mouseover", () => {
         letter.classList.add("animated");
         setTimeout(() => letter.classList.remove("animated"), 1000);
       });
     });
-  }
+  },
 };
 </script>
 
@@ -72,7 +72,7 @@ export default {
     }
     .hero-text .letter {
       display: inline-block;
-      font-size: 8rem;
+      font-size: 10rem;
       letter-spacing: -0.5rem;
       font-weight: 800;
       transition: color 0.1s;

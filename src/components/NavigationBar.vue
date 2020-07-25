@@ -90,7 +90,7 @@ export default {
     return {
       hamburgerCaption: "Menu",
       showMenu: false,
-      tl: gsap.timeline({ paused: true })
+      tl: gsap.timeline({ paused: true }),
     };
   },
   methods: {
@@ -107,7 +107,7 @@ export default {
         this.tl.reverse();
         this.showMenu = false;
       }
-    }
+    },
   },
   mounted() {
     const navMenu = document.querySelector("#menu-wrapper");
@@ -118,19 +118,19 @@ export default {
     //  set menu items position
     this.tl.set(menuItems, {
       x: -40,
-      opacity: 0
+      opacity: 0,
     });
 
     this.tl.set(moreInfo, {
       x: 100,
-      opacity: 0
+      opacity: 0,
     });
 
     this.tl.to(navMenu, {
       height: "100vh",
       opacity: 1,
       ease: "power2.out",
-      duration: 0.3
+      duration: 0.3,
     });
 
     this.tl.to(menuItems, {
@@ -138,7 +138,7 @@ export default {
       x: 0,
       ease: "power2.out",
       duration: 0.3,
-      stagger: 0.1
+      stagger: 0.1,
     });
 
     this.tl.to(
@@ -147,7 +147,7 @@ export default {
         opacity: 1,
         x: 0,
         ease: "power2.out",
-        duration: 0.3
+        duration: 0.3,
       },
       "-=0.3"
     );
@@ -155,7 +155,7 @@ export default {
     navMenu.addEventListener("click", () => {
       this.toggleMenu();
     });
-  }
+  },
 };
 </script>
 
@@ -320,8 +320,8 @@ export default {
         width: fit-content;
         left: 10rem;
         position: relative;
-        font-size: 4.5rem;
-        line-height: 4.5rem;
+        font-size: 3.5rem;
+        line-height: 2rem;
         padding: 0.5rem;
         display: inline-block;
         transition: color 0.5s;
@@ -335,6 +335,10 @@ export default {
           font-size: 3rem;
           line-height: 3rem;
         }
+        @media @large-desktop {
+          font-size: 4.5rem;
+          line-height: 4.5rem;
+        }
         &:hover {
           background: none;
           color: @white;
@@ -343,47 +347,6 @@ export default {
     }
     .menu-list ul li a.router-link-active {
       color: @text-color;
-      &:before {
-        content: "";
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        position: absolute;
-        left: -3.5rem;
-        top: 20px;
-        opacity: 0.2;
-        background: @text-color;
-        display: block;
-        animation: grow 2s infinite;
-        @keyframes grow {
-          0% {
-            transform: scale(0);
-          }
-          50% {
-            transform: scale(1.2);
-          }
-          100% {
-            transform: scale(0);
-          }
-        }
-
-        @media @mobile, @large-mobile, @tablet {
-          top: 10px;
-        }
-      }
-      &:after {
-        content: "";
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        position: absolute;
-        left: -2.2rem;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 1;
-        background: @text-color;
-        display: block;
-      }
     }
     .more-info {
       display: block;
