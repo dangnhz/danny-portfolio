@@ -3,13 +3,13 @@
     <div class="section-about m-auto">
       <div class="row">
         <div class="col-md-6 col-md-6 col-sm-12 col-xs-12 text-right about-title">
-          <h1 id="about-title-desktop" data-aos="fade-up">
+          <h1 id="about-title-desktop" data-aos="fade-in">
             Some
             <br />words
             <br />about
             <br />me
           </h1>
-          <h1 id="about-title-mobile" data-aos="fade-up">Some words about me</h1>
+          <h1 id="about-title-mobile" data-aos="fade-in">Some words about me</h1>
         </div>
 
         <div class="col-md-6 col-sm-12 col-xs-12 about-content">
@@ -19,7 +19,7 @@
               fill="#ff2f6e"
             />
           </svg>
-          <p data-aos="fade-up">
+          <p data-aos="fade-in">
             A hard-working and creative Master of IT graduate with a great eye for detail, keen enthusiasm in user-centred design and understanding of usability principles.
             A self-taught front-end web developer with the passion to learn new technologies every day and is always up for new challenges. With every line of code, I strive to create top quality and high-performance web applications.
           </p>
@@ -33,18 +33,18 @@
       </div>
     </div>
     <div class="section-skill">
-      <h1 data-aos="fade-up">Skills</h1>
+      <h1 data-aos="fade-in">Skills</h1>
       <div class="row">
         <div class="col-md-6 skill-description">
-          <p data-aos="fade-up">
+          <p data-aos="fade-in">
             The main area of my expertise is the front-end development.
             I am able to independently develop complicated front-end web apps through profound knowledge of multiple coding skills.
           </p>
 
           <p
-            data-aos="fade-up"
+            data-aos="fade-in"
           >Now is the time to meet a few technologies that I've been working with recently:</p>
-          <div class="row" data-aos="fade-up">
+          <div class="row" data-aos="fade-in">
             <div class="col-6 skill-item">
               <ul>
                 <li>Vue</li>
@@ -65,7 +65,7 @@
         </div>
 
         <div class="col-md-6">
-          <div class="skill-chart" data-aos="fade-up">
+          <div class="skill-chart" data-aos="fade-in">
             <svg viewBox="0 0 661 398">
               <line class="percent_line_dash" x1="0" y1="52" x2="661" y2="52" />
               <text transform="matrix(1 0 0 1 615 41)" class="skill_tri_full">100%</text>
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-      <div class="grid-skill" data-aos="fade-up">
+      <div class="grid-skill" data-aos="fade-in">
         <ul>
           <li>
             <svg version="1.1" viewBox="0 0 261.76 226.69" xmlns="http://www.w3.org/2000/svg">
@@ -243,9 +243,9 @@ export default {
   color: #fff;
   background: @bg-dark;
   max-width: 1920px;
-  margin: 10rem auto 0 auto;
+  margin: 5rem auto 0 auto;
   @media @mobile, @large-mobile, @tablet {
-    padding: 5rem 0;
+    margin: 5rem 0;
   }
   .section-about {
     width: 75%;

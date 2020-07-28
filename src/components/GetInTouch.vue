@@ -1,5 +1,5 @@
 <template>
-  <section class="get-in-touch" data-aos="fade-up">
+  <section class="get-in-touch" data-aos="fade-in">
     <h1>Get In Touch</h1>
     <span class="line"></span>
     <p>

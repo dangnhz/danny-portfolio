@@ -1,5 +1,5 @@
 <template>
-  <section class="pr_carousel" data-aos="fade-up">
+  <section class="pr_carousel" data-aos="fade-in">
     <div class="pr_carousel-wrapper">
       <div class="pr_carousel-title">
         <div class="pr-carousel-title-item">
@@ -109,7 +109,7 @@ export default {
     },
   },
   created() {
-    this.projects = this.$store.getters.getAllProjects;
+    this.projects = this.$store.getters.getHomeProjects;
   },
 };
 </script>

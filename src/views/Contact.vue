@@ -42,6 +42,7 @@ export default {
   width: 100%;
   color: #fff;
   height: fit-content;
+  padding-bottom: 5rem;
 
   .page-title {
     margin: 0 auto;

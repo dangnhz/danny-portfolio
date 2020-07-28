@@ -303,7 +303,7 @@ export default {
         }
         h3 {
           font-size: 2rem;
-          letter-spacing: 5px;
+          // letter-spacing: 5px;
           font-weight: 600;
           text-transform: uppercase;
           font-family: "averta", sans-serif;

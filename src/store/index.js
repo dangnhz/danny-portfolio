@@ -14,6 +14,9 @@ const getters = {
   getSingleProject: (state) => (project_name) => {
     return state.projects.find((project) => project.name === project_name);
   },
+  getHomeProjects(state) {
+    return state.projects.filter((project) => project.isHome === true);
+  },
 };
 
 const mutations = {
