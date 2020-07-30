@@ -33,9 +33,6 @@
 
     <!-- Menu Start -->
     <div id="menu-wrapper" class="menu-wrapper">
-      <div class="menu-background">
-        <!-- <vue-particles color="#dedede"></vue-particles> -->
-      </div>
       <div class="menu-container row">
         <div class="menu-list col-xs-12 col-sm-12 col-md-8">
           <ul>
@@ -111,7 +108,6 @@ export default {
   },
   mounted() {
     const navMenu = document.querySelector("#menu-wrapper");
-    // const menuBackground = document.querySelector(".menu-background");
     const menuItems = document.querySelectorAll(".menu-item");
     const moreInfo = document.querySelector(".more-info");
 
@@ -128,7 +124,6 @@ export default {
 
     this.tl.to(navMenu, {
       height: "100vh",
-      opacity: 1,
       ease: "power2.out",
       duration: 0.3,
     });
@@ -164,19 +159,18 @@ export default {
 
 // navbar styling
 .nav-bar {
-  padding: 0rem 5rem;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   color: @white;
   mix-blend-mode: difference;
-  background: transparent;
   position: fixed;
   top: 5rem;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999;
+  max-width: 1920px;
   @media @mobile, @large-mobile {
     top: 2rem;
-    padding: 0rem 1.5rem;
   }
 }
 
@@ -281,16 +275,9 @@ export default {
   z-index: 100;
   display: flex;
   align-items: center;
-  background: @black;
+  background: @bg-dark;
   overflow: hidden;
-  .menu-background {
-    width: 100%;
-    height: 0;
-    opacity: 1;
-    position: absolute;
-    z-index: -1;
-    background: @bg-dark;
-  }
+
   .menu-container {
     position: relative;
     width: 90%;
@@ -326,7 +313,7 @@ export default {
         display: inline-block;
         transition: color 0.5s;
         @media @mobile, @large-mobile, @tablet {
-          left: 1rem;
+          left: 0rem;
           font-size: 2.5rem;
           line-height: 3rem;
         }

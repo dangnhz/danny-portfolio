@@ -1,5 +1,5 @@
 <template>
-  <section class="pr_carousel" data-aos="fade-in">
+  <section class="pr_carousel">
     <div class="pr_carousel-wrapper">
       <div class="pr_carousel-title">
         <div class="pr-carousel-title-item">

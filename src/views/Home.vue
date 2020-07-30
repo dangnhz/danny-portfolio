@@ -35,14 +35,14 @@ export default {
     // animate about section
 
     let controller = new ScrollMagic.Controller();
-    let timeline = gsap.timeline();
+    let timeline = gsap.timeline({ paused: true });
     timeline
       .to(".hero-content", {
         y: "-100%",
         opacity: 0,
-        duration: 2,
+        duration: 1,
       })
-      .to("#home-hero", { duration: 1, opacity: 0 }, "-=3");
+      .to("#home-hero", { duration: 1, opacity: 0 }, "-=1");
 
     let scene1 = new ScrollMagic.Scene({
       triggerElement: ".intro-wrapper",
