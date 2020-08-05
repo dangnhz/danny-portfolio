@@ -10,20 +10,20 @@
           </router-link>
         </div>
       </div>
-      <div class="slider-carousel-wrap">
+      <div class="slider-carousel-wrap" v-if="projects">
         <slick ref="slick" :options="slickOptions" @afterChange="handleAfterChange">
           <div v-for="project in projects" :key="project.id">
-            <a :href="project.url" target="_blank">
+            <a :href="project.siteURL" target="_blank">
               <div class="project-image">
-                <img v-if="project.coverImage" :src="project.coverImage" :alt="project.title" />
+                <img v-if="project.homeImageURL" :src="project.homeImageURL" :alt="project.title" />
               </div>
 
               <div class="project-text">
                 <h3 class="project-title">{{project.title}}</h3>
 
                 <p class="project-tech-stack">
-                  <span class="project-tech-item">{{project.tech[0]}}</span>
-                  <span class="project-tech-item">{{project.tech[1]}}</span>
+                  <span class="project-tech-item">{{project.technologies[0]}}</span>
+                  <span class="project-tech-item">{{project.technologies[1]}}</span>
                 </p>
               </div>
             </a>
@@ -52,7 +52,6 @@ export default {
   },
   data() {
     return {
-      projects: [],
       slickOptions: {
         dots: true,
         arrows: true,
@@ -107,9 +106,25 @@ export default {
     handleAfterChange(event, slick, currentSlide) {
       this.currentSlide = currentSlide + 1;
     },
+    reInit() {
+      // Helpful if you have to deal with v-for to update dynamic lists
+      let currIndex = this.$refs.slick.currentSlide();
+      this.$refs.slick.destroy();
+      this.$nextTick(() => {
+        this.$refs.slick.create();
+        this.$refs.slick.goTo(currIndex, true);
+      });
+    },
   },
-  created() {
-    this.projects = this.$store.getters.getHomeProjects;
+  computed: {
+    projects() {
+      return this.$store.getters.getHomeProjects;
+    },
+  },
+  watch: {
+    projects() {
+      this.reInit();
+    },
   },
 };
 </script>
@@ -134,6 +149,7 @@ export default {
     }
 
     .pr_carousel-title {
+      user-select: none;
       position: absolute;
       left: 100px;
       width: 50%;
@@ -158,12 +174,11 @@ export default {
 
       .pr-carousel-title-item h3 {
         font-size: 3rem;
-        font-family: "averta", sans-serif;
         font-weight: 900;
         color: @white;
         position: relative;
         text-align: left;
-        padding-bottom: 20px;
+        padding-bottom: 0px;
         @media @mobile, @large-mobile, @tablet {
           font-size: 2rem;
         }
@@ -321,14 +336,20 @@ export default {
         .slick-dots {
           position: absolute;
           z-index: 10;
-          width: 50%;
           bottom: -68px;
-          right: 0;
+          left: 50%;
           text-align: left;
-          padding-left: 20px;
-          @media @mobile, @large-mobile, @tablet {
-            bottom: -28px;
+          padding-left: 10px;
+          @media @mobile, @large-mobile {
+            bottom: -27px;
             padding-left: 0px;
+            transform: translateX(-40px);
+          }
+
+          @media @tablet {
+            bottom: -27px;
+            padding-left: 0px;
+            transform: translateX(0px);
           }
 
           li button:before {
@@ -380,15 +401,13 @@ export default {
     }
     .pr-carousel-counter {
       position: absolute;
-      right: 50%;
+      left: 50%;
+      transform: translateX(-100px);
       z-index: 50;
-      bottom: 46px;
+      bottom: 42px;
       color: @white;
-      margin-right: 80px;
-      font-size: 0.75rem;
+      font-size: 1rem;
       color: rgba(255, 255, 255, 0.71);
-      font-weight: 500;
-      font-family: "averta", sans-serif;
       letter-spacing: 4px;
       &:before {
         content: "";
@@ -398,6 +417,11 @@ export default {
         width: 30px;
         height: 1px;
         background: @text-color;
+      }
+
+      @media @mobile, @large-mobile {
+        transform: translateX(40px);
+        left: 0;
       }
     }
   }

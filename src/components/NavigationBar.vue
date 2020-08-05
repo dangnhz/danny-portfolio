@@ -51,7 +51,7 @@
             </li>
           </ul>
         </div>
-        <div class="more-info col-xs-12 col-sm-12 col-md-4">
+        <div class="more-info col-xs-0 col-sm-0 col-md-4">
           <div class="mt-5 mb-5 mb-xs-2">
             <b>More</b>
           </div>
@@ -350,6 +350,10 @@ export default {
         }
       }
       @media @mobile, @large-mobile {
+        display: none;
+      }
+
+      @media only screen and (min-width: 660px) and (max-width: 767px) {
         display: none;
       }
     }

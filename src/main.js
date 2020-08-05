@@ -11,6 +11,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-awesome/icons';
 import Icon from 'vue-awesome/components/Icon';
 Vue.component('v-icon', Icon);
+Vue.config.devtools = true;
 
 Vue.config.productionTip = false;
 new Vue({

@@ -2,19 +2,20 @@
   <div id="footer" class="footer text-center">
     <div class="row">
       <div class="col-md-6 col-sm-12">Danny Ngo © {{year}}</div>
-      <div class="col-md-6 col-sm-12 social-group">
+      <div class="col-md-6 col-sm-12 d-flex justify-content-center social-group">
         <a
           href="https://www.linkedin.com/in/dang-nhz"
           target="_blank"
-          class="col-lg-12 col-md-12 col-6 mb-3"
+          class="d-flex align-items-center mx-3"
         >
           <v-icon class="mr-2" name="brands/linkedin"></v-icon>LinkedIn
         </a>
-        <a href="https://github.com/dangnhz" target="_blank" class="col-lg-12 col-md-12 col-6 mb-3">
+        <a href="https://github.com/dangnhz" target="_blank" class="d-flex align-items-center mx-3">
           <v-icon class="mr-2" name="brands/github"></v-icon>Github
         </a>
-        <a href="mailTo: dangnh3091@gmail.com" class="col-lg-12 col-md-12 col-6">
-          <v-icon class="mr-2" name="envelope"></v-icon>Email
+        <a href="mailTo: dangnh3091@gmail.com" class="d-flex align-items-center mx-3">
+          <v-icon class="mr-2" name="envelope"></v-icon>
+          <span>Email</span>
         </a>
       </div>
     </div>
@@ -26,13 +27,13 @@ export default {
   name: "main-footer",
   data() {
     return {
-      year: null
+      year: null,
     };
   },
   mounted() {
     let date = new Date();
     this.year = date.getFullYear();
-  }
+  },
 };
 </script>
 

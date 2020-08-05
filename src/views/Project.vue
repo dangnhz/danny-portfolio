@@ -1,12 +1,10 @@
 <template>
   <div id="project-container" class="project-container">
-    <PageLoader></PageLoader>
     <div class="project-wrapper" v-if="currentProject">
       <div class="page-title col-sm-12 col-md-10 col-lg-8">
         <h1>{{currentProject.title}}</h1>
         <div class="d-flex align-items-center mt-5">
           <div class="line"></div>
-          <div class="project-category ml-5">{{currentProject.category}}</div>
         </div>
       </div>
 
@@ -20,16 +18,16 @@
               <circle opacity=".71" fill="#2ECC71" cx="44.9" cy="11.5" r="4.7" />
             </svg>
             <img
-              v-if="currentProject.siteImage"
-              :src="currentProject.siteImage"
+              v-if="currentProject.workImageURL"
+              :src="currentProject.workImageURL"
               alt="project-cover"
             />
           </div>
           <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
             <div class="about-project">
-              <h5 class="mb-3">About this project</h5>
-              <p v-html="currentProject.desc"></p>
-              <a :href="currentProject.url" target="_blank" class="flat-btn mt-4">SEE THE SITE</a>
+              <h3 class="mb-3">About this project</h3>
+              <p v-html="currentProject.description"></p>
+              <a :href="currentProject.siteURL" target="_blank" class="flat-btn mt-4">SEE THE SITE</a>
             </div>
           </div>
         </div>
@@ -47,13 +45,11 @@
 
 <script>
 import ProjectFooterNavigation from "../components/ProjectFooterNavigation";
-import PageLoader from "../components/PageLoader";
 import gsap from "gsap";
 export default {
   name: "project",
   components: {
     ProjectFooterNavigation,
-    PageLoader
   },
   computed: {
     allProjects() {
@@ -78,7 +74,7 @@ export default {
       if (this.currentProjectIndex === this.allProjects.length - 1)
         return this.allProjects[0];
       return this.allProjects[this.currentProjectIndex + 1];
-    }
+    },
   },
   methods: {
     goToNextProject() {
@@ -86,7 +82,7 @@ export default {
       setTimeout(() => {
         this.$router.push({
           name: "project",
-          params: { project_name: this.nextProject.name }
+          params: { project_name: this.nextProject.slug },
         });
       }, 800);
     },
@@ -95,16 +91,16 @@ export default {
       setTimeout(() => {
         this.$router.push({
           name: "project",
-          params: { project_name: this.prevProject.name }
+          params: { project_name: this.prevProject.name },
         });
       }, 800);
-    }
+    },
   },
   watch: {
     currentProject() {
       gsap.to(".project-container", { opacity: 1, duration: 0.8, delay: 0.8 });
-    }
-  }
+    },
+  },
 };
 </script>
 

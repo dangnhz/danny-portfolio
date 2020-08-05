@@ -19,7 +19,7 @@ export default {
       bigBallDuration: 0.5,
       smallBallDuration: 0.1,
       smallBallPosX: null,
-      smallBallPosY: null
+      smallBallPosY: null,
     };
   },
   methods: {
@@ -59,24 +59,24 @@ export default {
         x: this.bigBallPosX,
         y: this.bigBallPosY,
         scale: this.scale,
-        duration: this.bigBallDuration
+        duration: this.bigBallDuration,
       });
       gsap.to(smallBall, {
         x: this.smallBallPosX,
         y: this.smallBallPosY,
-        duration: this.smallBallDuration
+        duration: this.smallBallDuration,
       });
     },
 
     // magnetic button method
     magneticButton(elements) {
-      elements.forEach(element => {
+      elements.forEach((element) => {
         element.addEventListener("mouseleave", () => {
           gsap.to(element, 0.3, {
             scale: 1,
             x: 0,
             y: 0,
-            ease: "elastic.out(1, 0.3)"
+            ease: "elastic.out(1, 0.3)",
           });
         });
 
@@ -84,7 +84,7 @@ export default {
           gsap.to(element, 0.3, { scale: 1, transformOrigin: "0 0" });
         });
 
-        element.addEventListener("mousemove", e => {
+        element.addEventListener("mousemove", (e) => {
           callParallax(e);
         });
 
@@ -106,16 +106,16 @@ export default {
               ((relY - boundingRect.height / 2 - scrollTop) /
                 boundingRect.width) *
               movement,
-            ease: "Power2.easeOut"
+            ease: "Power2.easeOut",
           });
         }
       });
-    }
+    },
   },
   mounted() {
     const bigBall = this.$refs.bigBall;
     const smallBall = this.$refs.smallBall;
-    document.addEventListener("mousemove", e =>
+    document.addEventListener("mousemove", (e) =>
       this.customCursor(e, bigBall, smallBall)
     );
 
@@ -123,14 +123,14 @@ export default {
     document.addEventListener("mousedown", () => {
       gsap.to(this.$refs.bigBall, {
         scale: 3,
-        duration: 0.3
+        duration: 0.3,
       });
     });
 
     document.addEventListener("mouseup", () => {
       gsap.to(this.$refs.bigBall, {
         scale: 1,
-        duration: 0.3
+        duration: 0.3,
       });
     });
 
@@ -139,7 +139,7 @@ export default {
     let magneticButtons = document.querySelectorAll(".magnetic-button");
 
     this.magneticButton(magneticButtons);
-  }
+  },
 };
 </script>
 
@@ -153,7 +153,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  // mix-blend-mode: difference;
+
   z-index: 99999;
   pointer-events: none;
   transform: translate(-100%, -100%);
@@ -169,6 +169,7 @@ export default {
   background: #fff;
   border-radius: 50%;
   opacity: 0.1;
+  mix-blend-mode: difference;
   // border: 2px solid #fff;
   //   border: 2px solid @pink;
 }

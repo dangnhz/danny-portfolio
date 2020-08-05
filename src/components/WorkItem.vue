@@ -10,8 +10,8 @@
         </svg>
         <img
           class="work-item-cover-image"
-          v-if="project.workImage"
-          :src="project.workImage"
+          v-if="project.workImageURL"
+          :src="project.workImageURL"
           alt="project_cover"
         />
       </div>
@@ -19,15 +19,15 @@
         <div class="work-item-content-wrapper">
           <!-- <p class="work-item-category">{{project.category}}</p> -->
           <h3 class="work-item-title">{{project.title}}</h3>
-          <p class="work-item-description">{{project.desc}}</p>
+          <p class="work-item-description">{{project.description}}</p>
           <div class="work-item-technology">
             <span
-              v-for="(item, index) in project.tech"
+              v-for="(item, index) in project.technologies"
               :key="index"
               class="project-technology-item"
             >{{ item }}</span>
           </div>
-          <a :href="project.url" target="_blank">
+          <a :href="project.siteURL" target="_blank">
             <button class="flat-btn mt-3">View Project</button>
           </a>
         </div>

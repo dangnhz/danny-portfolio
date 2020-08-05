@@ -28,25 +28,14 @@ export default {
     PageTitle,
     WorkItem,
   },
-  data() {
-    return {
-      projects: [],
-    };
+  computed: {
+    projects() {
+      return this.$store.getters.getAllProjects;
+    },
   },
-  created() {
-    this.projects = this.$store.getters.getAllProjects;
-  },
-  mounted() {
-    // parallax effect
-    const workList = document.querySelectorAll(".work-item");
-    let tl = gsap.timeline({ paused: true });
-    let w = window.innerWidth;
-    let size = w > 1024 ? "big" : "small";
-    if (size === "big") {
-      makeScrollMagic();
-    }
-
-    function makeScrollMagic() {
+  methods: {
+    makeScrollMagic(workList) {
+      let tl = gsap.timeline({ paused: true });
       tl.to(".page-title", {
         opacity: 0,
         duration: 1,
@@ -87,6 +76,20 @@ export default {
         }).setTween(tl2);
         controller.addScene(scene2);
       });
+    },
+  },
+  updated() {
+    const workList = document.querySelectorAll(".work-item");
+    this.makeScrollMagic(workList);
+  },
+
+  mounted() {
+    // parallax effect
+    const workList = document.querySelectorAll(".work-item");
+    let w = window.innerWidth;
+
+    if (w > 1024) {
+      this.makeScrollMagic(workList);
     }
   },
 };
@@ -95,6 +98,7 @@ export default {
 <style lang="less">
 @import "../assets/style/setting.less";
 .work-container {
+  min-height: 100vh;
   width: 80%;
   color: @white;
   position: relative;

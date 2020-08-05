@@ -19,6 +19,9 @@ export default {
     MainFooter,
     NewGlobalCursor,
   },
+  created() {
+    this.$store.dispatch("FETCH_PROJECTS");
+  },
 };
 </script>
 
