@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <NavigationBar></NavigationBar>
-    <router-view></router-view>
-    <MainFooter></MainFooter>
-    <NewGlobalCursor :targets="['a', 'button']"></NewGlobalCursor>
+    <Spinner v-if="loading" />
+    <div v-if="!loading">
+      <NavigationBar></NavigationBar>
+      <router-view></router-view>
+      <MainFooter></MainFooter>
+      <NewGlobalCursor :targets="['a', 'button']"></NewGlobalCursor>
+    </div>
   </div>
 </template>
 
@@ -11,16 +14,22 @@
 import NavigationBar from "./components/NavigationBar";
 import MainFooter from "./components/MainFooter";
 import NewGlobalCursor from "./components/NewGlobalCursor";
-
+import Spinner from "./components/Spinner";
 export default {
   name: "app",
   components: {
     NavigationBar,
     MainFooter,
     NewGlobalCursor,
+    Spinner,
   },
   created() {
     this.$store.dispatch("FETCH_PROJECTS");
+  },
+  computed: {
+    loading() {
+      return this.$store.state.loading;
+    },
   },
 };
 </script>

@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "spinner"
+  name: "spinner",
 };
 </script>
 
@@ -66,7 +66,7 @@ export default {
   display: block;
   width: 25%;
   height: 25%;
-  background-color: @white;
+  background-color: @text-color;
   border-radius: 100%;
   animation: sk-chase-dot-before 2s infinite ease-in-out both;
 }

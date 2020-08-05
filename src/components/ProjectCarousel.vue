@@ -10,7 +10,7 @@
           </router-link>
         </div>
       </div>
-      <div class="slider-carousel-wrap" v-if="projects">
+      <div class="slider-carousel-wrap">
         <slick ref="slick" :options="slickOptions" @afterChange="handleAfterChange">
           <div v-for="project in projects" :key="project.id">
             <a :href="project.siteURL" target="_blank">
@@ -400,6 +400,7 @@ export default {
       }
     }
     .pr-carousel-counter {
+      user-select: none;
       position: absolute;
       left: 50%;
       transform: translateX(-100px);

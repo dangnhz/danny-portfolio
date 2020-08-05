@@ -1,34 +1,61 @@
 <template>
   <div class="home-hero-container">
     <div class="hero-content text-center w-100">
-      <div id="text-hello" class="hero-text">
-        <span class="letter">H</span>
-        <span class="letter">e</span>
-        <span class="letter">l</span>
-        <span class="letter">l</span>
-        <span class="letter">o</span>
-        <span class="letter">,</span>
+      <div class="hero-text-wrapper">
+        <div id="text-hello" class="hero-text">
+          <span class="letter">H</span>
+          <span class="letter">e</span>
+          <span class="letter">l</span>
+          <span class="letter">l</span>
+          <span class="letter">o</span>
+          <span class="letter">,</span>
+        </div>
       </div>
-      <div id="text-danny" class="hero-text">
-        <span class="letter">I</span>
-        <span class="letter">'</span>
-        <span class="letter">m</span>
-        <span style="margin: 0 10px">&nbsp;</span>
-        <span class="letter">D</span>
-        <span class="letter">a</span>
-        <span class="letter">n</span>
-        <span class="letter">n</span>
-        <span class="letter">y</span>
+      <div class="hero-text-wrapper">
+        <div id="text-danny" class="hero-text">
+          <span class="letter">I</span>
+          <span class="letter">'</span>
+          <span class="letter">m</span>
+          <span style="margin: 0 10px">&nbsp;</span>
+          <span class="letter">D</span>
+          <span class="letter">a</span>
+          <span class="letter">n</span>
+          <span class="letter">n</span>
+          <span class="letter">y</span>
+        </div>
       </div>
-      <h2 id="slogan">I build things for the web.</h2>
+      <div class="hero-slogan-wrapper">
+        <h2 id="slogan" class="hero-slogan">I build things for the web.</h2>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import gsap from "gsap";
 export default {
   name: "home-hero",
   mounted() {
+    //initial effect
+    const tl = gsap.timeline();
+    tl.set([".hero-text", ".hero-slogan"], {
+      yPercent: 110,
+    });
+
+    tl.to(".hero-text", {
+      duration: 0.5,
+      yPercent: 0,
+      stagger: 0.4,
+    });
+    tl.to(
+      ".hero-slogan",
+      {
+        duration: 0.5,
+        yPercent: 0,
+      },
+      "-=0"
+    );
+
     // animate text on hover
     const letters = document.querySelectorAll(".letter");
     letters.forEach((letter) => {
@@ -70,7 +97,13 @@ export default {
     @media @mobile, @large-mobile, @tablet {
       transform: none;
     }
-    .hero-text .letter {
+    .hero-text-wrapper {
+      overflow: hidden;
+      margin: 4rem 0;
+    }
+
+    .letter {
+      line-height: 100%;
       display: inline-block;
       font-size: 10rem;
       letter-spacing: -0.5rem;
@@ -126,30 +159,17 @@ export default {
         }
       }
     }
-    h2 {
-      margin-top: 2rem;
-      transition: 0.2s;
-      @media @mobile, @large-mobile {
-        font-size: 1rem;
+
+    .hero-slogan-wrapper {
+      overflow: hidden;
+      .hero-slogan {
+        @media @mobile, @large-mobile {
+          font-size: 1rem;
+        }
+        @media @desktop {
+          font-size: 1.6rem;
+        }
       }
-      @media @desktop {
-        font-size: 1.6rem;
-      }
-    }
-  }
-  .light {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    display: block;
-    height: 100%;
-    width: 100%;
-    display: none;
-    background: radial-gradient(circle at 150px 150px, transparent, #000 35%);
-    transition: background 0.5s ease;
-    @media @mobile, @large-mobile, @tablet {
-      display: none;
     }
   }
 }

@@ -6,6 +6,7 @@ import { db } from '../firebase';
 Vue.use(Vuex);
 const state = {
   projects: [],
+  loading: false,
 };
 
 const getters = {
@@ -18,20 +19,28 @@ const getters = {
   getHomeProjects(state) {
     return state.projects.filter((project) => project.showOnHomePage === true);
   },
+  getLoading(state) {
+    return state.loading;
+  },
 };
 
 const mutations = {
   fetchProjects: (state, data) => {
     state.projects = data;
   },
+  setLoading: (state, payload) => {
+    state.loading = payload;
+  },
 };
 const actions = {
   FETCH_PROJECTS: ({ commit }) => {
+    commit('setLoading', true);
     db.collection('projects')
       .orderBy('createdAt', 'asc')
       .onSnapshot((snapshot) => {
         let data = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
         commit('fetchProjects', data);
+        commit('setLoading', false);
       });
   },
 };
