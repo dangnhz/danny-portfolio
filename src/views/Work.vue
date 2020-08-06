@@ -21,6 +21,9 @@ import WorkItem from "../components/WorkItem";
 import VerticalLine from "../components/VerticalLine";
 
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: "work",
   components: {
@@ -33,14 +36,54 @@ export default {
       return this.$store.getters.getAllProjects;
     },
   },
-  methods: {},
-  updated() {
-    const workList = document.querySelectorAll(".work-item");
-  },
+  methods: {
+    runParallax(element) {
+      let timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: "top 70%",
+          toggleActions: "play complete none reverse",
+          // markers: true,
+        },
+      });
 
+      timeline
+        .fromTo(
+          element.querySelector(".work-item-image"),
+          {
+            clipPath: "inset(100% 0% 0% 0%)",
+          },
+          {
+            y: 0,
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 0.8,
+          }
+        )
+        .from(
+          element.querySelector(".work-item-content"),
+          {
+            y: 50,
+            opacity: 0,
+            duration: 0.5,
+          },
+          "-=0.8"
+        );
+    },
+  },
   mounted() {
     // parallax effect
     const workList = document.querySelectorAll(".work-item");
+    workList.forEach((item) => {
+      this.runParallax(item);
+    });
+  },
+  watch: {
+    projects() {
+      const workList = document.querySelectorAll(".work-item");
+      workList.forEach((item) => {
+        this.runParallax(item);
+      });
+    },
   },
 };
 </script>
@@ -64,6 +107,13 @@ export default {
   }
   @media @large-desktop {
     width: 70%;
+  }
+
+  .work-list {
+    margin-top: 10rem;
+    @media @mobile, @large-mobile {
+      margin-top: 5rem;
+    }
   }
 }
 </style>

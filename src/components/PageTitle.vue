@@ -1,11 +1,14 @@
 <template>
   <div class="page-title">
-    <h1>{{ title }}</h1>
+    <div style="overflow:hidden">
+      <h1 class="page-title-content">{{ title }}</h1>
+    </div>
     <span class="line"></span>
   </div>
 </template>
 
 <script>
+import gsap from "gsap";
 export default {
   name: "page-title",
   props: {
@@ -13,6 +16,19 @@ export default {
       type: String,
       default: "",
     },
+  },
+  mounted() {
+    gsap
+      .timeline()
+      .from(".page-title-content", {
+        y: 100,
+        duration: 0.5,
+        delay: 0.5,
+      })
+      .from(".line", {
+        width: 0,
+        duration: 0.5,
+      });
   },
 };
 </script>

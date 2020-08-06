@@ -139,7 +139,7 @@ export default {
   width: 100%;
   background: @bg-dark-2;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
 
   .pr_carousel-wrapper {
     position: relative;
@@ -201,9 +201,12 @@ export default {
         line-height: 24px;
         // padding-bottom: 10px;
         font-weight: 500;
-        font-family: "averta", sans-serif;
+
         color: @white;
         text-align: left;
+        @media @mobile, @large-mobile, @tablet {
+          font-size: 1rem;
+        }
       }
     }
 

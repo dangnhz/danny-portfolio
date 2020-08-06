@@ -55,11 +55,11 @@ export default {
     max-width: 800px;
     @media @mobile, @large-mobile {
       padding: 1rem;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     @media @tablet {
       padding: 1rem;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
   }
 

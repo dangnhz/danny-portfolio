@@ -61,9 +61,24 @@ export default {
 
 .work-item {
   position: relative;
+  margin-bottom: 15rem;
+  display: block;
+  min-height: 50vh;
+  @media @mobile, @large-mobile {
+    margin-bottom: 8rem;
+  }
+  @media @tablet {
+    margin-bottom: 10rem;
+  }
+
+  @media @large-desktop {
+    margin-bottom: 20rem;
+  }
+
   .work-item-wrapper {
-    margin: 5rem 0 15rem 0;
+    position: relative;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
 
@@ -74,10 +89,10 @@ export default {
 
     .work-item-image {
       width: 55%;
-      transition: 0.4s;
       position: relative;
       z-index: 99;
       overflow: hidden;
+      transition: scale 0.4s;
       padding: 0;
       line-height: 0 !important;
 
@@ -117,8 +132,7 @@ export default {
     }
 
     .work-item-content {
-      height: 100%;
-      position: relative;
+      // height: 100%;
       width: 40%;
       @media @mobile, @large-mobile, @tablet {
         padding: 0;
@@ -132,7 +146,7 @@ export default {
       }
 
       .work-item-content-wrapper {
-        margin: 5rem 0;
+        // margin: 5rem 0;
         @media @mobile, @large-mobile, @tablet {
           margin: 1rem 0;
         }
@@ -143,6 +157,9 @@ export default {
 
           @media @mobile, @large-mobile {
             font-size: 1.5rem;
+          }
+          @media @tablet {
+            font-size: 2.5rem;
           }
         }
 
@@ -176,7 +193,7 @@ export default {
     color: rgba(255, 255, 255, 0.1);
     position: absolute;
     right: 0;
-    bottom: -8rem;
+    // bottom: -8rem;
     @media @mobile, @large-mobile, @tablet {
       bottom: -1rem;
       font-size: 2rem;

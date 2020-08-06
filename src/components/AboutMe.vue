@@ -104,7 +104,7 @@
               >JavaScript</text>
               <text
                 transform="matrix(1 0 0 1 549 382)"
-                class="skill_tri_text text-skill-fade-in"
+                class="skill_tri_text text-skill-fadeIn"
               >Node.js</text>
 
               <polygon
@@ -326,12 +326,12 @@ export default {
     // font-weight: 100;
     padding-left: 3rem;
     @media @mobile, @large-mobile {
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-top: 2rem;
       padding-left: 1rem;
     }
     @media @tablet {
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-top: 5rem;
     }
     .button__arrow {
@@ -375,11 +375,11 @@ export default {
       font-size: 1.2rem;
       @media @mobile, @large-mobile {
         padding: 1rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
       @media @tablet {
         padding: 1rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
     }
     .skill-item {

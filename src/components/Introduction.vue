@@ -67,8 +67,8 @@ export default {
         padding: 1rem;
       }
       @media @tablet {
-        font-size: 1.3rem;
-        line-height: 2.5rem;
+        font-size: 1rem;
+        line-height: 1.6rem;
         padding: 2rem;
       }
       @media @large-desktop {
@@ -81,7 +81,7 @@ export default {
       width: 90%;
       // height: 90%;
       object-fit: contain;
-      transition: 0.5s;
+      transition: scale 0.5s;
       &:hover {
         transform: scale(1.05);
       }

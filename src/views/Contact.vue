@@ -66,6 +66,9 @@ export default {
     }
     p {
       font-size: 1.2rem;
+      @media @mobile, @large-mobile {
+        font-size: 1rem;
+      }
     }
   }
 }
