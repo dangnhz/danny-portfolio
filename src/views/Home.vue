@@ -83,10 +83,8 @@ export default {
           start: "top 90%",
           toggleActions: "play complete none reverse",
         },
-        y: 100,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.2,
+        yPercent: 100,
+        duration: 0.6,
       });
     });
 

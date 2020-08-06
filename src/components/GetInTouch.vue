@@ -3,11 +3,15 @@
     <div style="overflow:hidden">
       <h1 class="animated-slideUp">Get In Touch</h1>
     </div>
-    <span class="line animated-slideUp"></span>
-    <p class="animated-slideUp">
-      I'm currently looking for any new opportunities, my inbox is always open.
-      Whether you have a question or just want to say hi, I'll try my best to get back to you!
-    </p>
+    <div style="overflow:hidden">
+      <span class="line animated-slideUp"></span>
+    </div>
+    <div style="overflow:hidden">
+      <p class="animated-slideUp">
+        I'm currently looking for any new opportunities, my inbox is always open.
+        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+      </p>
+    </div>
     <div style="overflow:hidden">
       <a class="flat-btn animated-slideUp" href="mailTo: dangnh3091@gmail.com">Say Hello</a>
     </div>
@@ -63,6 +67,7 @@ export default {
       padding: 1rem;
       font-size: 1rem;
       max-width: 95%;
+      margin: 0 auto;
     }
     @media @tablet {
       padding: 1rem;

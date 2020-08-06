@@ -29,10 +29,12 @@
               fill="#ff2f6e"
             />
           </svg>
-          <p id="about-summary" class="animated-slideUp">
-            A hard-working and creative Master of IT graduate with a great eye for detail, keen enthusiasm in user-centred design and understanding of usability principles.
-            A self-taught front-end web developer with the passion to learn new technologies every day and is always up for new challenges. With every line of code, I strive to create top quality and high-performance web applications.
-          </p>
+          <div style="overflow:hidden">
+            <p id="about-summary" class="animated-slideUp">
+              A hard-working and creative Master of IT graduate with a great eye for detail, keen enthusiasm in user-centred design and understanding of usability principles.
+              A self-taught front-end web developer with the passion to learn new technologies every day and is always up for new challenges. With every line of code, I strive to create top quality and high-performance web applications.
+            </p>
+          </div>
           <div style="overflow:hidden">
             <a
               href="/pdf/Danny_Resume.pdf"
@@ -48,16 +50,22 @@
       <div style="overflow: hidden">
         <h1 class="section-skill-title animated-slideUp">Skills</h1>
       </div>
-      <div class="row">
-        <div class="col-md-6 skill-description animated-slideUp">
-          <p>
-            The main area of my expertise is the front-end development.
-            I am able to independently develop complicated front-end web apps through profound knowledge of multiple coding skills.
-          </p>
+      <div class="row" style="overflow: hidden">
+        <div class="col-md-6 skill-description">
+          <div style="overflow: hidden">
+            <p class="animated-slideUp">
+              The main area of my expertise is the front-end development.
+              I am able to independently develop complicated front-end web apps through profound knowledge of multiple coding skills.
+            </p>
+          </div>
 
-          <p>Now is the time to meet a few technologies that I've been working with recently:</p>
-          <div class="row">
-            <div class="col-6 skill-item">
+          <div style="overflow: hidden" class="mt-4">
+            <p
+              class="animated-slideUp"
+            >Now is the time to meet a few technologies that I've been working with recently:</p>
+          </div>
+          <div class="row mt-4" style="overflow: hidden">
+            <div class="col-6 skill-item animated-slideUp">
               <ul>
                 <li>Vue</li>
                 <li>React</li>
@@ -65,7 +73,7 @@
                 <li>HTML5 & (S)CSS</li>
               </ul>
             </div>
-            <div class="col-6 skill-item">
+            <div class="col-6 skill-item animated-slideUp">
               <ul>
                 <li>Node.js</li>
                 <li>Laravel</li>

@@ -20,7 +20,7 @@
           <!-- <p class="work-item-category">{{project.category}}</p> -->
           <h3 class="work-item-title">{{project.title}}</h3>
           <p class="work-item-description">{{project.description}}</p>
-          <div class="work-item-technology">
+          <div class="work-item-technology mt-4">
             <span
               v-for="(item, index) in project.technologies"
               :key="index"
