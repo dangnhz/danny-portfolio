@@ -8,7 +8,9 @@
       I'm currently looking for any new opportunities, my inbox is always open.
       Whether you have a question or just want to say hi, I'll try my best to get back to you!
     </p>
-    <a class="flat-btn animated-slideUp" href="mailTo: dangnh3091@gmail.com">Say Hello</a>
+    <div style="overflow:hidden">
+      <a class="flat-btn animated-slideUp" href="mailTo: dangnh3091@gmail.com">Say Hello</a>
+    </div>
   </section>
 </template>
 
@@ -56,6 +58,11 @@ export default {
     @media @mobile, @large-mobile {
       padding: 1rem;
       font-size: 1rem;
+    }
+    @media @large-mobile {
+      padding: 1rem;
+      font-size: 1rem;
+      max-width: 95%;
     }
     @media @tablet {
       padding: 1rem;

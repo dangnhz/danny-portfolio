@@ -36,7 +36,7 @@ export default {
       footerHeight: null,
     };
   },
-  created() {
+  mounted() {
     this.footerHeight =
       document.getElementById("footer").getBoundingClientRect().height + "px";
   },

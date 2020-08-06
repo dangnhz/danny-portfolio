@@ -42,25 +42,18 @@ export default {
       },
     });
 
-    introTimeline
-      .from("#intro-text p", {
-        yPercent: 100,
-        duration: 0.8,
-        delay: 0.5,
-      })
-      .fromTo(
-        "#intro-img",
-        {
-          opacity: 0,
-          y: 150,
-        },
-        {
-          duration: 0.5,
-          y: 0,
-          opacity: 1,
-        },
-        "-=1"
-      );
+    introTimeline.fromTo(
+      "#intro-img",
+      {
+        opacity: 0,
+        y: 150,
+      },
+      {
+        duration: 0.5,
+        y: 0,
+        opacity: 1,
+      }
+    );
 
     //animate project carousel section
 

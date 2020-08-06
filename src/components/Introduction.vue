@@ -3,7 +3,7 @@
     <div id="introduction" class="intro-wrapper row m-0">
       <div id="intro-text" class="col-md-5 intro-col">
         <p
-          class="text mt-3"
+          class="text animated-slideUp mt-3"
         >I create websites with attention to detail and faithfulness to the design.</p>
       </div>
       <div class="col-md-7 intro-col p-xs-0 p-sm-0">

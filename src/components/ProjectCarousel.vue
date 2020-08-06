@@ -9,9 +9,11 @@
           <div style="overflow: hidden">
             <p id="carousel-subtitle" class="animated-slideUp">Some cool projects made by me.</p>
           </div>
-          <router-link :to="{name:'work'}">
-            <button id="carousel-button" class="flat-btn animated-slideUp">My Portfolio</button>
-          </router-link>
+          <div style="overflow: hidden">
+            <router-link :to="{name:'work'}">
+              <button id="carousel-button" class="flat-btn animated-slideUp">My Portfolio</button>
+            </router-link>
+          </div>
         </div>
       </div>
       <div class="slider-carousel-wrap">

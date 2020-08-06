@@ -171,7 +171,7 @@ export default {
         line-height: 100%;
         // transform: translateY(100%);
         @media @mobile, @large-mobile {
-          font-size: 1rem;
+          font-size: 1.2rem;
         }
         @media @desktop {
           font-size: 1.6rem;

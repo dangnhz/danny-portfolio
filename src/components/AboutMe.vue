@@ -33,12 +33,14 @@
             A hard-working and creative Master of IT graduate with a great eye for detail, keen enthusiasm in user-centred design and understanding of usability principles.
             A self-taught front-end web developer with the passion to learn new technologies every day and is always up for new challenges. With every line of code, I strive to create top quality and high-performance web applications.
           </p>
-          <a
-            href="/pdf/Danny_Resume.pdf"
-            id="button-resume"
-            target="_blank"
-            class="btn flat-btn animated-slideUp"
-          >MY RESUME</a>
+          <div style="overflow:hidden">
+            <a
+              href="/pdf/Danny_Resume.pdf"
+              id="button-resume"
+              target="_blank"
+              class="btn flat-btn animated-slideUp"
+            >MY RESUME</a>
+          </div>
         </div>
       </div>
     </div>
