@@ -4,7 +4,7 @@
       <h1 class="animated-slideUp">Get In Touch</h1>
     </div>
     <div style="overflow:hidden">
-      <span class="line animated-slideUp"></span>
+      <span class="line"></span>
     </div>
     <div style="overflow:hidden">
       <p class="animated-slideUp">
@@ -19,8 +19,26 @@
 </template>
 
 <script>
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 export default {
   name: "get-in-touch",
+  mounted() {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".line",
+        start: "top 90%",
+        toggleActions: "play complete none reverse",
+        // markers: true,
+      },
+    });
+
+    tl.from(".line", {
+      width: 0,
+      duration: 0.5,
+    });
+  },
 };
 </script>
 

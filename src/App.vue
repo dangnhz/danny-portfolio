@@ -99,7 +99,6 @@ li {
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 4px;
-    transition: all 200ms linear;
     text-transform: uppercase;
     border-radius: 4px;
     text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36);
