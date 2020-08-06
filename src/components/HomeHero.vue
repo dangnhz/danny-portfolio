@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="hero-slogan-wrapper">
-        <h2 id="slogan" class="hero-slogan">I build things for the web.</h2>
+        <h2 id="slogan" class="hero-slogan p-0 m-0">I build things for the web.</h2>
       </div>
     </div>
   </div>
@@ -33,6 +33,7 @@
 
 <script>
 import gsap from "gsap";
+
 export default {
   name: "home-hero",
   mounted() {
@@ -99,7 +100,11 @@ export default {
     }
     .hero-text-wrapper {
       overflow: hidden;
-      margin: 4rem 0;
+      margin: 2rem 0;
+
+      @media @large-desktop {
+        margin: 4rem 0;
+      }
     }
 
     .letter {
@@ -163,6 +168,8 @@ export default {
     .hero-slogan-wrapper {
       overflow: hidden;
       .hero-slogan {
+        line-height: 100%;
+        // transform: translateY(100%);
         @media @mobile, @large-mobile {
           font-size: 1rem;
         }

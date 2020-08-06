@@ -1,12 +1,14 @@
 <template>
   <section class="get-in-touch">
-    <h1>Get In Touch</h1>
-    <span class="line"></span>
-    <p>
+    <div style="overflow:hidden">
+      <h1 class="animated-slideUp">Get In Touch</h1>
+    </div>
+    <span class="line animated-slideUp"></span>
+    <p class="animated-slideUp">
       I'm currently looking for any new opportunities, my inbox is always open.
       Whether you have a question or just want to say hi, I'll try my best to get back to you!
     </p>
-    <a class="flat-btn" href="mailTo: dangnh3091@gmail.com">Say Hello</a>
+    <a class="flat-btn animated-slideUp" href="mailTo: dangnh3091@gmail.com">Say Hello</a>
   </section>
 </template>
 

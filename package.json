@@ -12,14 +12,11 @@
     "bootstrap-vue": "^2.5.0",
     "core-js": "^3.6.4",
     "firebase": "^7.17.1",
-    "gsap": "^3.2.2",
+    "gsap": "^3.4.2",
     "jquery": "^3.5.1",
-    "scrollmagic": "^2.0.7",
-    "scrollmagic-plugin-gsap": "^1.0.4",
     "vue": "^2.6.11",
     "vue-awesome": "^4.0.2",
     "vue-router": "^3.1.5",
-    "vue-scrollmagic": "^1.2.0",
     "vue-slick": "^1.1.15",
     "vuex": "^3.1.2"
   },
@@ -35,5 +32,8 @@
     "vue-particles": "^1.0.9",
     "vue-plugin-load-script": "^1.2.0",
     "vue-template-compiler": "^2.6.11"
+  },
+  "rules": {
+    "no-unused-vars": "warn"
   }
 }

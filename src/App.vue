@@ -15,6 +15,7 @@ import NavigationBar from "./components/NavigationBar";
 import MainFooter from "./components/MainFooter";
 import NewGlobalCursor from "./components/NewGlobalCursor";
 import Spinner from "./components/Spinner";
+
 export default {
   name: "app",
   components: {
@@ -48,6 +49,16 @@ export default {
 
 body {
   overscroll-behavior-y: none !important;
+  background: @bg-dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0px !important;
 }
 
 a {

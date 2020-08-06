@@ -1,12 +1,16 @@
 <template>
-  <section class="pr_carousel">
+  <section id="pr_carousel" class="pr_carousel">
     <div class="pr_carousel-wrapper">
       <div class="pr_carousel-title">
         <div class="pr-carousel-title-item">
-          <h3>Selected work</h3>
-          <p>Some cool projects made by me.</p>
+          <div style="overflow: hidden" class="mb-2">
+            <h3 id="carousel-title " class="m-0 animated-slideUp">Selected work</h3>
+          </div>
+          <div style="overflow: hidden">
+            <p id="carousel-subtitle" class="animated-slideUp">Some cool projects made by me.</p>
+          </div>
           <router-link :to="{name:'work'}">
-            <button class="flat-btn">My Portfolio</button>
+            <button id="carousel-button" class="flat-btn animated-slideUp">My Portfolio</button>
           </router-link>
         </div>
       </div>
@@ -133,9 +137,9 @@ export default {
 @import "../assets/style/setting.less";
 .pr_carousel {
   width: 100%;
-  height: auto;
   background: @bg-dark-2;
   text-align: center;
+  height: 100vh;
 
   .pr_carousel-wrapper {
     position: relative;
@@ -271,6 +275,7 @@ export default {
                 position: relative;
                 z-index: 1;
                 clip-path: inset(0% 0% 100% 0%);
+                display: none;
                 transition: all 0.5s ease;
                 @media @mobile, @large-mobile, @tablet {
                   //   padding: 16px 15px 30px 15px;
@@ -329,6 +334,7 @@ export default {
             }
             .slick-current .project-text {
               clip-path: inset(0% 0% 0% 0%);
+              display: block;
             }
           }
         }

@@ -1,8 +1,9 @@
 <template>
   <div class="home">
-    <HomeHero id="home-hero"></HomeHero>
+    <HomeHero></HomeHero>
     <Introduction></Introduction>
-    <project-carousel></project-carousel>
+    <div class="clearfix"></div>
+    <ProjectCarousel></ProjectCarousel>
     <div class="clearfix"></div>
     <AboutMe></AboutMe>
     <GetInTouch></GetInTouch>
@@ -15,10 +16,9 @@ import ProjectCarousel from "../components/ProjectCarousel";
 import AboutMe from "../components/AboutMe";
 import GetInTouch from "../components/GetInTouch";
 
-import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
-import gsap from "gsap"; // Also work with TweenLite and TimelineLite: import { TweenMax, TimelineMax } from "gsap";
-import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-ScrollMagicPluginGsap(ScrollMagic, gsap);
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "Home",
@@ -30,51 +30,119 @@ export default {
     GetInTouch,
   },
   mounted() {
-    // change opacity of hero section when scrolling
+    // animate intro section
+    let introTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#introduction",
+        start: "top 70%",
+        end: "+=100%",
+        // scrub: 0.5,
+        toggleActions: "play complete none reverse",
+        // markers: true,
+      },
+    });
 
-    // animate about section
-
-    let controller = new ScrollMagic.Controller();
-    let timeline = gsap.timeline({ paused: true });
-    timeline
-      .to(".hero-content", {
-        y: "-100%",
-        opacity: 0,
-        duration: 1,
+    introTimeline
+      .from("#intro-text p", {
+        yPercent: 100,
+        duration: 0.8,
+        delay: 0.5,
       })
-      .to("#home-hero", { duration: 1, opacity: 0 }, "-=1");
+      .fromTo(
+        "#intro-img",
+        {
+          opacity: 0,
+          y: 150,
+        },
+        {
+          duration: 0.5,
+          y: 0,
+          opacity: 1,
+        },
+        "-=1"
+      );
 
-    let scene1 = new ScrollMagic.Scene({
-      triggerElement: ".intro-wrapper",
-      duration: "100%",
-      triggerHook: 1,
-    }).setTween(timeline);
+    //animate project carousel section
 
-    // animate introduction section
-    let timeline2 = gsap.timeline();
-    timeline2
-      .from("#intro-text", { x: -300, opacity: 0, duration: 3 }, 0)
-      .from("#intro-img", { x: 300, opacity: 0, duration: 3 }, 0)
-      .to("#intro-img", { y: -80, duration: 2 });
+    // animate abnout section
 
-    let scene2 = new ScrollMagic.Scene({
-      triggerElement: ".intro-wrapper",
-      duration: "100%",
-      triggerHook: 1,
-    }).setTween(timeline2);
+    let aboutTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section-about",
+        start: "top 50%",
+        end: "+=100%",
+        // scrub: 0.5,
+        toggleActions: "play complete none reverse",
+        // markers: true,
+      },
+    });
+    aboutTimeline.from("#icon__arrow", {
+      rotate: -90,
+      duration: 0.5,
+    });
 
-    // animate about section
+    const slideUpElements = document.querySelectorAll(".animated-slideUp");
 
-    let timeline3 = gsap.timeline();
-    timeline3.from("#button__arrow", { rotate: -90, duration: 0.5 });
+    slideUpElements.forEach((element) => {
+      gsap.from(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 90%",
+          toggleActions: "play complete none reverse",
+        },
+        y: 100,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.2,
+      });
+    });
 
-    let scene3 = new ScrollMagic.Scene({
-      triggerElement: ".section-about",
-      duration: 0,
-      triggerHook: 0.5,
-    }).setTween(timeline3);
+    // animate  the skills graph
 
-    controller.addScene([scene1, scene2, scene3]);
+    let graphTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#skill-graph",
+        start: "top 70%",
+        toggleActions: "play complete none reverse",
+        // markers: true,
+      },
+    });
+
+    graphTimeline
+      .from(".skill_tri_body", {
+        scaleY: 0,
+        transformOrigin: "bottom",
+        duration: 0.5,
+        stagger: 0.1,
+      })
+      .from(".percent_line_dash", {
+        attr: {
+          x2: 0,
+        },
+        duration: 0.5,
+      })
+      .from(".text-skill-fadeIn", {
+        opacity: 0,
+        duration: 0.3,
+      });
+
+    //animated grid-skills
+
+    let gridSkillsTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".grid-skill",
+        start: "top 60%",
+        toggleActions: "play complete none reverse",
+        // markers: true,
+      },
+    });
+
+    gridSkillsTimeline.from(".grid-skill ul li", {
+      scale: 0,
+      opacity: 0,
+      duration: 0.5,
+      // stagger: 0.1,
+    });
   },
 };
 </script>

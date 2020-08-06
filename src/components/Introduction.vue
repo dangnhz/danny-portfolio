@@ -1,6 +1,6 @@
 <template>
   <section class="introduction">
-    <div class="intro-wrapper row m-0">
+    <div id="introduction" class="intro-wrapper row m-0">
       <div id="intro-text" class="col-md-5 intro-col">
         <p
           class="text mt-3"
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "introduction"
+  name: "introduction",
 };
 </script>
 
@@ -25,21 +25,24 @@ export default {
 @import "../assets/style/setting.less";
 .introduction {
   width: 100%;
-  height: 100%;
   position: relative;
-  padding: 10rem 0;
+  height: 80vh;
+  display: block;
   color: @white;
   background: @bg-dark;
-  overflow-x: hidden;
   max-width: 1920px;
-  margin: 0 auto;
+  margin: 5rem auto;
+  overflow: hidden;
   @media @mobile, @large-mobile, @tablet {
-    padding: 5rem 0;
+    height: 60vh;
+    margin: 0rem auto;
   }
   .intro-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
+    height: 100%;
 
     @media @mobile, @large-mobile {
       width: 100%;
@@ -49,21 +52,23 @@ export default {
       width: 100%;
       padding: 1rem;
     }
+
+    #intro-text {
+      overflow: hidden;
+    }
     .text {
-      font-family: "averta", sans-serif;
       font-size: 1.2rem;
       line-height: 2.5rem;
       padding: 0rem 2rem 0rem 5rem;
+      margin: 0;
       @media @mobile, @large-mobile {
         font-size: 1.2rem;
         line-height: 2.2rem;
-        margin-bottom: 10rem;
         padding: 1rem;
       }
       @media @tablet {
         font-size: 1.3rem;
         line-height: 2.5rem;
-        margin-bottom: 3rem;
         padding: 2rem;
       }
       @media @large-desktop {
@@ -74,7 +79,7 @@ export default {
     }
     .image-wrapper img {
       width: 90%;
-      height: 90%;
+      // height: 90%;
       object-fit: contain;
       transition: 0.5s;
       &:hover {
