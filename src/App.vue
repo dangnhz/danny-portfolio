@@ -108,6 +108,7 @@ li {
     border-color: transparent;
     margin-top: 3rem;
     background: @text-color;
+    transition: padding 200ms linear;
     &:before {
       content: "";
       position: absolute;
