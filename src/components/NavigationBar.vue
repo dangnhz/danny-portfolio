@@ -57,7 +57,7 @@
           </div>
           <div>
             <div class="mb-3">
-              <a href="https://www.linkedin.com/in/dang-nhz" target="_blank">
+              <a href="https://www.linkedin.com/in/dangnhz" target="_blank">
                 <v-icon class="mr-2" name="brands/linkedin"></v-icon>LinkedIn
               </a>
             </div>

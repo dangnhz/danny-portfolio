@@ -15,6 +15,7 @@
           alt="project_cover"
         />
       </div>
+
       <div class="work-item-content">
         <div class="work-item-content-wrapper">
           <!-- <p class="work-item-category">{{project.category}}</p> -->
@@ -27,9 +28,21 @@
               class="project-technology-item"
             >{{ item }}</span>
           </div>
-          <a :href="project.siteURL" target="_blank">
-            <button class="flat-btn mt-3">View Project</button>
-          </a>
+
+          <!-- <div class="group-actions my-3">
+            <a :href="project.githubURL" target="_blank" title="Github Repository">
+              <v-icon class="action-item" style="width:28px; height:28px" name="brands/github"></v-icon>
+            </a>
+            <a :href="project.siteURL" target="_blank" title="View Live Project">
+              <v-icon class="action-item ml-4" name="external-link-alt"></v-icon>
+            </a>
+          </div>-->
+
+          <div class="d-block">
+            <a :href="project.siteURL" target="_blank">
+              <button class="flat-btn mt-3">View Project</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -178,7 +191,25 @@ export default {
           margin-bottom: 1rem;
           .project-technology-item {
             margin-right: 1rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.5);
+          }
+        }
+
+        .group-actions {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          .action-item {
+            font-size: 5rem;
+            transition: 0.4s;
+            width: 25px;
+            height: 25px;
+            fill: rgba(255, 255, 255, 0.5);
+
+            &:hover {
+              fill: @text-color;
+            }
           }
         }
       }

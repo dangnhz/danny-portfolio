@@ -4,7 +4,7 @@
       <div class="col-md-6 col-sm-12">Danny Ngo © {{year}}</div>
       <div class="col-md-6 col-sm-12 d-flex justify-content-center social-group">
         <a
-          href="https://www.linkedin.com/in/dang-nhz"
+          href="https://www.linkedin.com/in/dangnhz"
           target="_blank"
           class="d-flex align-items-center mx-3"
         >

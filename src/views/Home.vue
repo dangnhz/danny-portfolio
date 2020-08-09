@@ -80,9 +80,11 @@ export default {
       gsap.from(element, {
         scrollTrigger: {
           trigger: element,
-          start: "top 90%",
+          start: "top 100%",
+          end: "+=100%",
           toggleActions: "play complete none reverse",
         },
+        opacity: 0,
         yPercent: 100,
         duration: 0.6,
       });

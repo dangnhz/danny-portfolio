@@ -81,7 +81,7 @@ export default {
       width: 90%;
       // height: 90%;
       object-fit: contain;
-      transition: scale 0.5s;
+      transition: all 0.5s;
       &:hover {
         transform: scale(1.05);
       }
