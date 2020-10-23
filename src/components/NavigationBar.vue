@@ -33,6 +33,7 @@
 
     <!-- Menu Start -->
     <div id="menu-wrapper" class="menu-wrapper">
+      <div class="menu-secondary-bg"></div>
       <div class="menu-container row">
         <div class="menu-list col-xs-12 col-sm-12 col-md-8">
           <ul>
@@ -108,6 +109,7 @@ export default {
   },
   mounted() {
     const navMenu = document.querySelector("#menu-wrapper");
+    const secondaryBg = document.querySelector(".menu-secondary-bg");
     const menuItems = document.querySelectorAll(".menu-item");
     const moreInfo = document.querySelector(".more-info");
 
@@ -122,10 +124,19 @@ export default {
       opacity: 0,
     });
 
-    this.tl.to(navMenu, {
+    this.tl.to([navMenu, secondaryBg], {
       height: "100vh",
+      ease: "power2.inOut",
+      transformOrigin: "right top",
+      skewY: 2,
+      duration: 0.7,
+      stagger: 0.07
+    });
+
+    this.tl.to([navMenu, secondaryBg], {
       ease: "power2.out",
-      duration: 0.3,
+      skewY: 0,
+      duration: 0,
     });
 
     this.tl.to(menuItems, {
@@ -275,12 +286,22 @@ export default {
   z-index: 100;
   display: flex;
   align-items: center;
-  background: @bg-dark;
+  background: @text-color;
   overflow: hidden;
+
+  .menu-secondary-bg {
+    width: 100%;
+    height: 0;
+    background: @bg-dark;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 
   .menu-container {
     position: relative;
-    width: 90%;
+    width: 100%;
     margin: auto auto;
     height: fit-content;
     z-index: 1;
