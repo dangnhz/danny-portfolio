@@ -1,8 +1,8 @@
-@large-desktop: ~'only screen and (min-width: 1800px)';
-@desktop: ~'only screen and (min-width : 1111px) and (max-width: 1799px)';
-@tablet: ~'only screen and (min-width : 660px) and (max-width : 1100px)';
-@large-mobile: ~'only screen and (min-width : 393px) and (max-width : 659px)';
-@mobile: ~'only screen and (max-width : 392px)';
+@large-desktop: ~"only screen and (min-width: 1800px)";
+@desktop: ~"only screen and (min-width : 1111px) and (max-width: 1799px)";
+@tablet: ~"only screen and (min-width : 660px) and (max-width : 1100px)";
+@large-mobile: ~"only screen and (min-width : 393px) and (max-width : 659px)";
+@mobile: ~"only screen and (max-width : 392px)";
 
 @navy: #1d2230;
 @bg-dark: #1f2029;
@@ -24,32 +24,14 @@
 @light-blue: #009f9f;
 @grey-projects: #919191;
 
-@import (css) url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 @font-face {
-  font-family: 'averta';
-  src: url('../fonts/avertademopecutteddemo-regular-webfont.woff2')
-    format('woff2');
+  font-family: "averta";
+  src: url("../fonts/avertademopecutteddemo-regular-webfont.woff2") format("woff2"),
+  url("../fonts/avertademopecutteddemo-regular-webfont.woff2")  format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Abril-Fatface';
-  src: url('../fonts/abrilfatface-regular-webfont.woff2') format('woff2'),
-    url('../fonts/abrilfatface-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'athena';
-  src: url('../fonts/athena-regular_personal_use_only-webfont.woff2')
-      format('woff2'),
-    url('../fonts/athena-regular_personal_use_only-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 *:focus {
   outline: none !important;
