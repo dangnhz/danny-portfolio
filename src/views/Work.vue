@@ -41,6 +41,7 @@ export default {
       let timeline = gsap.timeline({
         scrollTrigger: {
           trigger: element,
+          scroller: ".smooth-container",
           start: "top 70%",
           toggleActions: "play complete none reverse",
           // markers: true,
@@ -73,9 +74,12 @@ export default {
   mounted() {
     // parallax effect
     const workList = document.querySelectorAll(".work-item");
-    workList.forEach((item) => {
-      this.runParallax(item);
-    });
+    let _self = this
+    setTimeout(() => {
+      workList.forEach((item) => {
+      _self.runParallax(item);
+    })
+    }, 500)
   },
   watch: {
     projects() {

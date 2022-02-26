@@ -15,11 +15,11 @@ const routes = [
     name: 'work',
     component: () => import('../views/Work.vue'),
   },
-  {
-    path: '/work/:project_name',
-    name: 'project',
-    component: () => import('../views/Project.vue'),
-  },
+  // {
+  //   path: '/work/:project_name',
+  //   name: 'project',
+  //   component: () => import('../views/Project.vue'),
+  // },
   {
     path: '/contact',
     name: 'contact',

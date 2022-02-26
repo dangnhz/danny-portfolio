@@ -30,12 +30,17 @@ export default {
     GetInTouch,
   },
   mounted() {
-    // animate intro section
+    setTimeout(this.homepageAnimation, 500)
+  },
+  methods: {
+    homepageAnimation() {
+        // animate intro section
     let introTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#introduction",
         start: "top 70%",
         end: "+=100%",
+        scroller: ".smooth-container",
         // scrub: 0.5,
         toggleActions: "play complete none reverse",
         // markers: true,
@@ -64,6 +69,7 @@ export default {
         trigger: ".section-about",
         start: "top 50%",
         end: "+=100%",
+        scroller: ".smooth-container",
         // scrub: 0.5,
         toggleActions: "play complete none reverse",
         // markers: true,
@@ -82,6 +88,7 @@ export default {
           trigger: element,
           start: "top 100%",
           end: "+=100%",
+          scroller: ".smooth-container",
           toggleActions: "play complete none reverse",
         },
         opacity: 0,
@@ -96,6 +103,7 @@ export default {
       scrollTrigger: {
         trigger: "#skill-graph",
         start: "top 70%",
+        scroller: ".smooth-container",
         toggleActions: "play complete none reverse",
         // markers: true,
       },
@@ -124,7 +132,8 @@ export default {
     let gridSkillsTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".grid-skill",
-        start: "top 60%",
+        start: "top 80%",
+        scroller: ".smooth-container",
         toggleActions: "play complete none reverse",
         // markers: true,
       },
@@ -136,7 +145,8 @@ export default {
       duration: 0.5,
       // stagger: 0.1,
     });
-  },
+    }
+  }
 };
 </script>
 
