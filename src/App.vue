@@ -84,6 +84,7 @@ export default {
       if (!val && _self.scroller != undefined) {
         setTimeout(function () {
           _self.scroller.update();
+           ScrollTrigger.refresh();
         }, 500);
       }
     },
@@ -91,6 +92,7 @@ export default {
       let _self = this;
       setTimeout(function () {
         _self.scroller.update();
+         ScrollTrigger.refresh();
       }, 500);
     },
   },
