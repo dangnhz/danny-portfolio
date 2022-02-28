@@ -25,7 +25,9 @@
         </div>
       </div>
       <div class="hero-slogan-wrapper">
-        <h2 id="slogan" class="hero-slogan p-0 m-0">I build things for the web.</h2>
+        <h2 id="slogan" class="hero-slogan p-0 m-0">
+          I build things for the web.
+        </h2>
       </div>
     </div>
   </div>
@@ -38,24 +40,22 @@ export default {
   name: "home-hero",
   mounted() {
     //initial effect
-    const tl = gsap.timeline();
-    tl.set([".hero-text", ".hero-slogan"], {
-      yPercent: 110,
-    });
-
-    tl.to(".hero-text", {
-      duration: 0.5,
-      yPercent: 0,
-      stagger: 0.4,
-    });
-    tl.to(
-      ".hero-slogan",
-      {
+    setTimeout(() => {
+      const tl = gsap.timeline();
+      tl.to(".hero-text", {
         duration: 0.5,
-        yPercent: 0,
-      },
-      "-=0"
-    );
+        y: 0,
+        stagger: 0.4,
+      });
+      tl.to(
+        ".hero-slogan",
+        {
+          duration: 0.5,
+          y: 0,
+        },
+        "-=0"
+      );
+    }, 1000);
 
     // animate text on hover
     const letters = document.querySelectorAll(".letter");
@@ -105,6 +105,10 @@ export default {
       @media @large-desktop {
         margin: 4rem 0;
       }
+    }
+
+    .hero-text, .hero-slogan {
+      transform: translateY(110%);
     }
 
     .letter {

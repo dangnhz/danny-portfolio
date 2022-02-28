@@ -84,15 +84,16 @@ export default {
       if (!val && _self.scroller != undefined) {
         setTimeout(function () {
           _self.scroller.update();
-           ScrollTrigger.refresh();
+          ScrollTrigger.refresh();
         }, 500);
       }
     },
     $route() {
       let _self = this;
+      _self.scroller.scrollTo("top", { duration: 500 });
       setTimeout(function () {
         _self.scroller.update();
-         ScrollTrigger.refresh();
+        ScrollTrigger.refresh();
       }, 500);
     },
   },
