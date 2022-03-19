@@ -11,7 +11,7 @@
           </div>
           <div style="overflow: hidden">
             <router-link :to="{name:'work'}">
-              <button id="carousel-button" class="flat-btn animated-slideUp">My Portfolio</button>
+              <button id="carousel-button" class="flat-btn animated-slideUp">View all</button>
             </router-link>
           </div>
         </div>

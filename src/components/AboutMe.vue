@@ -67,16 +67,16 @@
           <div class="row mt-4" style="overflow: hidden">
             <div class="col-6 skill-item animated-slideUp">
               <ul>
-                <li>Vue</li>
                 <li>React</li>
-                <li>JavaScript (ES6+)</li>
+                <li>Vue</li>
+                <li>JavaScript, TypeScript</li>
                 <li>HTML5 & (S)CSS</li>
               </ul>
             </div>
             <div class="col-6 skill-item animated-slideUp">
               <ul>
                 <li>Node.js</li>
-                <li>Laravel</li>
+                <li>Drupal</li>
                 <li>WordPress</li>
                 <li>Python</li>
               </ul>
@@ -140,7 +140,7 @@
               <polygon
                 id="skill_tri_react"
                 class="skill_tri_body skill_tri_1"
-                points="188,358 376,358 282,120 "
+                points="188,358 376,358 282,100 "
               />
               <polygon
                 id="skill_tri_javascript"

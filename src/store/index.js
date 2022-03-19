@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-// import projects from './projects';
 import { db } from '../firebase';
 
 Vue.use(Vuex);
@@ -36,7 +35,7 @@ const actions = {
   FETCH_PROJECTS: ({ commit }) => {
     commit('setLoading', true);
     db.collection('projects')
-      .orderBy('createdAt', 'asc')
+      .orderBy('order', 'asc')
       .onSnapshot((snapshot) => {
         let data = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
         commit('fetchProjects', data);

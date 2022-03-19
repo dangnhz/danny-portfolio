@@ -94,6 +94,7 @@ export default {
     height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     @media @mobile, @large-mobile, @tablet {
       flex-direction: column;
