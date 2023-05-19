@@ -7,8 +7,8 @@
       <PageTitle title="Get In Touch" />
       <div class="contact-detail">
         <p>
-          My inbox is always open.
-          <br />Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          Thank you for visiting my portfolio!
+          <br />I appreciate your interest in my work and if you have any questions, feedback, or potential collaboration opportunities, I'd love to hear from you.
         </p>
         <a href="mailTo: dangnh3091@gmail.com">
           <div class="btn flat-btn">Say Hello</div>
